@@ -1,0 +1,36 @@
+<!--pages/my/info_user/info_user.wxml-->
+<compontNavbar title="个人资料" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<view class="information">
+  <view class="information-Head position_r" bindtap="modHead">
+    <text class="information-text mylineheight">我的头像</text>
+    <view class="information-photo">
+        <image wx:if="{{info.avatar==''}}" src="../../../images/default_user.png" mode="aspectFill"></image>
+        <image wx:else src="{{info.avatar}}" mode="aspectFill"></image>
+    </view>
+    <image src="../../../images/arrow_c9.png" class="information-icon myimgtop"></image>
+  </view>
+  
+  <navigator class="information-personal position_r" url="{{'/pages/my/modify_name/modify_name'}}">
+    <text class="information-text">用户名称</text>
+    <text class="information-name">{{info.nickname}}</text>
+    <image src="../../../images/arrow_c9.png" class="information-icon"></image>
+  </navigator>
+
+  
+  <view class="information-personal position_r" >
+    <text class="information-text">关系</text>
+    <text class="information-name"></text>
+    <image src="../../../images/arrow_c9.png" class="information-icon"></image>
+    
+  </view>
+  <view class="information-personal position_r">
+    <text class="information-text">手机号码</text>
+    <text class="information-telephone">{{info.mobile}}</text>
+  </view>
+</view>
+
+<view class='p_lr_26'>
+    <view bindtap='exitLogin' class='bind_off'>退出登录</view>
+</view>

@@ -1,0 +1,39 @@
+<!--pages/zuoye/zuoye.wxml-->
+<compontNavbar title="日常作业" isShowBack="{{false}}" component-class="component-class"></compontNavbar>
+
+
+<view class='bigbox'>
+  <block wx:if="{{showEmpty}}"><empty></empty></block> 
+  <view class='itembox' wx:for="{{list}}" wx:key='this' bindtap='tz_detail' data-zuoyeid='{{item.id}}'>
+    <view class='item_top display-flex justify-content-between align-items-center'>
+      <view class='item_topleft f_26 c_333'>{{item.createdate}}</view>
+      <view class='item_topright f_24 c_fff c_gf_bg'>{{item.subjectname}}</view>
+    </view> 
+    <view class='item_center'>
+      <view class='item_title f_28'>{{item.name}}</view>
+      <scroll-view class='newonlineter_scroll display-flex' scroll-x="true" wx:if="{{item.images}}">
+        <view class='newonlineter_item' wx:for='{{item.images}}' wx:key='this'>
+            <image wx:if="{{item}}" src="{{item}}" mode='aspectFill' catchtap="previewImg" data-index="{{idx}}" data-img="{{item}}" data-imgs="{{item}}"></image>
+            
+        </view>                   
+      </scroll-view>
+    </view>
+    <view class='item_bottom display-flex align-items-center justify-content-between'>
+      <!-- <view class='display-flex align-items-center'>
+        <image wx:if="{{item.userInfo.avatar}}" src='{{item.userInfo.avatar}}' class='item_headerimg'></image>
+        <image wx:else src='../../images/default_user.png' class='item_headerimg'></image>
+        <view class='item_name f_28 one_line c_333'>{{item.userInfo.nickname}}</view>
+        
+        <view class='item_tag f_24 c_666 one_line' >同学</view>
+
+      </view> -->
+      
+      <view wx:if="{{item.status==1}}" class='item_btn f_28 '>未批改</view>
+      <view wx:if="{{item.status==2}}" class='item_btn f_28 '>已批改</view>
+      
+    </view>
+  </view>
+  
+</view>
+
+

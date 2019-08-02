@@ -1,0 +1,46 @@
+/* pages/binding/binding.wxss */
+page{
+    background: #fff;
+    padding-top:10vh;
+}
+.component-class{
+    border-bottom:none !important;
+}
+.bigbox{
+    text-align: center;
+}
+.h1{
+    font-size:48rpx;
+    margin-top:114rpx;
+    line-height:48rpx;
+}
+.h2{
+    line-height:30rpx;
+    margin-top:64rpx;
+}
+.h3{
+    line-height:30rpx;
+    margin-top:116rpx;
+}
+.circle{
+    width:220rpx;
+    height:220rpx;
+    border-radius: 50%;
+    font-size:42rpx;
+    line-height: 220rpx;
+    text-align: center;
+}
+.circle1{
+    margin:92rpx auto 64rpx;
+    background-color:#f4f4f4;
+    color:#333;
+    
+}
+.circle2{
+    margin:0rpx auto 160rpx;
+     background: -webkit-linear-gradient(#50A6FB ,#70B6FC); 
+    background: -o-linear-gradient(#50A6FB ,#70B6FC);
+    background: -moz-linear-gradient(#50A6FB ,#70B6FC);
+    background: linear-gradient(to top,#50A6FB ,#70B6FC);
+    color:#fff;
+}

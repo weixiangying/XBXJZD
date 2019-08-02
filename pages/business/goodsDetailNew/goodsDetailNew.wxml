@@ -1,0 +1,152 @@
+<!--pages/business/goodsDetailNew/goodsDetailNew.wxml-->
+<compontNavbar title="商品详情" isShowBack="{{true}}"  ></compontNavbar>
+
+<import src="/wxParse/wxParse.wxml" />
+<view class="container">
+    <view class="imgs-box">
+        <view class="img-count-box" wx:if="{{detail.phone.length > 0}}">{{imgIndex + 1}}/{{detail.images.length}}</view>
+        <swiper>
+            <block wx:for="{{detail.item.photo}}" wx:key="this" wx:for-index="{{imgIndex}}">
+                <swiper-item>
+                    <image src="{{item.image}}" mode="aspectFill" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="info-box">
+        <view class="info-bg-fff">
+            <view class="point-box">
+                <view class="point">积分 {{detail.point}}</view>
+                <view class="hit">浏览次数: {{detail.look_num}}</view>
+            </view>
+            <view class="title">{{detail.item.title}}</view>
+        </view>
+        <view class="info-tip">
+            <view class="tip">
+                <image src="{{base}}images/tip-icon.png" class="tip-icon"></image>
+                <text class="tip-text">包邮</text>
+            </view>
+            <view class="tip">
+                <image src="{{base}}images/tip-icon.png" class="tip-icon"></image>
+                <text class="tip-text">正品行货</text>
+            </view>
+            <view class="tip">
+                <image src="{{base}}images/tip-icon.png" class="tip-icon"></image>
+                <text class="tip-text">24小时发货</text>
+            </view>
+        </view>
+    </view>
+    <view class="comment-box">
+        <view class="h2">
+            <view class="h2-lt">
+                <view class="rect-icon"></view>
+                <text class="h2-text">商品评论({{commentList.length}})</text>
+            </view>
+            <navigator url="{{'/pages/common/commentsList/commentsList?typeid=15&id=' + detail.item.id}}" class="h2-rt">
+                <text class="h2-rt-text">查看全部</text>
+                <image src="{{base}}images/next.png" class="h2-rt-img"></image>
+            </navigator>
+        </view>
+        <view class="comment-list" wx:if="{{commentList.length > 0}}">
+            <view class="comment-item" wx:for="{{commentList}}" wx:key="this" wx:for-index="index" wx:if="{{index < 2}}">
+                <view class="comment-info">
+                    <view class="comment-lt">
+                        <image class="comment-user" mode="aspectFill" src="{{item.userInfo.avatar?item.userInfo.avatar:'../../../images/default_user.png'}}"></image>
+                        <text class="comment-name">{{item.userInfo.nickname}}</text>
+                    </view>
+                    <view class="comment-time">{{item.createdate}}</view>
+                </view>
+                <view class="comment-cont">{{item.content}}</view>
+            </view>
+        </view>
+        <view class="no-comment" wx:else>暂时还没有评论哦~</view>
+    </view>
+    <view class="recommend-box" wx:if='{{detail.recommend_list.length!=0}}'>
+        <view class="h2">
+            <view class="h2-lt">
+                <view class="rect-icon"></view>
+                <text class="h2-text">推荐商品</text>
+            </view>
+        </view> 
+        <scroll-view class="scroll-box" scroll-x="true">
+            <navigator class="scroll-item" wx:for="{{detail.recommend_list}}" wx:key="this" url="{{'/pages/business/goodsDetailNew/goodsDetailNew?id=' + item.id}}">
+                <image src="{{item.picture.image}}" class="slide-image" mode="aspectFill"></image>
+                <view class="slide-tit">{{item.title}}</view>
+                <view class="slide-point">￥{{item.price}}</view>
+            </navigator>            
+        </scroll-view>
+    </view>
+    <view class="detail-box">
+        <view class="h2">
+            <view class="h2-lt">
+                <view class="rect-icon"></view>
+                <text class="h2-text">商品详情</text>
+            </view>
+        </view>
+        <view class="wxParse">
+            <template is="wxParse" data="{{wxParseData: description.nodes}}"></template>
+        </view>
+    </view>
+      
+</view>
+<view class='bottom_box'>
+  <view class='display-flex justify-content-between'>
+    <view class='bottom_left display-flex align-items-center justify-content-around'>
+      <view class='bottom_leftitem' catchtap="makePhone" data-phone="{{tel}}">
+        <image src='{{base}}images/concat.png' class='bottom_img'></image>
+        <view class='f_24 c_666'>客服</view>
+      </view>
+      <view class='bottom_leftitem' catchtap="clickCollect" wx:if="{{isCollect == 0}}">
+        <image src="{{base}}images/collect_news.png" class='bottom_img'></image>
+        <view class='f_24 c_666'>收藏</view>
+      </view>
+      <view class='bottom_leftitem' catchtap="clickCollect" wx:if="{{isCollect == 1}}">
+        <image src='{{base}}images/collect_news_already.png' class='bottom_img'></image>
+        <view class='f_24 c_666'>收藏</view>
+      </view>
+           
+
+      <navigator class='bottom_leftitem' url='/pages/periphery/gift/gift'>
+        <image src='{{base}}images/tabBtom/gift2.png' class='bottom_img'></image>
+        <view class='f_24 c_666'>购物车</view>
+      </navigator>
+    </view>
+    <view class='bottom_right f_26' catchtap="showNumBox" data-flag="1">加入购物车</view>
+  </view>
+</view>
+
+    <view class="mod-num-box" wx:if="{{showNumBox}}">
+        <view class="small-goods-img-box">
+          <image class="small-goods-img" src="{{detail.item.photo[0].image}}"></image>  
+        </view>       
+        <view class="mod-num-cont">
+            <view class="mod-num-cont-1">                
+               
+                <view class="mod-num-info">
+                    <view class="goods-price">￥{{detail.item.price}}</view>
+                    <view class="goods-num"><text>剩余数量{{detail.item.total_num - detail.item.sales_num}}</text></view>
+                </view>
+            </view>
+            <view class="mod-num-cont-2">
+                <view class="mod-text">购买数量</view>
+                <view class="tips">
+                    <view class="mod-btn {{num == 1? 'disabled': ''}}" data-status="1" catchtap="modifNumClick">-</view>
+                    <view class="num">{{num}}</view>
+                    <view class="mod-btn {{num == (detail.total_num - detail.sales_num)? 'disabled': ''}}" data-status="2" catchtap="modifNumClick">+</view>
+                </view>
+            </view>
+        </view>
+        <view class='newmod_box display-flex'>
+          <view class='newmod_box_btn1 newmod_box_btn' catchtap="hideNumBox">取消</view>
+          <view class='newmod_box_btn2 newmod_box_btn' catchtap="comfimNumFn">确定</view>
+        </view>
+        <!-- <view class="mod-num-btn" catchtap="comfimNumFn">确定</view> -->
+    </view>
+    <view class="declare-cont-box" wx:if="{{showDeclare}}">
+        <view class="declare-cont">
+            <template is="wxParse" data="{{wxParseData: declareContent.nodes}}"></template>
+        </view>
+        <view class="declare-btn" catchtap="hideDeclare">确定</view>
+    </view> 
+
+    

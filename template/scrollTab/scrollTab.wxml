@@ -1,0 +1,12 @@
+<template name="scrollTab">
+    <view class="scroll-item" bindtap="swiScrollTab" data-index="{{item.id}}" data-classify="{{item.PrimaryID}}">
+        <view class="scroll-item-text">{{item.name || item.title ||item.TypeName}}</view>
+        <view class="scroll-item-line"></view>
+    </view>
+</template>
+<template name="scrollTabActive">
+    <view class="scroll-item active" bindtap="swiScrollTab" data-index="{{item.id}}" data-classify="{{item.PrimaryID}}">
+        <view class="scroll-item-text">{{item.name || item.title ||item.TypeName}}</view>
+        <view class="scroll-item-line"></view>
+    </view>
+</template>

@@ -1,0 +1,21 @@
+/* pages/task/choicestu/choicestu.wxss */
+page{
+    background-color:#f4f4f4;
+    padding-top: 10vh;
+}
+.mtbox{
+    margin-top:18rpx;
+}
+.item{
+    height: 100rpx;border-bottom:1px solid #dfdfdf;
+    background-color:#fff;
+}
+.headerimg{
+    width:74rpx;
+    height: 74rpx;
+    margin:0 38rpx 0 28rpx;
+    border-radius: 50%;
+}
+.name{
+    line-height: 120rpx;
+}

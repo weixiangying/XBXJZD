@@ -1,0 +1,41 @@
+/* pages/courseList/write/write.wxss */
+page{
+
+
+  background: #fff;
+  padding-top: 10vh;
+}
+.component-class{
+    background-color:#FAF9F9 !important;
+}
+.textareabox{
+  padding:0 30rpx;
+  margin-top:40rpx;
+  max-height: 500rpx
+}
+.placeholder{
+  font-size:32rpx;
+  color:#ABABAB;
+}
+textarea{
+  font-size:32rpx;
+  color:#333;
+  width:100%;
+  min-height: 50vh;
+}
+.bottombox{
+  position:fixed;bottom:10rpx;left: 0;
+  z-index: 2;
+  width:100%;
+}
+.btn{
+  width:690rpx;
+  margin:0 auto;
+  height:96rpx;
+  border-radius: 10rpx;
+  line-height: 96rpx;
+  color:#fff;
+  font-size:34rpx;
+  text-align: center;
+  
+}

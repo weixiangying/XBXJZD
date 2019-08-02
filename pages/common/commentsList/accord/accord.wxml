@@ -1,0 +1,9 @@
+<view class="box" id="accord">
+    <view class="cont-text {{count%2 == 0? '':'swi-style'}}">
+        {{item.content}}
+    </view>
+    <view class="more" catchtap="modiHeight" wx:if="{{length > 132}}">
+        {{count%2 == 0?'查看全部':'隐藏'}}
+    </view>
+</view>
+

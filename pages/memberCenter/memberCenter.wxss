@@ -1,0 +1,151 @@
+
+page{
+    padding-top:10vh;
+    background-color:#f5f5f5;
+}
+.bigbox{
+    padding:0 30rpx;
+    
+}
+.bigbox1{
+    padding:46rpx 30rpx 35rpx;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+.headerimg{
+    width:100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin-right: 18rpx;
+}
+.name_img{
+    width:32rpx;
+    height: 30rpx;
+    margin-left:10rpx;
+}
+.name{
+    max-width:310rpx;
+    line-height: 32rpx;
+    margin:15rpx 0 16rpx 0;
+}
+.time{
+    line-height: 24rpx;
+}
+
+.bigtitle{
+    margin-bottom:48rpx;
+    font-weight: bold;
+}
+.bigtitle text{
+    display: inline-block;
+    margin-right:8rpx;
+    height: 32rpx;
+    width:10rpx;
+    font-weight: bold;
+}
+.choice_box{
+    justify-content: space-between;
+}
+.choice_item{
+    background-color: #fff8f2;
+    text-align: center;
+    width: 210rpx;
+    border:2px solid #fff8f2;
+    border-radius: 6rpx;
+}
+.choice_item_c{
+    border:2px solid #ff9731 !important;
+}
+.choice_text1{
+    margin-top: 55rpx;
+    margin-bottom:40rpx;
+    color:#39414c;
+}
+
+.choice_text2{
+    color:#000;
+    font-weight: bold;
+}
+.choice_text1_c{
+    color:#ff9731 !important;
+}
+.choice_text3{
+    margin-top: 32rpx;
+    margin-bottom:50rpx;
+    text-decoration:line-through;
+}
+.qy_itembigbox{
+    flex-wrap:wrap;
+}
+.qy_itembox{
+    width: 50%;
+    margin-bottom:24rpx;
+}
+.qy_img{
+    width:105rpx;
+    height: 105rpx;
+}
+.qy_text1{
+    margin:10rpx 0 5rpx;
+}
+.qy_bigbox{
+    margin-bottom:150rpx;
+}
+.fix_bottom{
+    position:fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 100rpx;
+}
+.fix_btn{
+    width:320rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center; 
+    padding:0;
+    border-radius: 0;
+    margin:0;
+}
+.fix_money{
+    color:#FB6D0E;
+    margin-left:50rpx;
+    margin-right:30rpx;
+    width:140rpx;
+    font-size:42rpx;
+    font-weight: bold;
+}
+
+
+.authorizebox{
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:200;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,.7);
+}
+.authorize_smbox{
+    position:relative;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+    width:60%;    
+    /* background-color:#fff; */
+    /* padding:100rpx 0; */
+}
+.authorize_btn{
+    
+    height:8vh;
+    line-height:8vh;
+    font-size:42rpx;
+    text-align: center;
+    background-color:#fff;
+    
+    border-radius: 20rpx;
+    margin:0 auto;
+    /* box-shadow: 0rpx 5rpx 15rpx #ccc; */
+}

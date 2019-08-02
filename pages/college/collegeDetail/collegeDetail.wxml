@@ -1,0 +1,318 @@
+<compontNavbar title="课程详情" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<import src="/wxParse/wxParse.wxml" />
+<view class='video_box'>
+  <video class='video' src='{{detail.VideoUrl}}' poster='{{videopic}}' controls objectFit="fill" custom-cache="{{false}}"></video>
+</view>
+
+
+<view class="tab" wx:if="{{(bjdetail==1)&&(pldetail==1)&&(twdetail==1)}}" style='top:{{tab_topstyle}}px'>
+    <view class="tab-view {{curTabIndex == 0? 'active' : ''}}" data-id="0" bindtap="tabFun">
+        <view class="tit {{curTabIndex == 0? 'c_gf' : ''}}">简介</view>
+        <view wx:if="{{curTabIndex==0}}" class="tabline-box c_gf_bg"></view>
+    </view> 
+    <view class="tab-view {{curTabIndex == 1? 'active' : ''}}" data-id="1" bindtap="tabFun">
+        <view class="tit {{curTabIndex == 1? 'c_gf' : ''}}">提问</view>
+        <view wx:if="{{curTabIndex == 1}}" class="tabline-box"></view>
+    </view>
+    <view class="tab-view {{curTabIndex == 2? 'active' : ''}}" data-id="2" bindtap="tabFun">
+        <view class="tit {{curTabIndex == 2? 'c_gf' : ''}}">评论</view>
+        <view wx:if="{{curTabIndex == 2}}" class="tabline-box"></view>
+    </view> 
+    <view class="tab-view {{curTabIndex == 3? 'active' : ''}}" data-id="3" bindtap="tabFun">
+        <view class="tit {{curTabIndex == 3? 'c_gf' : ''}}">笔记</view>
+        <view wx:if="{{curTabIndex == 3}}" class="tabline-box"></view>
+    </view>
+</view>
+
+<scroll-view scroll-y="true" style="height:{{scrollheight}}px" class="tab-content" wx:if="{{(bjdetail==1)&&(pldetail==1)&&(twdetail==1)}}" bindscrolltolower="loadMore">
+    <view class="content-item_new" wx:if="{{curTabIndex == 0}}">
+      <view class='jj_topbigbox'>
+        <view class='jj_topbox display-flex'>
+          <view class='overf'>
+            <image src='{{detail.nTeacher.FacePath?detail.nTeacher.FacePath:"../../../images/default_user.png"}}' class='jj_topheader fl' mode="aspectFill"></image>
+            <view class='fl'>
+              <view class='jj_topname f_26 c_333 one_line'>{{detail.nTeacher.Name}}</view>
+              <!-- <view class='jj_topnum f_24 c_999'>111粉丝</view> -->
+            </view>
+          </view>
+          <!-- <view class='cb_lightgreen jj_topbtn c_fff f_26'>+关注</view> -->
+        </view>
+        <view class='jj_topcontent display-flex'>
+          <view class="jj_toptitle f_30 c_333 {{zhedie%2==0?'one_line':''}}">{{detail.Intro}}</view>
+          <image catchtap='zhedie'  src='{{base}}images/arrow_down.png' class='jj_toparrow'></image>
+        </view>
+        <view class="jj_toptext f_26 {{zhedie%2==0?'two_line':''}}">{{detail.Content}}</view>
+        <view class='overf'>
+          <view class='jj_w33 f_24 c_888 fl new_jj_duiqi display-flex' bindtap='addAgree'>
+            <view wx:if="{{detail_isagree==1}}"><image  src='{{base}}images/agr3.png' class='jj_agrimg'></image></view>
+            <view wx:else><image src='{{base}}images/agr.png' class='jj_agrimg'></image></view>
+            <view class='new_jj_text_duiqi'>{{detail_agreeNum}}</view>
+          </view>
+          <view class='jj_w33 f_24 c_888 fl new_jj_duiqi display-flex' bindtap='collect'>
+            <view wx:if="{{detail_iscollect==2}}"><image  src='{{base}}images/collect_news.png' class='jj_agrimg'></image></view>
+            <view wx:else><image src='{{base}}images/collect_news_already.png' class='jj_agrimg'></image></view>
+            <view class='new_jj_text_duiqi'>{{detail_collect_num}}</view>
+          </view>
+          <!-- <view class='jj_w33 f_24 c_888 fl'>
+            <image src='{{base}}images/transmit.png' class='jj_agrimg'></image>
+            {{detail.share_num}}
+          </view> -->
+          <button class='jj_w33 f_24 c_888 fl share_btn new_jj_duiqi display-flex'  open-type="share" plain="true">
+            <view><image src='{{base}}images/transmit.png' class='jj_agrimg'></image></view>
+            <view class='new_jj_text_duiqi'>{{detail_share_num}}</view>
+          </button>
+        </view>
+      </view>
+      <view class='jj_centerbigbox'>
+        <view class='overf'>
+          <view wx:for="{{detail.taglist}}" wx:key class='fl jj_centertag f_24 c_333'>{{item.name}}</view>          
+        </view>
+      </view>
+      <view class='itembox overf' wx:for="{{jj_course}}" wx:key="this" data-videopic="{{item.PicUrl}}" data-myid="{{item.Id}}" bindtap='tz_detail'>
+        <view class='item_imgbox fl '>
+          <image wx:if="{{item.PicUrl}}" src='{{item.PicUrl}}' class='item_img' mode="aspectFill"></image> 
+          <image wx:else src='{{base}}images/normal_pic1.png' class='item_img' mode="aspectFill"></image>         
+        </view>
+        <view class='fl item_textbox'>
+          <view class='item_title'>{{item.Name}}</view>
+          <view class='item_numbox display-flex'>
+            <image src='{{base}}images/agr.png' class='item_agrimg '></image>
+            <view class=' item_num'>{{item.AgreeNum}}</view>
+            <image src='{{base}}images/msg.png' class='item_msgimg '></image>
+            <view class=' item_num'>{{item.CommentNum}}</view>        
+          </view>
+        </view>
+      </view>
+      <image src='{{base}}images/add2.png' class="jj_addimg {{flag==true?'display_show':'display_none'}} " bindtap='jj_add'></image>
+    </view>
+    <view class="pb90" wx:if="{{curTabIndex == 1}}">
+        <block wx:if="{{showEmptyTw}}">
+          <view class='new_nocomment'>还没有人提问哦~</view>
+        </block>
+        <view class='tw_box overf' wx:for="{{twlist}}" wx:key="this"  bindtap='tz_twdetail' data-twdetailid="{{item.id}}">
+          <view class='fl tw_leftbox'>
+            <image wx:if="{{item.userInfo.avatar==''}}" src='{{base}}images/default_user.png' class='tw_headerimg '></image>
+            <image wx:else src='{{item.userInfo.avatar}}' class='tw_headerimg '></image>
+          </view>
+          <view class='fl tw_rightbox'>
+            <view class='display-flex tw_top'>
+              <view class='tw_name one_line f_28'>{{item.userInfo.nickname}}</view>
+              <view class='tw_time  f_24'>{{item.difftime}}</view>
+            </view>
+            <view class='tw_content f_30 c_333'>{{item.name}}</view>
+            <view class='tw_bottombox display-flex'>
+              <view class='display-flex '>
+                <!-- <view class='tw_bottomnum'><image src='{{base}}images/agr.png' class='tw_delimg mr12'></image>11赞？？</view> -->
+                <view class='tw_bottomnum'><image src='{{base}}images/msg2.png' class='tw_delimg mr12'></image>{{item.answernum}}</view>
+              </view>
+              <image src='{{base}}images/del2.png' class='tw_delimg' wx:if="{{item.uid==realuserid}}" catchtap='del_mytw' data-twid='{{item.id}}'></image>
+            </view>
+          </view>
+        </view>
+        <image src='{{base}}images/add2.png' class="jj_addimg" bindtap='tz_write' data-mytag="1"></image>
+    </view>
+    <view class="content-item" wx:if="{{curTabIndex == 2}}">
+        <view wx:if="{{pldetail==1}}">
+          <block wx:if="{{showEmptyComment}}">
+            <view class='new_nocomment'>还没有人评论哦~</view>
+          </block>
+          <view class='mb90'>
+            <block wx:key="this" wx:for="{{commentlist}}">
+              <view class='tw_box overf' bindtap='tz_pldetail' data-commentdetailid='{{item.id}}'>
+                <view class='fl tw_leftbox'>
+                  <image src='{{item.userInfo.avatar?item.userInfo.avatar:"../../../images/default_user.png"}}' class='tw_headerimg' mode="aspectFill"></image>
+                </view>
+                <view class='fl tw_rightbox'>
+                  <view class='display-flex tw_top'>
+                    <view class='tw_name one_line f_28'>{{item.userInfo.nickname}}</view>
+                    <view class='tw_time  f_24'>{{item.createdate}}</view>
+                  </view>
+                  <view class='tw_content f_30 c_333'>{{item.content}}</view>
+                  <view class='tw_bottombox display-flex'>
+                    <view class='display-flex '>
+                      <view class='tw_bottomnum' catchtap='comment_zan' data-dianzancomment='{{item.isagree}}'  data-commentid='{{item.id}}'>
+                        <image wx:if="{{item.isagree==2}}" src='{{base}}images/agr.png' class='tw_delimg mr12'></image>
+                        <image wx:else src='{{base}}images/agr3.png' class='tw_delimg mr12'></image>
+                        {{item.agreenum}}
+                      </view>
+                      <view class='tw_bottomnum' catchtap='tz_write' data-mytag="3" data-parent='{{item.id}}'><image src='{{base}}images/msg2.png' class='tw_delimg mr12'></image>{{item.reply_list.length}}</view>
+                    </view>
+                    <image wx:if="{{item.userid==realuserid}}" src='{{base}}images/del2.png' class='tw_delimg' catchtap='del_mycomment' data-commentid='{{item.id}}'></image>
+                  </view>
+                </view>
+              </view>
+            </block>  
+          </view>  
+        </view>    
+        <view class="detail-container" >
+            <view class='detail-content display-flex'>
+                <view class="input-container ">
+                    <input placeholder="说点什么吧" type="text" bindinput="inputFn" value="{{msg}}" bindconfirm="submitCommt" cursor-spacing='140' ></input>                    
+                </view>
+                <image src='{{base}}images/send.png' class='send_img' catchtap='submitCommt'></image>
+            </view>
+        </view> 
+    </view>
+    <view class="content-item_new" wx:if="{{curTabIndex == 3}}">
+        <view wx:if="{{bjdetail==1}}">
+          <view class='tw_box' bindtap='tz_bjdetail' wx:for="{{notelist}}" wx:key='this' data-notetail='{{item.content}}'>
+            <view class='two_line f_28 c_333 bj_content' >{{item.content}}</view>
+            <view class='display-flex bj_bottom'>
+              <view class='bj_time f_24 c_999'>{{item.createdate}}</view>
+              <!-- <image src='{{base}}images/del2.png' class='tw_delimg'></image> -->
+            </view>
+          </view>          
+        </view>
+        <image src='{{base}}images/add2.png' class="jj_addimg" bindtap='tz_write' data-mytag="2"></image>
+    </view>
+</scroll-view>
+<view wx:else></view>
+<!--提问详情  -->
+
+<view class="bjdetail_topbox display-flex" style='top:{{tab_topstyle}}px' wx:if="{{twdetail==2}}" >
+    <view class='f_28 c_333 ml24'>提问详情</view>
+    <image src='{{base}}images/close3.png' class='bjdetail_closeimg' bindtap='twdetail_close'></image>
+</view>
+<scroll-view scroll-y="true" style="height:{{scrollheight}}px" class="tab-content" wx:if="{{twdetail==2}}"  bindscrolltolower="loadMore"> 
+<view class='pb90'>
+      
+        <view class='tw_box overf'>
+          <view class='fl tw_leftbox'>
+            <image wx:if="{{twcontentdetail.userInfo.avatar==''}}" src='{{base}}images/default_user.png' class='tw_headerimg' mode="aspectFill"></image>
+            <image wx:else src='{{twcontentdetail.userInfo.avatar}}' class='tw_headerimg' mode="aspectFill"></image>
+            
+          </view>
+          <view class='fl tw_rightbox'>
+            <view class='display-flex tw_top'>
+              <view class='tw_name one_line f_28'>{{twcontentdetail.userInfo.nickname}}</view>
+              <view class='tw_time  f_24'>{{twcontentdetail.difftime}}</view>
+            </view>
+            <view class='tw_content f_30 c_333'>{{twcontentdetail.name}}</view>
+            <!-- <navigator url="{{'/pages/homework/answer/answer?id=' + detail.id + '&title=' + detail.name}}" class='btn'>回答</navigator> -->
+            <view class='tw_bottombox display-flex' catchtap='tz_answerquestion' data-answerid='{{twcontentdetail.id}}' data-answertitle='{{twcontentdetail.name}}'>
+              <view class='display-flex '>                                
+                <view class='tw_bottomnum' ><image src='{{base}}images/msg2.png' class='tw_delimg mr12'></image>{{twcontentdetail_answernum}}</view>
+              </view>              
+            </view> 
+          </view>
+        </view>
+        <view class='tw_box_new overf' wx:for="{{ansList}}" wx:key="this">
+          <view class='fl tw_leftbox'>
+            <image wx:if="{{item.userInfo.avatar==''}}" src='{{base}}images/default_user.png' class='tw_headerimg' mode="aspectFill"></image>
+            <image wx:else src='{{item.userInfo.avatar}}' class='tw_headerimg' mode="aspectFill"></image>
+          </view>
+          <view class='fl tw_rightbox'>
+            <view class='display-flex tw_top'>
+              <view class='tw_name one_line f_28'>{{item.userInfo.nickname}}</view>
+              <view class='tw_time  f_24'>{{item.difftime}}</view>
+            </view>
+            <view class="wxParse">
+                        <block wx:for="{{ansContentList}}" wx:key="key" wx:for-index="i">
+                            <block wx:if="{{index == i}}">
+                                <template is="wxParse" data="{{wxParseData: item}}" />
+                            </block>
+                        </block>
+            </view>
+            <!-- <view class='tw_content f_30 c_333'>{{item.content}}</view>              -->
+            <view class='tw_bottombox display-flex'>
+              <view class='display-flex '>
+                <view class='tw_bottomnum' catchtap='tw_zan_detail' data-dianzantw='{{item.isagree}}'  data-twid='{{item.id}}'>
+                      <image wx:if="{{item.isagree==2}}" src='{{base}}images/agr.png' class='tw_delimg mr12'></image>
+                      <image wx:else src='{{base}}images/agr3.png' class='tw_delimg mr12'></image>
+                      {{item.agreenum}}
+                </view>                
+              </view>
+              <image wx:if="{{item.uid==realuserid}}" src='{{base}}images/del2.png' class='tw_delimg' catchtap='del_myanswer_detail' data-answerid='{{item.id}}'></image>
+            </view>
+          </view>
+        </view>  
+</view>
+</scroll-view>
+<!--提问详情end  -->
+<!--评论详情  -->
+<view class='bjdetail_topbox display-flex' wx:if="{{pldetail==2}}"  style='top:{{tab_topstyle}}px'>
+    <view class='f_28 c_333 ml24'>评论详情</view>
+    <image src='{{base}}images/close3.png' class='bjdetail_closeimg' bindtap='pldetail_close'></image>
+</view>
+<scroll-view scroll-y="true" style="height:{{scrollheight}}px" class="tab-content"  bindscrolltolower="loadMore" wx:if="{{pldetail==2}}"> 
+<view class='mb90' >
+      
+        <view class='tw_box overf'>
+          <view class='fl tw_leftbox'>
+            <image wx:if="{{commentdetail.userInfo.avatar==''}}" src='{{base}}images/default_user.png' class='tw_headerimg ' mode="aspectFill"></image>
+            <image wx:else src='{{commentdetail.userInfo.avatar}}' class='tw_headerimg' mode="aspectFill"></image>
+            
+          </view>
+          <view class='fl tw_rightbox'>
+            <view class='display-flex tw_top'>
+              <view class='tw_name one_line f_28'>{{commentdetail.userInfo.nickname}}</view>
+              <view class='tw_time  f_24'>{{commentdetail.difftime}}</view>
+            </view>
+            <view class='tw_content f_30 c_333'>{{commentdetail.content}}</view>
+            <view class='tw_bottombox display-flex'>
+              <view class='display-flex '>
+                <!-- <view class='tw_bottomnum'><image src='{{base}}images/del2.png' class='tw_delimg mr12'></image>11</view> -->
+                <view class='tw_bottomnum' catchtap='comment_zan1' data-dianzancomment='{{commentdetail.isagree}}'  data-commentid='{{commentdetail.id}}'>
+                      <image wx:if="{{commentdetail.isagree==2}}" src='{{base}}images/agr.png' class='tw_delimg mr12'></image>
+                      <image wx:else src='{{base}}images/agr3.png' class='tw_delimg mr12'></image>
+                      {{commentdetail.agreenum}}
+                </view>
+                <view class='tw_bottomnum' catchtap='tz_write' data-mytag="3" data-parent='{{item.id}}'><image src='{{base}}images/msg2.png' class='tw_delimg mr12'></image>{{commentdetail.reply_list.length}}</view>
+              </view>
+              <image wx:if="{{commentdetail.userid==realuserid}}" src='{{base}}images/del2.png' class='tw_delimg' catchtap='del_mycomment_detail' data-commentid='{{commentdetail.id}}'></image>
+            </view>
+          </view>
+        </view>
+        <view class='tw_box_new overf' wx:for="{{commentdetailreply}}" wx:key="this">
+          <view class='fl tw_leftbox'>
+            <image src='{{base}}images/default_user.png' class='tw_headerimg' mode="aspectFill"></image>
+          </view>
+          <view class='fl tw_rightbox'>
+            <view class='display-flex tw_top'>
+              <view class='tw_name one_line f_28'>{{item.userInfo.nickname}}</view>
+              <view class='tw_time  f_24'>{{item.difftime}}</view>
+            </view>
+            <view class='tw_content f_30 c_333'>{{item.content}}</view>
+            <view class='tw_bottombox display-flex'>
+              <view class='display-flex '>
+                <view class='tw_bottomnum' catchtap='comment_zan_detail' data-dianzancomment='{{item.isagree}}'  data-commentid='{{item.id}}'>
+                      <image wx:if="{{item.isagree==2}}" src='{{base}}images/agr.png' class='tw_delimg mr12'></image>
+                      <image wx:else src='{{base}}images/agr3.png' class='tw_delimg mr12'></image>
+                      {{item.agreenum}}
+                </view>                
+              </view>
+              <image wx:if="{{item.userid==realuserid}}" src='{{base}}images/del2.png' class='tw_delimg' catchtap='del_mycomment_detail' data-commentid='{{item.id}}'></image>
+            </view>
+          </view>
+        </view>
+</view>
+</scroll-view>
+<!--评论详情end  -->
+<!--笔记详情  -->
+<view class='bjdetail_topbox display-flex' wx:if="{{bjdetail==2}}"  style='top:{{tab_topstyle}}px'>
+    <view class='f_28 c_333 ml24'>笔记详情</view>
+    <image src='{{base}}images/close3.png' class='bjdetail_closeimg' bindtap='bjdetail_close'></image>
+</view>
+<scroll-view scroll-y="true" style="height:{{scrollheight}}px" class="tab-content"  bindscrolltolower="loadMore" wx:if="{{bjdetail==2}}"> 
+<view class='bjdetail_info mb90' >{{notetail}}</view>
+</scroll-view>
+<!----笔记详情end  -->
+<!--遮罩层  -->
+<view class="mask" hidden="{{flag}}"> 
+  <view class='mask_smbox' >
+    <view class='mask_content display-flex' bindtap='tz_write' data-mytag="1">
+      <text>问个问题</text>
+      <image src='{{base}}images/mask_4.png' class='mask_img'></image>
+    </view>
+    <view class='mask_content display-flex' bindtap='tz_write'  data-mytag="2">
+      <text>记个笔记</text>
+      <image src='{{base}}images/mask_3.png' class='mask_img'></image>
+    </view>
+    <view class='mask_content display-flex' bindtap='tz_write'  data-mytag="3">
+      <text>发个评论</text>
+      <image src='{{base}}images/msg3.png' class='mask_img'></image>
+    </view> 
+    <image bindtap='mask_del' src='{{base}}images/close5.png' class='mask_delimg'></image>
+  </view>   
+</view> 

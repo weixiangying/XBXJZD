@@ -1,0 +1,67 @@
+<!--pages/task/arrange/arrange.wxml-->
+<compontNavbar title="布置任务" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+<form bindsubmit="bindFormSubmit">
+    <view class='itembox mt15'>
+        <view>任务类型</view>
+        <picker bindchange="bindPickerType" value="{{typeIndex}}" range="{{typeArr}}" class="picker display_flex align_items_center" range-key="taskname">
+            <text class="{{typeIndex==0?'c_999':'c_333'}}">{{typeArr[typeIndex].taskname}}</text>            
+            <image class="arow_right" src="../../../images/arrow_a9.png"></image>
+        </picker>       
+    </view>
+    <view class='itembox '>
+        <view>开始时间</view>
+        <!-- <picker bindchange="bindPickerStarttime"  mode="date"
+            class="picker display-flex align-items-center" value='{{starttime}}' name='starttime'>
+            <text class="{{starttime}}?'c_999':'c_333">{{starttime || '请选择'}}</text>
+            <image class="arow_right" src="../../../images/arrow_a9.png"></image>
+        </picker>      -->
+        <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}" class="picker display-flex align-items-center">
+            <text class="{{starttime?'c_333':'c_999'}}">{{starttime || '请选择'}}</text>
+            <image class="arow_right" src="../../../images/arrow_a9.png"></image>
+        </picker>
+
+    </view>
+    <view class='itembox '>
+        <view>结束时间</view>
+        <!-- <picker bindchange="bindPickerEndtime"  mode="date"
+            class="picker display-flex align-items-center" value='{{endtime}}' name='endtime'>
+            <text class="{{endtime}}?'c_999':'c_333">{{endtime || '请选择'}}</text>
+            <image class="arow_right" src="../../../images/arrow_a9.png"></image>
+        </picker>      -->
+        <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray}}" class="picker display-flex align-items-center">
+            <text class="{{endtime?'c_333':'c_999'}}">{{endtime || '请选择'}}</text>
+            <image class="arow_right" src="../../../images/arrow_a9.png"></image>
+        </picker>
+    </view>
+    <view class='itembox '>
+        <view>完成次数</view>
+        <picker bindchange="bindPickerCs"  
+    class="picker display-flex align-items-center" value='{{csIndex}}' range="{{csArr}}"  range-key="name">
+            <text class="{{csIndex==0?'c_999':'c_333'}}">{{csArr[csIndex].name}}</text>
+            <image class="arow_right" src="../../../images/arrow_a9.png"></image>
+        </picker>       
+    </view>
+
+    <view class='itemboxbottom '>
+        <view class='item_bottomtext f_32 c_333'>任务奖励</view>
+        <view class="imgs">
+            <scroll-view class="scroll-box" scroll-x="true">
+                <!-- <view class="scroll-item" wx:for="{{imgList}}" wx:key="this" wx:for-index="idx">
+                    <image src="{{item}}" class="hmwk-img"></image>
+                    <image src="{{base}}images/del.png" class="del-img" catchtap="delImg" data-idx="{{idx}}"></image>
+                </view> -->
+                <view class="scroll-item" wx:for="{{goods}}" wx:key="this" wx:for-index="idx">
+                    <image src="{{item.image}}" class="hmwk-img"></image>
+                    <image src="{{base}}images/del.png" class="del-img" catchtap="delImg" data-idx="{{idx}}" data-goodsid='{{item.id}}'></image>
+                </view>
+                <view class="scroll-item" wx:if="{{imgList.length == 0}}">
+                    <image src="{{base}}images/add_big.png" class="hmwk-img" catchtap="addImg"></image>
+                </view>
+            </scroll-view>
+        </view>   
+    </view>
+    
+    <view class='btn_box'>
+        <button class='btn f_32 c_fff c_gf_bg c_gf_border' formType="submit">发布任务</button>
+    </view>
+</form>

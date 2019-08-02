@@ -1,0 +1,82 @@
+<!--pages/task/task.wxml-->
+<compontNavbar title="成长任务" isShowBack="{{false}}" component-class="component-class"></compontNavbar>
+
+<view class='p_lr_26 {{nostudent?"nostudent":""}}'>
+    <view class='topbox display-flex align-items-center justify-content-between' bindtap='tz_choicestu' wx:if="{{!nostudent}}">
+        <view class='display-flex align-items-center'>
+            <image wx:if="{{listtab.avatar}}" src='{{listtab.avatar}}' class='topbox_img'></image>
+            <image wx:else src='../../images/default_user.png' class='topbox_img'></image>
+            
+            <view class='top_name f_36 c_333 one_line'>{{listtab.nickname}}</view>
+        </view>
+        <image src='../../images/arowRtGray.png' class='arowRtGray'></image>
+    </view>
+    <view class='topimgbox display-flex align-items-center justify-content-between'>
+        <view class='position_r' bindtap='tz_calendar'>
+            <image src='../../images/task/task1.png' class='top_taskimg'></image>
+            <view class='position_a topimg_text'>学习日历</view>
+        </view>
+        <navigator class='position_r' url='/pages/task/guide/guide'>
+            <image src='../../images/task/task2.png' class='top_taskimg'></image>
+            <view class='position_a topimg_text'>使用指南</view>
+        </navigator>
+    </view>
+    <view class='topimgbox display-flex align-items-center justify-content-between'>
+        <navigator class='position_r' url='/pages/task/taskReward/taskReward'>
+            <image src='../../images/task/task3.png' class='top_taskimg'></image>
+            <view class='position_a topimg_text'>任务奖励</view>
+        </navigator>
+        <navigator class='position_r' url='/pages/task/growup/growup'>
+            <image src='../../images/task/task4.png' class='top_taskimg'></image>
+            <view class='position_a topimg_text'>成长问题</view>
+        </navigator>
+    </view>
+</view>
+<view class='centerbox'>
+    <view class='titlebox p_lr_26 display-flex align-items-center justify-content-between c_333'>
+        <view class='center_title1 f_34'>当前任务</view>
+        <view class='center_title1 f_30' catchtap='tz_arrange'>布置任务</view>
+    </view>
+    <block wx:if="{{showEmpty}}"><empty></empty></block> 
+    <view class='new_rwitembox' wx:for="{{tasklist}}" wx:key='this'>
+        <view class='display-flex justify-content-between align-items-center new_smbox'>
+            <view class='display-flex '>
+                
+                <image  src='../../images/task/t{{item.taskid}}.png' class='newrw_rwimg'></image>
+                <view>
+                    <view class='newrw_toptext f_30 c_333'>{{item.taskname}}<text>{{item.score}}积分</text></view>
+                    <view class='f_24 c_999' wx:if='{{item.num==item.all}}'>
+                        已完成该任务
+                    </view>
+                    <view wx:else class='display-flex align-items-center' >
+                        <view class='newrw_pro position_r' >
+                            <view class='position_a newrw_pro_cur' style="width:{{item.num/item.all*prowidth}}px;max-width:250rpx;"></view>
+                        </view>
+
+                        <view class='newrw_protext f_24 c_999' wx:if='{{item.status==3}}'>已完成</view>
+                        <view wx:else class='newrw_protext f_24 c_999'>{{item.num}}/{{item.all}}次</view>
+
+                    </view>
+                    
+                </view>
+            </view>
+            <view class='new_rightbox'>
+                
+                <image wx:if='{{item.id==taskid}}' src="../../images/task/icon_task_item_up.png" class='img_down' catchtap='click_zhankai' data-taskid='{{item.taskid}}'></image>
+                <image wx:else src="../../images/task/icon_task_item_down.png" class='img_down' catchtap='click_zhankai' data-taskid='{{item.id}}'></image>
+                
+            </view>
+        </view>
+        <view wx:if="{{item.id==taskid}}" class='new_bottomtext f_28 c_999'>
+                <scroll-view class='newonlineter_scroll display-flex' scroll-x="true" wx:if="{{item.receiveGoods.length!=0}}">
+                    <view class='newonlineter_item' wx:for="{{item.receiveGoods}}" wx:key="this">
+                        <image src="{{item.image?item.image:'../../images/normal_pic12.png'}}" mode='aspectFill'></image>
+                                
+                    </view>
+                    
+                </scroll-view>
+                <view class='f_28 c_999 new_rw_bottomtext' >{{item.info2}}</view>
+        </view>
+    </view>
+    
+</view>

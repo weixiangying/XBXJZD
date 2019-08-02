@@ -1,0 +1,19 @@
+<!--pages/task/guide/guide.wxml-->
+<import src="/template/tab/tab.wxml" />
+<compontNavbar title="成长问题" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+<view class="tabs">
+    <block wx:for="{{tabs}}" wx:key="this">
+        <template is="{{curIndex == item.index? 'tabActive': 'tab'}}" data="{{item}}"/>
+    </block>
+</view>
+
+
+<view class="tab-content">
+    <view class="right-item" wx:if="{{curIndex == 0}}">
+        <empty></empty>
+    </view>
+
+    <view class="right-item" wx:if="{{curIndex == 1}}">
+        <empty></empty>
+    </view>
+</view>

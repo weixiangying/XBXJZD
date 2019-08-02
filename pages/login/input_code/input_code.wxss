@@ -1,0 +1,116 @@
+/* pages/login/input_code/input_code.wxss */
+page{
+    padding-top:10vh;
+}
+.code_error{
+	position:fixed;
+	top:0;
+	width:100%;
+	color:#fff;
+	background-color:#F1342E;
+	height:10vh;
+	line-height:10vh;
+	font-size:30rpx;
+    z-index: 1000;
+}
+.code_error_img{
+    width:34rpx;
+    height:34rpx;
+    margin-left:48rpx;
+    margin-right:11rpx;
+}
+
+
+.bigbox{
+	/* padding:0 82rpx; */
+    width:586rpx;
+    margin:0 auto;
+}
+.code_already{
+	margin-top:62rpx;	
+    margin-bottom:100rpx;
+}
+.code_already text{
+	margin-left:20rpx;	
+}
+
+.code_input{
+	border-bottom:3px solid #999;
+	font-size:40rpx;
+	line-height:60rpx;
+	width:88rpx;
+	text-align:center;
+	color:#333;
+}
+input[type=text]:focus{
+    border-bottom:3px solid #61ACE3;
+}
+.code_form{
+	/* padding-top:100rpx; */
+	margin-bottom:46rpx;	
+    min-height:64rpx;
+}
+.code_righttext{
+	text-align:right;	
+}	
+.code_agreement{
+	text-align:left;
+	margin-top:56rpx;
+}
+
+
+
+/* new */
+.input{
+   border-bottom:4rpx solid #61ACE3;
+	font-size:40rpx;
+	line-height:60rpx;
+	width:88rpx;
+	text-align:center;
+	color:#333; 
+   
+}
+.input_none{
+   
+    border-bottom:4rpx solid #999;
+	font-size:40rpx;
+	line-height:60rpx;
+	width:88rpx;
+	text-align:center;
+	color:#333; 
+}
+.input-content {
+    background-color:red;
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+  top: 600rpx;
+  background: #f56;
+  z-index: -999;
+  text-align: center;
+}
+.input-content.active {
+  z-index: -99;
+}
+/* 验证码btn */
+.modifyp_btn2{
+    text-align:right;
+  font-size:24rpx;  
+  /* line-height: 50rpx;   */
+  color:#999;
+  margin:0;
+  padding:0 0rpx;
+  border:1rpx solid #fff;
+  position: static;
+  background-color:#fff;
+}
+.verify_color{
+  color:#61ACE3;
+}
+button{
+    z-index: -1;
+}
+button[disabled][type="default"],wx-button[disabled]:not([type]) {
+background:#fff;
+
+}

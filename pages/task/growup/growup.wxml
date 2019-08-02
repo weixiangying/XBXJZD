@@ -1,0 +1,22 @@
+<!--pages/task/growup/growup.wxml-->
+<compontNavbar title="成长问题" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+<view class='bigbox'>
+    <block wx:if="{{showEmpty}}"><empty></empty></block> 
+    <block wx:else>
+        <view class='itembox' wx:for='{{list}}' wx:key='this' bindtap='tz_detail' data-listid='{{item.id}}'>
+            <image wx:if="{{item.image}}" src='{{item.image}}' class='item_img' ></image>
+            <image wx:else src='../../../images/normal_pic1.png' class='item_img' ></image>
+            <view class='item_content'>{{item.name}}</view>
+            <view class='item_bottombox display-flex align-items-center'>
+                <view class='display-flex align-items-center item_bottomsm'>
+                    <image src='../../../images/transmit_c9.png' class='img_agr'></image>
+                    <view class='item_bottomnum'>{{item.sharenum}}</view>
+                </view>
+                <view class='display-flex align-items-center item_bottomsm'>
+                    <image src='../../../images/agree_c9.png' class='img_agr'></image>
+                    <view class='item_bottomnum'>{{item.isagree}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

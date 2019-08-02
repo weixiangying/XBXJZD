@@ -1,0 +1,22 @@
+<compontNavbar title="聊天信息" isShowBack="{{true}}" url="/pages/message/liveroom/liveroom" component-class="component-class"></compontNavbar>
+<view class="box">
+    <view class="cont" bindtap="toDetail">
+        <view class="lt">
+            <image src="{{detail.avatar || base + 'images/default_user.png'}}" class="user-img" mode="aspectFill"></image>
+            <view class="uname">{{detail.friend_remark || detail.nickname}}</view>
+        </view>
+        <image src="{{base}}images/arowRtGray.png" class="next-icon"></image>
+    </view>
+    <view class="list">
+        <!-- <view class="item" bindtap="clearMsg">
+            <view class="im-lt">清空聊天记录</view>
+        </view> -->
+        <view class="item">
+            <view class="im-lt">黑名单</view>
+            <view class="im-rt">
+                <switch bindchange="switchChange" wx:if="{{detail.is_black_list == 0}}"/>
+                <switch bindchange="switchChange" wx:if="{{detail.is_black_list == 1}}" checked/>
+            </view>
+        </view>
+    </view>
+</view>

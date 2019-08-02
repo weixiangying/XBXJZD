@@ -1,0 +1,51 @@
+<!--pages/course/course.wxml-->
+<compontNavbar title="{{navtitle}}" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+
+<import src="/template/scrollTab/scrollTab.wxml" />
+<view class='top_fix display-flex align-items-center' >
+    <picker class='bigpicker c_999 f_28 position_r' bindchange="bindPickerChange" value="{{index}}" range="{{nianji}}" range-key="title">
+        <view class="picker">
+          {{nianji[index].title}}
+        </view>
+        <image src='../../../images/arrow_right_bottom.png' class='arrow_right_bottom position_a'></image>
+    </picker>
+    <scroll-view class="scroll-view" scroll-x="true">
+        <block wx:for="{{tabs}}" wx:key="this">
+            <template is="{{selectedTab == item.id? 'scrollTabActive': 'scrollTab'}}" data="{{item}}" />
+        </block>
+    </scroll-view>
+</view>
+
+
+
+<view class='p_lr_26'>
+     
+     
+      <block wx:if="{{showEmpty}}">
+        <empty></empty>
+      </block>  
+      
+      <view class='newcourse_itembox' wx:for="{{list}}" wx:key="this" bindtap='tz_detail'  data-id="{{item.Id}}" data-myid="{{item.Id}}" data-videopic="{{item.PicUrl}}">
+        <view class='position_r'>
+            <image wx:if="{{item.PicUrl}}" class='newcourse_topimg' src='{{item.PicUrl}}' mode='aspectFill' ></image>
+            <image wx:else class='newcourse_topimg' src='../../../images/normal_pic1.png' mode='aspectFill' ></image>
+            <view wx:if="{{item.nTeacher}}" class='position_a display-flex live_position align-items-center'>
+                <image wx:if="{{item.nTeacher.FacePath==''}}" src='../../../images/default_user.png' class='newcourse_headerimg'></image>
+                <image wx:else src='{{item.nTeacher.FacePath}}' class='newcourse_headerimg'></image>
+                <view class='newcourse_name one_line f_26 c_333'>{{item.nTeacher.Name}}</view>
+            </view>
+        </view>
+        
+        <view class='newcourse_title f_32 c_333 display-flex'>
+          <text class='text_new1' wx:if="{{item.nBaseSubject.Name}}">{{item.nBaseSubject.Name}}</text>
+          <text class='text_new2 one_line'>{{item.Name}}</text>
+        </view>        
+                 
+        <view class='newcourse_time f_26 c_666'>
+            课程时长<text wx:if="{{item.Minute==0}}">10</text><text wx:else>{{item.Minute}}</text>分钟 · {{item.Hit}}人已观看            
+        </view>          
+        
+      </view>   
+</view>

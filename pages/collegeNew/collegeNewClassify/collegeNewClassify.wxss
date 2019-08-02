@@ -1,0 +1,79 @@
+/* pages/collegeNew/collegeNewClassify/collegeNewClassify.wxss */
+page{
+    padding-top:10vh;
+}
+.contentbigbox{
+  /* margin-top:100rpx; */
+}
+.leftbox{
+   width:21%;
+   height:100%;
+   left:0;
+   background-color:#f7f7f7;
+}
+.lefttext{
+  /* height: 110rpx; */
+  font-size:28rpx;
+  padding:40rpx 0;
+  text-align: center;
+  /* background-color:#f4f4f4; */
+  color:#444d78;
+  box-sizing: border-box;
+  border-left:none;
+  background-color:#f7f7f7;
+  
+}
+.lefttext view{
+  line-height:30rpx; 
+}
+.current{
+  border-bottom:3rpx solid #47ade8 !important;
+  color:#47ade8 !important;
+  background-color:#fff !important;
+  font-weight: bold !important;
+}
+.rightbox{
+  /* margin-left:4%; */
+  width:79%;
+  right:0;
+}
+.active{ 
+ display: block !important; 
+} 
+.display_none{
+  display: none;
+}
+
+/*右边内容  */
+.tabright{
+  /* padding-top: 36rpx; */
+}
+.rightbigbox{
+  padding:15rpx 20rpx 0;
+  margin-bottom:18rpx;
+}
+.right_topimg_box{
+    width:100%;
+    text-align: center;
+    margin-bottom:30rpx;
+}
+.right_topimg{
+    width:500rpx;
+    height: 205rpx;
+    border-radius: 10rpx;
+}
+.right_itembox{
+    flex-wrap:wrap;
+    /* justify-content:center; */
+}
+.right_item{
+    width:33.33%;
+    text-align: center;
+}
+.right_item_img{
+    width:70rpx;
+    height: 70rpx;
+}
+.right_item_text{
+    margin:27rpx 0 52rpx;
+}

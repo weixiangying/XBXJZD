@@ -1,0 +1,5 @@
+<!--pages/emptypage/emptypage.wxml-->
+<compontNavbar title="" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<empty></empty>

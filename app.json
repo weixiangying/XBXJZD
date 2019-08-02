@@ -1,0 +1,137 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/tuiguang/tuiguang",
+    "pages/my/aboutMoney/member/member",
+    "pages/my/aboutMoney/aboutMoney",
+    "pages/my/aboutMoney/memberRenewalNewDel/memberRenewalNewDel",
+    "pages/college/college",
+    "pages/collegeNew/play/play",
+    "pages/collegeNew/collegeNewDel/collegeNewDel",
+    "pages/collegeNew/collegeNew",
+    "pages/collegeNew/collegeNewClassify/collegeNewClassify",
+    "pages/jiameng/jiameng",
+    "pages/spread/spreadDetail/spreadDetail",
+    "pages/spread/spread",
+    "pages/memberCenter/memberCenter",
+    "pages/common/commentsList/commentsList",
+    "pages/common/commentsList/accord/accord",
+    "pages/business/goodsDetailNew/goodsDetailNew",
+    "pages/business/businessDetail/businessDetail",
+    "pages/periphery/gift/gift",
+    "pages/business/business",
+    "pages/tool/tool",
+    "pages/task/taskChoice/taskChoice",
+    "pages/task/arrange/arrange",
+    "pages/task/taskReward/taskReward",
+    "pages/zuoye/zuoye",
+    "pages/zuoye/zuoyeDetail/zuoyeDetail",
+    "pages/task/calendarnew/calendarnew",
+    "pages/task/calendar/calendar",
+    "pages/task/task",
+    "pages/webView/webView",
+    "pages/canvas/canvas",
+    "pages/task/guide/guide",
+    "pages/task/growupDetail/growupDetail",
+    "pages/task/growup/growup",
+    "pages/task/choicestu/choicestu",
+    "pages/emptypage/emptypage",
+    "pages/recite/reciteDetail/reciteDetail",
+    "pages/recite/recite",
+    "pages/agremt/agremt",
+    "pages/message/message",
+    "pages/message/applyAddFrd/applyAddFrd",
+    "pages/message/frdInfo/frdInfo",
+    "pages/message/frdDetail/frdDetail",
+    "pages/message/frdList/frdList",
+    "pages/message/groupInfo/groupInfo",
+    "pages/message/groupList/groupList",
+    "pages/message/liveRoom/liveRoom",
+    "pages/message/newFrd/newFrd",
+    "pages/message/setRemarks/setRemarks",
+    "pages/composition/composition",
+    "pages/my/advise/advise",
+    "pages/my/school/school",
+    "pages/binding/archives/archives",
+    "pages/binding/binding",
+    "pages/binding/form/form",
+    "pages/course/courseSearchBefore/courseSearchBefore",
+    "pages/course/periphery/periphery",
+    "pages/course/courseType/courseType",
+    "pages/course/course",
+    "pages/course/courseDetail/courseDetail",
+    "pages/course/write/write",
+    "pages/my/my",
+    "pages/my/my_collect/my_collect",
+    "pages/my/info_user/info_user",
+    "pages/my/modify_name/modify_name",
+    "pages/my/aboutus/aboutus",
+    "pages/my/info_student/info_student",
+    "pages/login/login",
+    "pages/supervise/supervise",
+    "pages/topic/topic",
+    "pages/topic/topic_vote/topic_vote",
+    "pages/composition/compositionDetail/compositionDetail",
+    "pages/news/news",
+    "pages/message/onlineSevDetail/onlineSevDetail",
+    "pages/news/newsDetail/newsDetail",
+    "pages/news/newsCommt/newsCommt",
+    "pages/news/accord/accord",
+    "pages/login/input_code/input_code",
+    "pages/login/modify_password/modify_password"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#61ace3",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "./images/botmTab/home.png",
+        "selectedIconPath": "./images/botmTab/home_after.png"
+      },
+      {
+        "pagePath": "pages/zuoye/zuoye",
+        "text": "日常作业",
+        "iconPath": "./images/botmTab/course.png",
+        "selectedIconPath": "./images/botmTab/course_after.png"
+      },
+      {
+        "pagePath": "pages/task/task",
+        "text": "成长任务",
+        "iconPath": "./images/botmTab/task.png",
+        "selectedIconPath": "./images/botmTab/task_after.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "./images/botmTab/message.png",
+        "selectedIconPath": "./images/botmTab/message_after.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./images/botmTab/my.png",
+        "selectedIconPath": "./images/botmTab/my_after.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序联盟商家的展示"
+    }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxa6430a50baf97cf7"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

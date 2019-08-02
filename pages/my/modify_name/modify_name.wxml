@@ -1,0 +1,12 @@
+<compontNavbar title="修改名称" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<view class="container">
+    <view class="input-container">
+        <input bindinput="inputFn"></input>
+    </view>
+    <view class="tip">请输入2-8位的汉字、数字、字母</view>
+     <view class="btn-box">
+        <view class="btn c_gf_bg" bindtap="submitNewName">保存</view>
+    </view> 
+</view>

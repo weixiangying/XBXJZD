@@ -1,0 +1,32 @@
+<!--pages/tuiguang/tuiguang.wxml-->
+<compontNavbar title="推广平台" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class='new_bigbox'>
+  <view class='overf newbox'>
+            <image wx:if="{{info.avatar}}" src='{{info.avatar}}' class='headerimg fl'></image>
+            <image wx:else src='{{base}}images/default_user.png' class='headerimg fl'></image>
+    <!-- <image src='{{headerimg}}' class='headerimg fl'></image> -->
+    <view class='fl'>
+      <view class='newtext newtext1'>我是{{info.nickname}}</view>
+      <view class='line'><view class='newtext newtext2'>邀请您加入<text>学霸学教育</text></view></view>
+    </view>
+  </view>
+</view>
+
+<!-- <image src='../../images/tuiguang.png' class='tgbanner' mode='aspectFill'></image> -->
+<view class='slogan1'>利国利民的互联网共享教育</view>
+<view class='slogan2'>立即加入学霸学教育</view>
+<view class="container-box">
+    <view class="img-box">
+        <!-- <canvas bindtap="previewImg" hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas"/> -->
+        <canvas   hidden="{{canvasHidden}}" bindlongtap="previewImg" style="width: 410rpx;height: 410rpx;background:#fff;display:block;margin:0 auto;" canvas-id="mycanvas"/>
+        
+    </view>
+    
+</view>
+<view hidden="{{maskHidden}}" class="mask"></view>
+<view class="canvas-box"></view>
+<view class='qrtext'>{{qrtext}}</view>
+<view class='qrtext2'>{{qrtext2}}</view>
+
+

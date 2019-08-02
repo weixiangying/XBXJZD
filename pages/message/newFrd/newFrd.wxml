@@ -1,0 +1,59 @@
+<compontNavbar title="新朋友" isShowBack="{{true}}" url="/pages/message/frdList/frdList" component-class="component-class"></compontNavbar>
+<view class="box">
+    <block wx:if="{{!isShowAddList}}">
+        <block wx:if="{{showEmpty}}">
+            <view class="nodata-box">
+                <image src="{{base}}images/nothave.png" mode="aspectFill"></image>
+                <view class="no-text">暂无同学申请，去找同学吧</view>
+                <view class="no-btn" catchtap="showAddList">去找同学</view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="list">
+                <view class="item" wx:for="{{list}}" wx:key="this" bindtap="toDetail" data-id="{{item.id}}" data-mobile="{{item.mobile}}">
+                <view class="lt">
+                    <image src="{{item.avatar? item.avatar : '{{base}}images/default_user.png'}}" class="img" mode="aspectFill"></image>
+                    <view class="level-icon">{{'v' + item.level_name}}</view>
+                </view>
+                <view class="cont">
+                    <view class="tit-box">
+                        <text class="tit">{{item.nickname}}</text>
+                        <image src="../../../images/message/sex1.png" class="sex-icon" mode="aspectFill" wx:if="{{item.sex == 1}}"></image>
+                        <image src="../../,,.images/message/sex2.png" class="sex-icon" mode="aspectFill" wx:if="{{item.sex == 2}}"></image>
+                        <view class="role" wx:if="{{item.is_pioneer == 1}}">建设者</view>
+                        <view class="role" wx:if="{{item.is_pioneer == 2}}">管理员</view>
+                    </view>
+                    <view class="sub">{{item.personal_sign}}</view>
+                </view>
+                <view class="btn" catchtap="addFrd" data-id="{{item.uid}}" data-ty="agree">接受</view>
+            </view>
+            </view>
+        </block>
+    </block>
+    <block wx:if="{{isShowAddList}}">
+        <view class="search-box">
+            <view class="search-cont">
+                <image src="{{base}}images/search.png" class="search-icon"></image>
+                <input class="input" bindinput="inputFn" bindconfirm="confirmFn"></input>
+            </view>
+        </view>
+        <view class="list add-list">
+            <view class="item" wx:for="{{addList}}" wx:key="this" bindtap="toDetail" data-id="{{item.uid}}" data-mobile="{{item.mobile}}">
+                <view class="lt">
+                    <image src="{{item.avatar? item.avatar : base + 'images/default_user.png'}}" class="img" mode="aspectFill"></image>
+                    <view class="level-icon">{{'v' + item.level_name}}</view>
+                </view>
+                <view class="cont">
+                    <view class="tit-box">
+                        <text class="tit">{{item.nickname}}</text>
+                        <image src="../../../images/message/sex1.png" class="sex-icon" mode="aspectFill" wx:if="{{item.sex == 1}}"></image>
+                        <image src="../../../images/message/sex2.png" class="sex-icon" mode="aspectFill" wx:if="{{item.sex == 2}}"></image>
+                        <view class="role" wx:if="{{item.is_pioneer == 1}}">建设者</view>
+                        <view class="role" wx:if="{{item.is_pioneer == 2}}">管理员</view>
+                    </view>
+                    <view class="sub">{{item.personal_sign? item.personal_sign: 'Ta还没有填写个性签名'}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

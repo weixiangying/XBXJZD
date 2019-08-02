@@ -1,0 +1,99 @@
+page{
+    padding-top:10vh;
+}
+.scroll-view {
+    width: 100%;
+    height: 150rpx;
+    white-space: nowrap;
+    margin-bottom: 20rpx;
+    border-top: 1rpx solid #dfdfdf;
+    border-bottom: 1rpx solid #dfdfdf;
+    padding: 30rpx 0;
+    background: #fff;
+}
+
+.scroll-view-item{
+    width: 150rpx;
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.scroll-header {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 15rpx;
+    display: inline-block;
+}
+.scorll-name {
+    width: 100%;
+    height: 50rpx;
+    font-size: 28rpx;
+    color: #333;
+    line-height: 50rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.list{
+    width: 100%;
+    background: #fff;
+    padding-left: 30rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.item{
+    width: 100%;
+    padding: 3% 30rpx 3% 0;
+    border-bottom: 1rpx solid #dfdfdf;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.item:last-child{
+    border-bottom: none;
+}
+.lt{
+    width: 30%;
+    font-size: 30rpx;
+    color: #333;
+}
+.rt{
+    width: 69%;
+    text-align: right;
+}
+.rt-text{
+    font-size: 30rpx;
+    color: #999;
+    display: inline-block;
+    vertical-align: middle;
+}
+.g-img{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.next-icon{
+    width: 17rpx;
+    height: 22rpx;
+    margin-left: 10rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+.btn{
+    width: 90%;
+    padding: 3% 0;
+    margin: 50rpx auto;
+    background: #f33;
+    color: #fff;
+    font-size: 30rpx;
+    text-align: center;
+    border-radius: 10rpx;
+}

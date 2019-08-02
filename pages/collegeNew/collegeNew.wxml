@@ -1,0 +1,52 @@
+<!--pages/collegeNew/collegeNew.wxml-->
+<compontNavbar title="{{mytext}}" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<import src="/template/scrollTab/scrollTab.wxml" />
+<view class='top_fix' >
+    <scroll-view class="scroll-view" scroll-x="true">
+        <block wx:for="{{classifyList}}" wx:key="this">
+            <template is="{{selectedTab == item.PrimaryID? 'scrollTabActive': 'scrollTab'}}" data="{{item}}" />
+        </block>
+    </scroll-view>
+</view>
+
+
+<!-- <view class='banner_box2' wx:if='{{imgUrlsNew.length!=0}}'>
+    <swiper autoplay="false" duration="500" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#4bace2"  class='swiper_img2' wx:if='{{imgUrlsNew}}'>
+        <block wx:for="{{imgUrlsNew}}" wx:key="this">
+            <swiper-item>
+                <image src="{{item.image}}" class="slide-image2" catchtap="toH5New"  mode='aspectFill' data-type="{{item.to_type}}"/>
+            </swiper-item>
+        </block>
+    </swiper>
+</view> -->
+<view class='new_newbox'>
+    <block wx:if="{{showCourseEmpty}}">
+        <empty></empty>
+    </block>
+    <view class='c_itembox display-flex' wx:for='{{courselist}}' wx:key='this' catchtap='tz_detail' data-myid='{{item.LessonID}}'>
+        <view class='c_item_leftbox position_r'>
+            <image wx:if='{{item.LessonImage}}' src='{{item.LessonImage}}' class='c_coverimg' mode='	aspectFill'></image>
+            <image wx:else src='../../images/normal_pic1.png' class='c_coverimg' mode='	aspectFill'></image>
+            <view wx:if="{{item.ClassType==1}}" class='position_a c_item_position f_24 c_item_position1'>视频</view>
+            <view wx:if="{{item.ClassType==2}}" class='position_a c_item_position f_24 c_item_position2'>音频</view>
+
+            <image class='position_a img_bofang' src='../../images/college/img_bofang.png'></image>
+        </view>
+        <view class='w_340'>
+            <view class='one_line c_item_text1 f_32'>{{item.LessonName}}</view>
+            <view class='one_line c_item_text2 f_24 c_666'>{{item.LessonContent}}</view>
+            <view wx:if="{{item.LessonPrice==0}}" class='c_item_money f_32'>免费</view>
+            <view wx:else class='display-flex align-items-center justify-content-between'>
+                <view>
+                    <text class='c_item_money f_32'>{{item.LessonPrice}}</text>
+                    <text class='c_item_yuan f_24'>弹贝</text>
+                </view>
+                <view class='display-flex align-items-center'>
+                    <image src='../../images/college/people.png' class='c_peopleimg'></image>
+                    <view class='c_item_people f_26'>{{item.PayNum}}人已购</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

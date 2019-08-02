@@ -1,0 +1,14 @@
+<view class="box" bindtap="onTap" data-id="{{item.id}}" id="addAgre">
+    <block wx:if="{{resourcetypeid == 10}}">
+        <text class="{{count? 'active' : ''}}">{{agreenum}}</text>
+        <image src="../../images/agr.png" wx:if="{{!count}}"></image>
+        <image src="../../images/agr2.png" wx:else></image>
+    </block>
+
+    <block wx:if="{{resourcetypeid == 9}}">
+        <image wx:if="{{!count}}" src="../../images/agr.png" class="dz-icon"></image>
+        <image wx:else src="../../images/agr2.png" class="dz-icon"></image>
+        <text class="dz-count {{count?'add-count': ''}}">{{agreenum}}</text>
+    </block>
+    
+</view>   

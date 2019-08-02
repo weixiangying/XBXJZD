@@ -1,0 +1,65 @@
+.box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,.23);
+}
+.picker-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 50vh;
+    background: #fff;
+}
+.picker-btns{
+    width: 100%;
+    height: 10vh;
+    line-height: 10vh;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-bottom: 1rpx solid #dfdfdf;
+}
+.btn{
+    font-size: 30rpx;
+    color: #333;
+}
+.btn:last-child{
+    text-align: right;
+    color: #4b94ee;
+}
+
+.selected{
+    width: 100%;
+    height: 8vh;
+    line-height: 8vh;
+    color: #333;
+    font-size: 32rpx;
+}
+
+.picker-view {
+    width: 100%;
+    height: 40vh;
+}
+picker-view-column{
+    width: 33.33%;
+}
+picker-view-column view{
+    width: 100%;
+    font-size: 30rpx;
+    line-height: 8vh;
+    color: #333;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-align: center;
+}

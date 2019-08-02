@@ -1,0 +1,13 @@
+<!--pages/my/advise/advise.wxml-->
+<compontNavbar title="投诉建议" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<view class="toptext">你的意见或问题</view>
+<view class='textareabox'>
+  <textarea placeholder='请简要描述您的问题和意见' placeholder-class='placeholder' bindinput='saveContent'></textarea>
+</view>
+<view class="centertext">联系方式（选填）</view>
+<view class='inputbox'>
+  <input type='tel' bindinput='saveMobile'></input>
+</view>
+<view class='btn ' catchtap='submit'>提交</view>

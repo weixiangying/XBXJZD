@@ -1,0 +1,38 @@
+<!--pages/top/top.wxml-->
+<compontNavbar title="热议话题" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class='top'>
+    <view class='bigbox'>
+        <block wx:if="{{showEmpty}}">
+            <empty></empty>
+        </block>
+        <!-- for -->
+        <view wx:else>         
+            <view class='itembigbox' wx:for="{{list}}" wx:key='this' bindtap='tz_detail' data-myid='{{item.id}}'>
+                <view class='itembox'>
+                    <view class='item_title f_34 c_333'>#{{item.title}}</view>
+                    <image wx:if="{{item.url==''}}" src='../../images/home/default_topic.png' class='item_img' mode='aspectFill'></image>
+                    <image wx:else src='{{item.url}}' class='item_img' mode='aspectFill'></image>
+                    <view class='display-flex align-items-center justify-content-between itembottom'>
+                        <view class='votebigbox display-flex align-items-center'>
+                            <view class='votebox votebigbox display-flex align-items-center'>
+                                <image src='../../images/home/topic_vote.png'></image>
+                                <view>{{item.partakenum}}人投票</view>
+                            </view>
+                            <view class='votebox votebigbox display-flex align-items-center'>
+                                <image src='../../images/home/topic_discuss.png'></image>
+                                <view>{{item.commentnum}}人讨论</view>
+                            </view>
+                            
+                        </view>
+                        <view class='itembtn c_gf_bg'>立即参与</view>
+                       
+                    </view>
+                </view>               
+            </view>
+        </view>
+
+
+        
+    </view>
+</view>

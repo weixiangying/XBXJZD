@@ -1,0 +1,96 @@
+<!--pages/course/course.wxml-->
+<!-- <view class="navigation-box component-class" >
+    <view class="back-box" bindtap="goBack">
+        <image class="navigation-back-icon" src="../../images/arow_top_left.png"></image>
+    </view>
+    <view class="navigation-tit">
+        <picker bindchange="bindPickerChange" class="h1" range="{{nianji}}" range-key="title">  
+            <view class="picker">  
+                <text>{{nianji[index].title}}</text>
+                <image src="../../images/arrow_down.png"></image> 
+            </view>  
+        </picker> 
+    </view>
+</view> -->
+
+<navigat-bar class="navigation-box component-class" id="compontNavbar">
+    <view class="back-box display-flex align-items-center"  >
+        <image class="navigation-back-icon" src="../../images/arow_top_left.png" bindtap="goBack"></image>
+        <image class='navigation_search' src="../../images/search.png" bindtap="goSearch"></image>
+    </view>
+    <view class="navigation-tit">新华课典</view>
+</navigat-bar>
+
+
+<import src="/template/scrollTab/scrollTab.wxml" />
+<view class='top_fix' >
+    <scroll-view class="scroll-view" scroll-x="true">
+        <block wx:for="{{tabs}}" wx:key="this">
+            <template is="{{selectedTab == item.id? 'scrollTabActive': 'scrollTab'}}" data="{{item}}" />
+        </block>
+    </scroll-view>
+</view>
+
+
+
+
+
+<view wx:if="{{imgUrls.length}}" class='containbox'>
+    <swiper autoplay="false" duration="500" indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" >
+        <block wx:for="{{imgUrls}}" wx:key="this">
+            <swiper-item>
+                <image src="{{item.image}}" class="slide-image" catchtap="toH5" data-type="{{item.to_type}}" data-url="{{item.url}}" data-toid="{{item.to_id}}"/>
+            </swiper-item>
+        </block>
+    </swiper>
+    
+</view>
+<view class="tabs {{imgUrls.length==0?'mttab':''}}">
+        <view class="new_tab" bindtap='mytop' data-mytopid="0">
+            <image class="new_tab_img" src="../../images/course/course_img1.png"></image>
+            <view class='new_tab_text'>全部</view>
+        </view>
+        <view class="new_tab" bindtap='mytop' data-mytopid="1">
+            <image class="new_tab_img" src="../../images/course/course_img2.png"></image>
+            <view class='new_tab_text'>双优课</view>
+        </view>
+        <view class="new_tab" bindtap='mytop' data-mytopid="2">
+            <image class="new_tab_img" src="../../images/course/course_img3.png"></image>
+            <view class='new_tab_text'>公开课</view>
+        </view>
+        <view class="new_tab" bindtap='mytop' data-mytopid="3">
+            <image class="new_tab_img" src="../../images/course/course_img4.png"></image>
+            <view class='new_tab_text'>微课</view>
+        </view>
+</view>
+
+<view class='p_lr_26'>
+     <view class='coursebigtitle c_333 font_weight_b'>精品课程</view>
+     
+      <block wx:if="{{showEmpty}}">
+        <empty></empty>
+      </block>  
+      
+      <view class='newcourse_itembox' wx:for="{{list}}" wx:key="this" bindtap='tz_detail'  data-id="{{item.Id}}" data-myid="{{item.Id}}" data-videopic="{{item.PicUrl}}">
+        <view class='position_r'>
+            <image wx:if="{{item.PicUrl}}" class='newcourse_topimg' src='{{item.PicUrl}}' mode='aspectFill' ></image>
+            <image wx:else class='newcourse_topimg' src='../../images/normal_pic1.png' mode='aspectFill' ></image>
+            <view wx:if="{{item.nTeacher}}" class='position_a display-flex live_position align-items-center'>
+                <image wx:if="{{item.nTeacher.FacePath==''}}" src='../../images/default_user.png' class='newcourse_headerimg'></image>
+                <image wx:else src='{{item.nTeacher.FacePath}}' class='newcourse_headerimg'></image>
+                <view class='newcourse_name one_line f_26 c_333'>{{item.nTeacher.Name}}</view>
+            </view>
+        </view>
+        
+        <view class='newcourse_title f_32 c_333 display-flex'>
+          <text class='text_new1 c_gf_bg' wx:if='{{item.nBaseSubject.Name}}'>{{item.nBaseSubject.Name}}</text>
+          <text class='text_new2 one_line'>{{item.Name}}</text>
+        </view>        
+                 
+        <view class='newcourse_time f_26 c_666'>
+        课程时长<text wx:if="{{item.Minute==0}}">10</text><text wx:else>{{item.Minute}}</text>分钟 · {{item.Hit}}人已观看
+                       
+        </view>          
+        
+      </view>   
+</view>

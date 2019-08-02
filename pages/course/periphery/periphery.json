@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "逗逗超市",
+    "usingComponents": {
+        "empty": "/component/empty/empty"
+        
+    }
+}

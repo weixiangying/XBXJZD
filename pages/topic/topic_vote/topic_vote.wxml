@@ -1,0 +1,132 @@
+<!--pages/topic/topic_vote/topic_vote.wxml-->
+<compontNavbar title="热议话题" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class='containbox' bindtap='bindtapall'>
+    <view class='topbox'>
+           
+        <view class='topbox_title display-flex justify-content-between'>
+            <view class='display-flex'>
+                <image src='../../../images/home/topic.png'></image>
+                <view class='topbox_titletext c_333'>{{detail.title}}</view>
+            </view>
+            <image wx:if="{{iscollect==1}}" bindtap='iscollect' class='collect_img' src='../../../images/collect_news_already.png'></image>
+            <image wx:else bindtap='iscollect' class='collect_img' src='../../../images/collect_news.png'></image>
+        </view>
+            
+        
+        <view class='choicebox'>
+            <view class='choicetext f_333 c_30'>{{detail.description}}</view>
+            <view class='choiceitembox'>
+                <!-- for -->
+                <view wx:for="{{answerlist}}" class='display-flex align-items-center justify-content-between choiceitem' data-optionid='{{item.id}}' wx:key="this" catchtap="selectClick" id="{{index}}">
+                    <view class='display-flex align-items-center'>
+                        <image wx:if="{{item.checked==1}}" src='../../../images/home/step.png' class='choice_img'></image>
+                        <image wx:if="{{item.checked==0}}" src='../../../images/home/choice_no.png' class='choice_img'></image>
+                        <view class='choice_content f_30 c_333'>{{item.option}}</view>
+                    </view>
+                    <view class='choice_num c_999 f_26'>
+                       {{item.percent}}
+                    </view>
+                </view>
+                
+                <!-- <view class='display-flex align-items-center justify-content-between choiceitem'>
+                    <view class='display-flex align-items-center'>
+                        <image src='../../../images/home/step.png' class='choice_img'></image>
+                        <view class='choice_content f_30 c_333'>文字文字文字文字文字文字文字文字文字文字</view>
+                    </view>
+                    <view class='choice_num c_999 f_26'>
+                       40%
+                    </view>
+                </view>  -->
+            </view>
+        </view>
+        <view class='choicebtnbox display-flex align-items-center justify-content-between'>
+            <view class='choicebtnbox_left f_26 c_333'>已有{{detail.partakenum}}人参与</view>
+            <view class='choicebtnbox_right f_28 c_fff c_gf_bg' catchtap='to_vote'>投票</view>
+        </view>
+    </view>
+
+    <!-- 热门评论 -->
+    <view class='hotbox'>
+        <view class='hottitlebox display-flex align-items-center'>
+            <view class='h3 c_gf_bg'></view>
+            <view class='f_30 c_333'>实时评论</view>
+        </view>
+        <block wx:if="{{showEmpty}}">
+             <view class='new_nocomment'>还没有人评论哦~</view>
+        </block>
+        <!-- for -->
+        <view class='commentbigbox display-flex' wx:key="this" wx:for="{{commentlist}}">
+            
+            <image src='{{item.userInfo.avatar?item.userInfo.avatar:"../../../images/default_user.png"}}' class='comment_headerimg' mode="aspectFill"></image>
+            <view style="width:{{cssW}}px">
+                <view class='comment_name c_333 f_30 one_line' style="width:{{cssW}}px">{{item.userInfo.nickname}}</view>
+                <view class='comment_content c_333 f_30'>{{item.content}}</view>
+                <view class='comment_operatebox display-flex align-items-center justify-content-between'>
+                    <view class='comment_time f_24 c_999'>{{item.createdate}}</view>
+                    <view class='display-flex align-items-center  justify-content-around'>
+                        <button class='comment_operate' open-type="share" plain="true">
+                            <image src='../../../images/transmit_c9.png'></image>
+                        </button>
+                        <view class='comment_operate' catchtap='comment_reply'  data-commentid='{{item.id}}'>
+                            <image src='../../../images/msg_c9.png'></image>
+                        </view>
+
+                        <view class='comment_operate display-flex align-items-center' catchtap='comment_zan' data-dianzancomment='{{item.isagree}}'  data-commentid='{{item.id}}'>
+                            <image wx:if="{{item.isagree==2}}" src='../../../images/agree_c9.png'></image>
+                            <image wx:else src='../../../images/agr2.png'></image>
+                            <view class='comment_agreenum c_666 f_26'>{{item.agreenum}}</view>
+                        </view>                       
+                    </view>
+                </view>
+                
+                <view class='comment_itembigbox' wx:if="{{item.replynum!=0}}">
+                    <view class='comment_itembox'>
+                        <view class='total_reply f_24'>共{{item.replynum}}条回复</view>
+                        <!-- for -->                        
+                        <view class='item_contentbox f_28 c_666' wx:for="{{item.reply_list}}" wx:key='this'>
+                            <text class='c_333'>{{item.userInfo.nickname}}：</text>{{item.content}}
+                        </view>                        
+                    </view>                   
+                </view>
+            </view>
+        </view>  
+    </view>
+    
+</view>
+
+
+
+
+
+
+<!--底部 -->
+<view class='bottombox' wx:if="{{showbottom}}">
+    <view class='display-flex align-items-center justify-content-between'>
+        <!-- <view class='bottom_item display-flex align-items-center justify-content-center'>
+            <image src='../../../images/share_93.png' class='shareimg'></image>
+            <view class='f_30 c_666'>分享</view>
+        </view> -->
+        <button  open-type="share" plain="true">
+            <view class="display-flex align-items-center justify-content-center">
+                <image src="../../../images/share_93.png" class='shareimg'></image>
+                <view class='f_30 c_666'>分享</view>
+            </view>
+            
+        </button>
+        <view class='bottom_item bottom_right display-flex align-items-center justify-content-center' catchtap='discuss_btn'>
+            <image src='../../../images/canyu.png' class='canyuimg'></image>
+            <view class='f_30 c_gf'>参与讨论</view>
+        </view>
+    </view>
+</view>
+
+
+        <view wx:else class="detail-container" >
+            <view class='detail-content display-flex'>
+                <view class="input-container ">
+                    <input placeholder="{{mytypetext}}" type="text" bindinput="inputFn" value="{{msg}}" bindconfirm="submitCommt" confirm-type='go'></input>                    
+                </view>
+                <image src='../../../images/send.png' class='send_img' catchtap='submitCommt'></image>
+            </view>
+        </view> 

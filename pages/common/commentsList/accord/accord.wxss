@@ -1,0 +1,43 @@
+.box{
+    width: 100%;
+}
+
+.cont-text{
+    width: 100%;
+    max-height: 138rpx;
+    line-height: 1.5em;
+    font-size: 30rpx;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    word-break: break-all;
+}
+.swi-style{
+    max-height: 100%;
+}
+.more{
+    width: 25%;
+    height: 28rpx;
+    text-align: right;
+    padding-right: 40rpx;
+    margin-top: 30rpx;
+    font-size: 22rpx;
+    color: #4bace2;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-left: 75%;
+}
+.height-225{
+    height: 225rpx;
+}
+.auto-height{
+    height: auto;
+}
+
+
+
+
+
+
+

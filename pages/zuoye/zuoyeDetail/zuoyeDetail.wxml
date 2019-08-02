@@ -1,0 +1,50 @@
+<!--pages/zuoye/zuoyeDetail/zuoyeDetail.wxml-->
+
+<view class='newnavbox position_r c_gf_bg'>
+    <view class="back-box" bindtap="goBack" >
+        <image src="../../../images/arow_top_left_fff.png" class='navigation-back-icon'></image>
+    </view>
+    <view>作业详情</view>
+</view>
+
+
+<view class=' position_r mb28'>
+  <view class='newtopbg position_a c_gf_bg'></view>
+  <view class='bigbox item_bigtop position_r'>
+    
+    <view class='item_top bg_fff'>
+      
+        <view class='h3'>学生作业</view>
+                                             
+        <view class='item_topcontentview f_26 c_333'>
+            {{list.name}}
+        </view>
+        <view class='display-flex item_imgbox' wx:if='{{list.images}}'>
+            <image wx:for='{{list.images}}' src='{{item}}' class='item_img' mode='aspectFill' wx:key='this' catchtap="previewImg" data-index="{{idx}}" data-img="{{item}}" data-imgs="{{item}}"></image>              
+        </view>
+    </view>
+
+    <view class='item_top bg_fff item_pigaibox' wx:if='{{listPg.length!=0}}'>
+      
+        <view class='h3'>作业批改</view>
+        <view class='videobox' wx:for='{{listPg}}' wx:key='this'>
+            <!-- <video if="{{}}" src='' class='video'></video> -->
+            <block wx:if="{{item.an_type==1}}">
+                <video  src='{{item.video}}' class='video'></video>
+            </block>
+            <block wx:if="{{item.an_type==2}}">
+                <!-- <video  src='{{item.video}}' class='video'></video> -->
+                <view catchtap='tz_canvas' data-canvas='{{item.video_json}}' class='position_r'>
+                    <image src='{{item.newcoverimg}}' class='newcanvas_img'></image>
+                    <view class='play-icon-bg position_a'>
+                        <view class='play-icon'></view>
+                    </view>
+                </view>
+            </block>
+        </view>                                    
+        
+    </view>
+    
+  </view>
+
+</view>

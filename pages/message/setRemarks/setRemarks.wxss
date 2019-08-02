@@ -1,0 +1,34 @@
+page{
+    padding-top:10vh;
+}
+.box{
+    width: 100%;
+    height: 90vh;
+    padding: 20rpx 30rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: #f7f7f7;
+}
+.tit{
+    width: 100%;
+    font-size: 30rpx;
+    color: #666;
+    margin: 50rpx 0 10rpx;
+}
+input{
+    width: 100%;
+    height: 6vh;
+    border-bottom: 1rpx solid #48b947;
+    font-size: 30rpx;
+    color: #333;
+}
+.btn{
+    width: 100%;
+    margin: 50rpx auto;
+    padding: 4% 0;
+    text-align: center;
+    background: #48b947;
+    color: #fff;
+    font-size: 30rpx;
+    border-radius: 15rpx;
+}

@@ -1,0 +1,82 @@
+/* pages/composition/compositionDetail/compositionDetail.wxss */
+page{
+    padding-top: 10vh;
+    background-color:#f4f4f4;
+}
+.containbox{
+    padding:0 26rpx;
+}
+.title{
+    margin-top:37rpx;
+    line-height:50rpx;
+    text-align: center;
+}
+.title_text{
+    display: inline-block;
+    background-color:#fe5757;
+    color:#fff;
+    font-size:24rpx;
+    height:32rpx;
+    line-height: 32rpx;
+    padding:0 16rpx;
+    border-top-right-radius: 16rpx;
+    border-bottom-right-radius: 16rpx;
+    border-top-left-radius: 13rpx;
+    margin-left:14rpx;  
+}
+.compositionstyle{
+    text-align: center;
+    line-height:77rpx;
+    margin-bottom:22rpx;
+}
+.article{
+    line-height:48rpx;
+    word-break: break-all;
+    margin-bottom:34rpx;
+    display: block;
+    text-indent: 60rpx;
+}
+.dianpingbox{
+    margin-bottom:100rpx;
+    margin-top:100rpx;
+}
+.wonderfulbox{
+    left:0;top:-25rpx;
+    width:100%;
+}
+.wonderful{
+    
+    height:50rpx;
+    line-height: 50rpx;
+    width:190rpx;
+    text-align: center;
+    border-radius: 6rpx;
+    margin: 0 auto;
+}
+.dianping{
+    line-height:48rpx;
+    word-break: break-all;
+    padding:64rpx 30rpx 60rpx;
+    text-indent: 60rpx;
+}
+
+
+.operatebox{
+    padding:0 190rpx;
+    margin-bottom:74rpx;
+}
+.collectimg{
+    width:42rpx;
+    height: 42rpx;
+}
+.shareimg{
+    width:35rpx;
+    height: 35rpx;
+}
+button[plain]{
+    border: none;
+}
+button{
+    padding:0;
+    margin:0;
+}

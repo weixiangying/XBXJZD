@@ -1,0 +1,26 @@
+<!--pages/spread/spreadDetail/spreadDetail.wxml-->
+<compontNavbar title="{{title}}" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<block wx:if="{{showEmpty}}">
+    <empty></empty>
+</block>
+<view class='bigbox'>
+    <view class='item_box display-flex justify-content-between align-items-center' wx:for='{{list}}' wx:key='this'>
+        <view>
+            <view class='item_text1 f_30 c_333'>{{item.title}}<text class='f_26 c_999'>{{item.duname}}</text></view>
+            <view class='item_time f_24 c_666'>{{item.create_time}}</view>
+        </view>
+        <view class='item_money'>
+            {{item.price}}元
+        </view>
+    </view> 
+    <!-- <view class='item_box display-flex justify-content-between align-items-center'>
+        <view>
+            <view class='item_text1 f_30 c_333'>姓名<text class='f_26 c_999'>成功邀请成为会员</text></view>
+            <view class='item_time f_24 c_666'>2018-01-01</view>
+        </view>
+        <view class='item_money'>
+            +5元
+        </view>
+    </view> -->
+</view>

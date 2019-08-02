@@ -1,0 +1,71 @@
+/* pages/my/my_collect/my_collect.wxss */
+@import "/template/tab/tab.wxss";
+@import "/pages/news/news.wxss";
+@import "/pages/topic/topic.wxss";
+
+page{
+    padding-top: 10vh;
+    background-color:#f4f4f4;
+}
+
+.content{   
+    margin-top:9vh;
+}
+.item{
+    margin-bottom:12rpx;
+    display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* overflow: hidden; */
+  position: relative;
+  background-color:#fff;
+}
+.itemtopic{
+    margin-bottom:12rpx;
+    display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* overflow: hidden; */
+  position: relative;
+ 
+}
+.news{
+    background-color:#fff;
+    padding:30rpx 0rpx;
+    border-bottom:none;
+}
+.newbox{
+    background-color:#fff;
+    padding:0 26rpx;
+    width:100%;
+}
+.news-lt{
+    width:235rpx;
+    height:132rpx;  
+}
+
+.itemnewbox{
+    margin:0 26rpx;
+    width:100%;
+}
+.itembox{
+    background-color:#fff;
+    width:100%;
+     padding:36rpx 0rpx 29rpx;
+}
+
+
+
+.del{
+  background-color: #f00;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -60px;
+   display: flex; 
+  justify-content: center;
+  align-items: center;
+  color:#fff;
+}
+

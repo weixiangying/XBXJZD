@@ -1,0 +1,77 @@
+/* pages/jiameng/jiameng.wxss */
+page{
+    padding-top:10vh;
+}
+.fix_bottom{
+    position:fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 100rpx;
+}
+.fix_btn{
+    width:320rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center; 
+    padding:0;
+    border-radius: 0;
+    margin:0;
+}
+.fix_money{
+    color:#FB6D0E;
+    /* margin-left:50rpx; */
+    margin-right:30rpx;
+    width:140rpx;
+    font-size:42rpx;
+    font-weight: bold;
+}
+
+
+.authorizebox{
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:200;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,.7);
+}
+.authorize_smbox{
+    position:relative;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+    width:60%;    
+    /* background-color:#fff; */
+    /* padding:100rpx 0; */
+}
+.authorize_btn{
+    
+    height:8vh;
+    line-height:8vh;
+    font-size:42rpx;
+    text-align: center;
+    background-color:#fff;
+    
+    border-radius: 20rpx;
+    margin:0 auto;
+    /* box-shadow: 0rpx 5rpx 15rpx #ccc; */
+}
+
+.imgbox{
+    padding-bottom:100rpx;
+}
+.imgbox image{
+    width:100%;
+    display: block;
+    margin:0;
+    padding:0;
+}
+.zongji{
+    margin-left:55rpx;
+    font-weight: bold;
+    margin-top:17rpx;
+}

@@ -1,0 +1,10 @@
+<compontNavbar title="群聊" isShowBack="{{true}}" url="/pages/message/frdList/frdList" component-class="component-class"></compontNavbar>
+<block wx:if="{{showEmpty}}">
+    <empty></empty>
+</block>
+<view class="box" wx:else>
+    <view class="item" wx:for="{{list}}" wx:key="this" bindtap="enterLive" data-item="{{item}}">
+        <image src="{{item.image}}" mode="aspectFill"></image>
+        <view class="tit">{{item.name}}</view>
+    </view>
+</view>

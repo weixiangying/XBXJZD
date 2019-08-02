@@ -1,0 +1,113 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<compontNavbar title="{{title}}" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<template name="videoMsg">
+    <view class="video-box">
+        <text class="sys-msg">{{item.timeStr}}</text>
+    </view>
+</template>
+<template name="imgMsg">
+    <view class="img-box">
+        <template is="wxParse" data="{{wxParseData: im}}" />
+    </view>
+</template>
+<template name="recAudioMsg">
+    <view class="audio-box">
+        <view class="icon-box">
+            <image src="{{'../../../images/message/audio1' + audioImg + '.png'}}" class="audio-img {{'audio-img-' + audioImg}}" wx:if="{{item.time == soundTime}}"></image>
+            <image src="../../../images/message/audio11.png" class="audio-img" wx:else></image>
+        </view>
+        <text class="audio-dur audio-dur-2">{{item.seconds}}s</text>
+    </view>
+</template>
+<template name="sedAudioMsg">
+    <view class="audio-box">
+        <view class="icon-box">
+            <image src="{{'../../../images/message/audio2' + audioImg + '.png'}}" class="audio-img {{'audio-img-' + audioImg}}" wx:if="{{item.time == soundTime}}"></image>
+            <image src="../../../images/message/audio21.png" class="audio-img" wx:else></image>
+        </view>
+        <text class="audio-dur">{{item.seconds}}s</text>
+    </view>
+</template>
+<template name="timeMsg">
+    <view class="sys-msg-box">
+        <text class="sys-msg">{{item.timeStr}}</text>
+    </view>
+</template>
+<template name="systemMsg">
+    <view class="sys-msg-box">
+        <text class="sys-msg">{{item.contentHtml}}</text>
+    </view>
+</template>
+<template name="recevMsg">
+    <image class="head-img" src="{{item.fromAccountImage || base + 'images/default_user.png'}}" mode="aspectFill"></image>
+    <view class="cont-box cont-box-2">
+        <block wx:if="{{item.isImg}}">
+            <template is="imgMsg" data="{{im}}" />
+        </block>
+        <block wx:else>
+            <view class="triangle triangle2"></view>
+            <view class="msg msg2" bindtap="audioEV" data-item="{{item}}">
+                <!-- style="background: url('../../images/msg-bg-1.png') no-repeat; background-size: 100% 100%;" -->
+                <!-- {{item.contentHtml}} -->
+                <block wx:if="{{item.isAudio}}">
+                    <template is="recAudioMsg" data="{{item, audioImg, soundTime}}" />
+                </block>
+                <block wx:else>
+                    <template is="wxParse" data="{{wxParseData: im}}" />
+                </block>
+            </view>
+        </block>
+    </view>
+</template>
+<template name="sendMsg">
+    <view class="cont-box cont-box-1">
+        <block wx:if="{{item.isImg}}">
+            <template is="imgMsg" data="{{im}}" />
+        </block>
+        <block wx:else>
+            <view class="msg" bindtap="audioEV" data-item="{{item}}">
+                <!-- style="background: url('../../images/msg-bg-2.png') no-repeat;background-size: 100% 100%;" -->
+                <!-- {{item.contentHtml}} -->
+                <block wx:if="{{item.isAudio}}">
+                    <template is="sedAudioMsg" data="{{item, audioImg, soundTime}}" />
+                </block>
+                <block wx:else>
+                    <template is="wxParse" data="{{wxParseData: im}}" />
+                </block>
+            </view>
+            <view class="triangle triangle1"></view>
+        </block>
+    </view>
+    <image class="head-img" src="{{item.fromAccountImage || base + 'images/default_user.png'}}" mode="aspectFill"></image>
+</template>
+
+<view class="box">
+    <block wx:for="{{msgList}}" wx:key="this">
+        <template wx:if="{{item.subType == 2}}" is="systemMsg" data="{{item}}" />
+        <block wx:else>
+            <block wx:if="{{item.time - msgList[index - 1].time > 50}}">
+                <template is="timeMsg" data="{{item}}" />
+            </block>
+            <view class="item {{item.isSelf? 'self-box' : ''}}">
+                <!-- <template is="{{item.isSelf? 'sendMsg' : 'recevMsg'}}" data="{{item}}"/> -->
+                <block wx:for="{{contentList}}" wx:key="key" wx:for-index="i" wx:for-item="im">
+                    <block wx:if="{{index == i}}">
+                        <template is="{{item.isSelf? 'sendMsg' : 'recevMsg'}}" data="{{im, base, item, audioImg, soundTime}}" />
+                    </block>
+                </block>
+            </view>
+        </block>
+    </block>
+</view>
+
+<view class="bottom-box">
+    <image src="../../../images/message/group-icon.png" bindtap="toGroupInfo" wx:if="{{typ == 2}}"></image>
+    <image src="../../../images/message/my2.png" bindtap="toFrdInfo" wx:if="{{typ == 1}}"></image>
+    <view class="input-cont">
+        <view class="input-box">
+            <input bindinput="inputFn" value="{{msg}}"></input>
+        </view>
+        <view class="btn" bindtap="sendMsg">确定</view>
+    </view>
+</view>

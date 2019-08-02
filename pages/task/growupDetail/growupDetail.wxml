@@ -1,0 +1,83 @@
+<!--pages/task/growupDetail/growupDetail.wxml-->
+<image src='../../../images/arow_top_left.png' class='bogack_img' catchtap='goback'></image>
+<view>
+
+    <view class='position_r'>
+        
+        <!-- <image wx:if="{{list.image}}" src='{{list.image}}' class='top_img'></image>
+        <image wx:else src='../../../images/normal_pic1.png' class='top_img'></image> -->
+        <video src='{{item1.video}}' class='video'></video>
+    </view>
+    <view class=' bgfff top_bigbox'>
+        <view class='top_title c_333'>{{item1.name}}</view>
+        <view class='display-flex align-items-center bigtitlebox'>
+            <view class='h1 c_gf_bg'></view>
+            <view class='bigtitle'>问题分析</view>
+        </view>
+        <view class="top_content {{zhedie%2==0?'six_line':''}}">{{item1.content}}</view>
+        <view class='top_btnbox display-flex align-items-center f_26 c_999' catchtap='zhedie'>
+            <view>{{zhedie_text}}</view>
+            <image src='{{zhedie_img}}' class='top_arrow'></image>
+        </view>
+    </view>
+    <!-- 布置作业 -->
+    <view class='contentbox p_lr_26'>
+        <view class='display-flex align-items-center bigtitlebox'>
+            <view class='h1'></view>
+            <view class='bigtitle'>问题解决</view>
+        </view>
+        <!-- for -->
+        <block wx:if="{{showEmpty}}">
+            <empty></empty>
+        </block>
+        <view class='newrw_box display-flex align-items-center justify-content-between' wx:for='{{list}}' wx:key='{{this}}'>
+            <view class='display-flex align-items-center'>
+                <image src='../../../images/task/t{{item.task_id}}.png' class='newrw_rwimg'></image>
+                <view>
+                    <view class='newrw_toptext f_32 c_333'>{{item.task_name}}</view>
+                    <view class='f_26 c_333 newrw_text two_line'>
+                        {{item.task_content}}
+                    </view>
+                </view>
+            </view>
+            <view class='newrw_btn  c_gf c_gf_border' catchtap='click_btn' data-taskid='{{item.task_id}}'>立即布置</view>
+        </view>
+        <!-- <view class='newrw_box display-flex align-items-center justify-content-between'>
+            <view class='display-flex'>
+                <image src='../../../images/task/t11.png' class='newrw_rwimg'></image>
+                <view style='align-content:space-between;'>
+                    <view class='newrw_toptext f_32 c_333'>冥想任务</view>
+                    <view class='f_26 c_333 newrw_text two_line'>
+                        文字文字文字文字
+                    </view>
+                </view>
+            </view>
+            <view class='newrw_btn'>立即布置</view>
+        </view> -->
+    </view>
+
+</view>
+
+
+
+
+
+
+<view class='fixbox overf bgfff'>
+    <button  class='share-box display-flex align-items-center justify-content-center w50 fl fix_leftbox' open-type="share" plain="true">
+        <image src='../../../images/transmit_gf.png' class='fixbox_img'></image>
+        <view class='c_333 f_30'>转发</view>
+        <view class='c_333 f_26 fixbox_num'>({{item1.sharenum}})</view>
+        <!-- <button class="share-box" open-type="share" plain="true">
+            <image src="../../../images/share.png"></image>
+        </button> -->
+    </button>
+    <view  class='display-flex align-items-center justify-content-center w50 fr fix_rightbox' catchtap='isLike' >
+        <!-- <image wx:if="{{item1.isagree==2}}" src="../../../images/collection2.png" ></image>
+        <image wx:else src="../../../images/heart-fff.png"></image> -->
+
+        <image src='../../../images/like_gf.png' class='fixbox_img'></image>
+        <view class='c_333 f_30'>支持</view>
+        <view class='c_333 f_26 fixbox_num'>({{item1.agreenum}})</view>
+    </view>
+</view>

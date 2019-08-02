@@ -1,0 +1,305 @@
+/* pages/course/periphery/periphery.wxss */
+page{
+    padding-top:10vh;
+}
+.box{
+    width: 100%;
+    padding-bottom: 10vh;
+}
+.userinfo-box{
+    position: fixed;
+    width: 100%;
+    height: 12vh;
+    overflow: hidden;
+    top:0;
+    left:0;
+    background-color:#fff;
+    z-index: 3;
+}
+.bg-img{
+    width: 100%;
+    height: 100%;
+}
+.user-info{
+    position: absolute;
+    top: 10vh;
+    left: 7.5%;
+    width: 85%;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+}
+.ava{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin-right: 24rpx;
+}
+.user-cont{
+    width: 50%;
+}
+.user-name{
+    font-size: 30rpx;
+    color: #b28949;
+    margin-bottom: 16rpx;
+}
+.user-text{
+    font-size: 28rpx;
+    color: #b28949;
+}
+.search-box{
+    position: absolute;
+    bottom: 1vh;
+    left: 5%;
+    width: 450rpx;
+    height: 7vh;
+    border-radius: 10rpx;
+    background: #fff;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color:#f4f4f4;
+}
+.search-icon{
+    width: 22rpx;
+    height: 22rpx;
+    margin-right: 16rpx;
+}
+input{
+    width: 98%;
+    height: 100%;
+    line-height: 7vh;
+    font-size: 30rpx;
+    color: #333;
+}
+.place{
+    color: #999;
+}
+.slide-box,
+.goods-box{
+    width: 100%;
+}
+.tit-box{
+    width: 80%;
+    margin: 20rpx auto;
+    text-align: center;
+}
+.border{
+    width: 30%;
+    height: 1px;
+    background: #4bace2;
+    display: inline-block;
+    vertical-align: middle;
+}
+.tit{
+    color: #4bace2;
+    font-size: 30rpx;
+    margin: 0 20rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+.scroll-box {
+    width: 100%;
+    white-space: nowrap; 
+    display: flex;
+    display: -webkit-flex;
+    background: #fff;
+    padding: 24rpx; 
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.scroll-item {
+    width: 274rpx;
+    height: 100%; 
+    display: inline-block;
+    margin-right: 30rpx;
+}
+.slide-image{
+    width: 100%;
+    height: 200rpx;
+}
+.slide-price{
+    width: 100%;
+    padding: 0 5rpx;
+    margin: 16rpx 0;
+    font-size: 30rpx;
+    color: #4bace2;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+.slide-count{
+    width: 100%;
+    padding: 0 5rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 24rpx;
+    color: #999;
+    text-align: center;
+}
+.goods-list{
+    width: 100%;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.goods{
+    width: 49%;
+    margin-right: 2%;
+    margin-bottom: 16rpx;
+    padding-bottom: 10rpx;
+    background: #fff;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.goods:nth-child(2n){
+    margin-right: 0;
+}
+.goods-img{
+    width: 100%;
+    height: 200rpx;
+}
+.goods-name{
+    width: 100%;
+    height: 90rpx;
+    line-height: 45rpx;
+    font-size: 30rpx;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    margin-bottom: 16rpx;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.goods-tips{
+    width: 100%;
+    height: 40rpx;
+    line-height: 40rpx;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.goods-price,
+.buy-count{
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.goods-price{
+    font-size: 30rpx;
+    color: #4bace2;
+}
+.buy-count{
+    font-size: 24rpx;
+    color: #999;
+    text-align: right;
+}
+
+
+
+/*search  */
+.navigation-back-icon{
+    position: absolute;
+    left: 30rpx;
+    /* top: 62%; */
+    top:88rpx;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 18rpx;
+    height: 32rpx;
+}
+.search_box{
+  z-index: 2;
+  position:fixed;
+  top:0rpx;
+  left:0;
+  width:100%; 
+  padding:60rpx 0 20rpx;
+  background-color:#fff;
+}
+.search{
+  width:420rpx;
+  background-color:#f4f4f4;
+  margin-left:80rpx;
+  height:58rpx;
+  border-radius: 29rpx;
+}
+.search image{
+  width:30rpx;
+  height:30rpx;
+  margin:0 17rpx 0 26rpx;
+}
+.search input{
+  color:a1a1a1;
+  font-size:26rpx;
+  display:block;
+  width:510rpx;
+  height:58rpx;
+  line-height:58rpx;
+}
+.placeholder{
+  color:a1a1a1;
+  font-size:26rpx;
+}
+
+/*最近搜索过  */
+.recently-box {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;  
+    padding: 20rpx 24rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.tit {
+    font-size: 26rpx;
+    color: #333;
+}
+.del-icon {
+    width: 26rpx;
+    height: 26rpx;
+}
+
+.list{
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.item {
+    padding: 10rpx 42rpx;
+    margin-top: 20rpx;
+    margin-right: 20rpx;
+    font-size: 30rpx;
+    color: #333;
+    border-radius: 10rpx;
+    background-color: #f1f1f1;
+}

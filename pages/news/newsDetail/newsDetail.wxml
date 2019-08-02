@@ -1,0 +1,36 @@
+<import src="../../../wxParse/wxParse.wxml" />
+
+<compontNavbar title="详情" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class="comt-box">
+     <view class="rich-text-box">
+        <template is="wxParse" data="{{wxParseData: content.nodes}}"></template>
+    </view>    
+    <view class="share-meth-box">
+        <view class="like-box" bindtap='isLike'>
+          
+	      <image wx:if="{{myagree==1}}" src="../../../images/collection2.png" ></image>
+          <image wx:else src="../../../images/heart-fff.png"></image>
+          <text>{{mynum}}人喜欢</text>
+        </view>
+        
+    </view>
+    <view class="comt">
+        <view class="input-container">
+            <input placeholder="写跟帖..." type="text" bindinput="inputFn" value="{{msg}}" bindconfirm="submitCommt" cursor-spacing='300px'></input>
+            
+        </view>
+        <view class="count-box position_r" catchtap="toCommt">
+            <image src="../../../images/msg_news.png"></image>
+            <text class="count position_a">{{mycommentnum}}</text>
+        </view>
+        <view bindtap='isCollect' class='collect_box'>           
+            <image src='../../../images/collect_news_already.png' class='collect_img' wx:if='{{mycollect==1}}' ></image>
+            <image wx:else src='../../../images/collect_news.png' class='collect_img' ></image>
+        </view>
+        
+        <button class="share-box" open-type="share" plain="true">
+            <image src="../../../images/share.png"></image>
+        </button>
+    </view>
+</view>

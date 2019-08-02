@@ -1,0 +1,30 @@
+<!--pages/task/taskReward/taskReward.wxml-->
+<view class='search_box display-flex' >
+  <image class="navigation-back-icon" src="../../../images/arow_top_left.png" bindtap='backReturn'></image>
+  <view class='search display-flex align-items-center'>
+    
+    <image src='../../../images/search.png'></image>
+    <input placeholder='搜索关键字' placeholder-class='placeholder'  bindinput="saveSearch" type='text' bindconfirm='submit' confirm-type='search'></input>
+  </view>
+</view> 
+
+<view class='contentbox'>
+    <block wx:if="{{showEmpty}}">
+            <empty></empty>
+    </block>
+    <view class='itembox' wx:for='{{list}}' wx:key='this'>
+        <view class='display-flex '>
+            <image wx:if='{{item.image}}' src='{{item.image}}' class='item_img'></image>
+            <image wx:else src='../../../images/normal_pic12.png' class='item_img'></image>
+            <view class='item_content f_28 c_333'>{{item.title}}</view>
+        </view>
+        <view class='item_bottom'>￥{{item.price}}</view>
+    </view>
+    <!-- <view class='itembox'>
+        <view class='display-flex '>
+            <image src='../../../images/normal_pic12.png' class='item_img'></image>
+            <view class='item_content f_28 c_333'>文字文字文字文字文字文字文字文字文字</view>
+        </view>
+        <view class='item_bottom'>￥12</view>
+    </view> -->
+</view>

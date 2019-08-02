@@ -1,0 +1,70 @@
+<compontNavbar title="通讯录" isShowBack="{{true}}" url="/pages/message/message" component-class="component-class"></compontNavbar>
+<view class="box">
+    <!-- <view class="search-box">
+        <input class="input" bindinput="inputFn"></input>
+    </view> -->
+    <view class="list">
+        <view class="item-box">
+            <view class="item" bindtap="toNewFrd">
+                <image src="../../../images/message/l1.png" class="img"></image>
+                <view class="name">新的朋友</view>
+            </view>
+            <view class="item" bindtap="toGroupList">
+                <image src="../../../images/message/l2.png" class="img"></image>
+                <view class="name">群聊</view>
+            </view>
+        </view>
+        <view class="item-box">
+            <block wx:if="{{showEmpty}}">
+                <empty></empty>
+            </block>
+            <block wx:else>
+                <view class="item" wx:for="{{list}}" wx:key="this" bindtap="toDetail" data-id="{{item.fid}}" data-mobile="{{item.mobile}}">
+                    <image src="{{item.avatar? item.avatar : base + 'images/default_user.png'}}" class="img" mode="aspectFill"></image>
+                    <view class="name" wx:if="{{item.remark}}">{{item.remark}}</view>
+                    <view class="name" wx:else>{{item.nickname}}</view>
+                </view>
+            </block>
+        </view>
+
+        <!-- <block wx:for="{{list}}" wx:key="this"> -->
+        <!-- <view class="tip">F</view> -->
+        <!-- <view class="item-box"> -->
+        <!-- <view class="item">
+                <image src="{{item.avatar? item.avatar : base + 'images/default-user-2.png'}}" class="img" mode="aspectFill"></image>
+                <view class="name" wx:if="{{item.remark}}">{{item.remark}}</view>
+                <view class="name" wx:else>{{item.nickname}}</view>
+            </view> -->
+        <!-- </view> -->
+        <!-- </block> -->
+    </view>
+
+    <!-- <view class="aside" bindtap="asideSearch">
+        <view class="aside-item" data-search="A">A</view>
+        <view class="aside-item" data-search="B">B</view>
+        <view class="aside-item" data-search="C">C</view>
+        <view class="aside-item" data-search="D">D</view>
+        <view class="aside-item" data-search="E">E</view>
+        <view class="aside-item" data-search="F">F</view>
+        <view class="aside-item" data-search="G">G</view>
+        <view class="aside-item" data-search="H">H</view>
+        <view class="aside-item" data-search="I">I</view>
+        <view class="aside-item" data-search="J">J</view>
+        <view class="aside-item" data-search="K">K</view>
+        <view class="aside-item" data-search="L">L</view>
+        <view class="aside-item" data-search="M">M</view>
+        <view class="aside-item" data-search="N">N</view>
+        <view class="aside-item" data-search="O">O</view>
+        <view class="aside-item" data-search="P">P</view>
+        <view class="aside-item" data-search="Q">Q</view>
+        <view class="aside-item" data-search="R">R</view>
+        <view class="aside-item" data-search="S">S</view>
+        <view class="aside-item" data-search="T">T</view>
+        <view class="aside-item" data-search="U">U</view>
+        <view class="aside-item" data-search="V">V</view>
+        <view class="aside-item" data-search="W">W</view>
+        <view class="aside-item" data-search="X">X</view>
+        <view class="aside-item" data-search="Y">Y</view>
+        <view class="aside-item" data-search="Z">Z</view>
+    </view> -->
+</view>

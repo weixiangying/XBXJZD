@@ -1,0 +1,15 @@
+<!--pages/tool/tool.wxml-->
+<compontNavbar title="家长工具" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class='bigbox '>
+    <view class='display-flex align-items-center justify-content-between smbox'>
+        <navigator url='/pages/composition/composition'><image src='../../images/tool_1.png' url='/pages/composition/composition'></image></navigator>
+        
+        <!-- <navigator url='/pages/recite/recite'><image src='../../images/tool_2.png' ></image></navigator> -->
+        <navigator url='/pages/emptypage/emptypage'><image src='../../images/tool_2.png' ></image></navigator>
+    </view>
+    <!-- <view class='display-flex align-items-center justify-content-between smbox'>
+        <navigator url='/pages/emptypage/emptypage'><image src='../../images/tool_3.png' url=''></image></navigator>
+        <navigator url='/pages/emptypage/emptypage'><image src='../../images/tool_4.png' ></image></navigator>
+    </view> -->
+</view>

@@ -1,0 +1,81 @@
+/* pages/binding/form/form.wxss */
+page{
+    background: #fff;
+    padding-top:10vh;
+}
+.component-class{
+    border-bottom:none !important;
+}
+.bigbox{
+    text-align: center;
+}
+
+.h1{
+    font-size:42rpx;
+    margin-top:114rpx;
+    line-height:42rpx;
+}
+.h2{
+    line-height:30rpx;
+    margin-top:82rpx;
+    color:#9a9a9a;
+    margin-bottom:96rpx;
+}
+.inputbox{
+    margin:0 auto;
+    width:490rpx;
+    height:80rpx;
+    line-height:80rpx;
+    box-sizing: border-box;
+    background-color:#f4f4f4;
+    border:1px solid #dfdfdf;
+    border-radius: 6rpx;
+    padding:0 36rpx;
+}
+.inputbox2{
+    margin-top:40rpx;
+}
+.btn{
+    margin:76rpx auto 160rpx;
+    border-radius: 6rpx;
+    width:490rpx;
+    height:86rpx;
+    line-height:86rpx;
+    box-sizing: border-box;
+     background: -webkit-linear-gradient(#50A6FB ,#70B6FC); 
+    background: -o-linear-gradient(#50A6FB ,#70B6FC);
+    background: -moz-linear-gradient(#50A6FB ,#70B6FC);
+    background: linear-gradient(to left,#50A6FB ,#70B6FC);
+    color:#fff;
+    font-size:34rpx;
+}
+.placeholder{
+    font-size:30rpx;
+    color:#9a9a9a;
+}
+input{
+    font-size:30rpx;
+    color:#333;
+    width:100%;
+    text-align: left;
+    height:80rpx;
+    line-height:80rpx;
+}
+.codeinput{
+    width:60%;
+}
+.codebtn{
+    width:190rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    border-radius: 6rpx;
+   
+}
+.code_style1{
+    background-color: #ccc;
+}
+
+.inputbox3{
+    padding-right:10rpx;
+}

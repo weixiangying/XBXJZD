@@ -1,0 +1,46 @@
+/* pages/my/aboutMoney/member/member.wxss */
+page{    
+    background-color:#f9f9fc;
+    padding-top:10vh;
+}
+.bigbox{
+    padding:0 30rpx;
+}
+.itembox{
+    width:100%;
+    border-radius: 6rpx;
+    padding:40rpx 0 38rpx;
+    margin-top:18rpx;
+}
+.header{
+    width:86rpx;
+    height: 86rpx;
+    border-radius: 50%;
+    margin:0 16rpx;
+}
+.item_rightbox{
+    width:555rpx;
+}
+.name{
+    width:500rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+}
+.banji{
+    display: inline-block;
+    margin-left:22rpx;
+}
+.schoolname{
+    width:270rpx;
+    line-height: 35rpx;
+    margin-top:10rpx;
+}
+.duration{
+    height: 36rpx;
+    line-height: 36rpx;
+    border-radius: 18rpx;
+    padding:0 15rpx;
+}
+.time{
+    margin-top:10rpx;
+}

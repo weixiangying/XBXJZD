@@ -1,0 +1,6 @@
+<compontNavbar title="备注名" isShowBack="{{true}}" url="{{url}}" component-class="component-class"></compontNavbar>
+<view class="box">
+    <view class="tit">备注名</view>
+    <input auto-focus="true" bindinput="inputFn"></input>
+    <view class="btn" catchtap="save">保存</view>
+</view>

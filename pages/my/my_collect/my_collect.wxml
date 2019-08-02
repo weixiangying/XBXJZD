@@ -1,0 +1,66 @@
+<!--pages/my/my_collect/my_collect.wxml-->
+<import src="/template/tab/tab.wxml" />
+
+<compontNavbar title="我的收藏" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class="tabs">
+    <block wx:for="{{tabs}}" wx:key="this">
+        <template is="{{tabindex == item.index? 'tabActive': 'tab'}}" data="{{item}}"/>
+    </block>
+</view> 
+<view class='content'>
+    <block wx:if="{{showEmpty}}">
+            <empty></empty>
+        </block>
+    <block wx:if="{{tabindex == 4}}">
+        <view class="item" wx:key="this" wx:for="{{list}}" bindlongpress="del" data-id="{{item.id}}" style="{{item.txtStyle}}"  bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-idx="{{idx}}" data-index="{{index}}" style="{{item.txtStyle}}"  data-myid="{{item.id}}" data-videopic="{{item.imgurl}}" bindtap='tz_coursedetail'>               
+                <view class='newbox'>
+                    <view  bindtap='toDetail'  data-newsid='{{item.id}}'  class="news">
+                        <view class="news-lt">
+                            <image class="news-img" src="{{item.imgurl}}"></image>       
+                        </view>
+                        <view class="news-rt">
+                            <view class="news-tit two_line">{{item.title}}</view>
+                            <view class="news-tips">
+                                <view class="tips-lt">{{item.createdate}}</view>
+                                <view class="tips-rt">
+                                    <image class="news-tip-img" src="../../../images/agree.png"></image><text class="news-tip-text">{{item.likenum}}</text>
+                                        <image class="news-tip-img" src="../../../images/comment.png"></image><text class="news-tip-text">{{item.commendnum}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="del" data-id="{{item.id}}" bindtap="del">删除</view>
+            
+        </view>
+    </block>
+    <block wx:if="{{tabindex == 20}}">
+        <view class="itemtopic" wx:key="this" wx:for="{{list}}" bindlongpress="del" data-id="{{item.typeid}}" style="{{item.txtStyle}}"  bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-idx="{{idx}}" data-index="{{index}}" style="{{item.txtStyle}}" bindtap='tz_detail'>                          <view class='itemnewbox'>
+                    <view class='itembox'>
+                        <view class='p_lr_26'>
+                            <view class='item_title f_34 c_333'>#{{item.title}}</view>
+                            <image wx:if="{{item.imgurl==''}}" src='../../images/home/default_topic.png' class='item_img' mode='aspectFill'></image>
+                            <image wx:else src='{{item.imgurl}}' class='item_img' mode='aspectFill'></image>
+                            <view class='display-flex align-items-center justify-content-between itembottom'>
+                                <view class='votebigbox display-flex align-items-center'>
+                                    <view class='votebox votebigbox display-flex align-items-center'>
+                                        <image src='../../../images/home/topic_vote.png'></image>
+                                        <view>{{item.likenum}}人投票</view>
+                                    </view>
+                                    <view class='votebox votebigbox display-flex align-items-center'>
+                                        <image src='../../../images/home/topic_discuss.png'></image>
+                                        <view>{{item.commendnum}}人讨论</view>
+                                    </view>
+                                    
+                                </view>
+                                <view class='itembtn'>立即参与</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="del" data-id="{{item.id}}" bindtap="del">删除</view>
+            
+        </view>
+    </block>
+</view>

@@ -1,0 +1,97 @@
+/* pages/business/business.wxss */
+page{
+  background-color:#f4f4f4;
+  padding-top:10vh;
+  padding-bottom:120rpx;
+}
+.item_box{
+  background-color:#fff;
+  padding:20rpx 30rpx 0;
+  border-bottom:16rpx solid #f4f4f4;
+}
+.item_headerbox{
+  width:14%;
+}
+.item_headerbox image{
+  width:84rpx;
+  height:84rpx;
+}
+.item_top{
+  margin-bottom:28rpx;
+}
+.item_titlebox{
+  width:86%;
+}
+.item_title{
+  max-width: 450rpx;
+  line-height:34rpx;
+}
+.item_state{
+  font-size:24rpx;
+  color:#ea2929;
+  border-radius: 5rpx;
+  border:1rpx solid #ea2929;
+  margin-left:20rpx;
+  padding:0 9rpx;
+  height:34rpx;
+  line-height:34rpx;
+}
+.item_num{
+  margin-top:12rpx;
+}
+.item_start_img{
+  width:24rpx;
+  height:22.74rpx;
+  margin-right:8rpx;
+}
+.item_score{
+  margin-left:18rpx;
+}
+.item_type{
+  margin-top:20rpx;
+}
+.item_typetext{
+  margin-left:10rpx;
+}
+
+.item_location{
+  right:48rpx;
+  top:110rpx;
+}
+.item_location image{
+  width:18rpx;
+  height:24rpx;
+  margin-right:8rpx;
+}
+.item_contentbigbox{
+  margin-bottom:20rpx;
+  width:100%;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+.item_contentbox{
+  width:30%; 
+  background-color:#f6f6f6;
+  margin-bottom:18rpx;
+}
+.item_contentimg{
+  /* width: */
+  width:100%;
+  height:160rpx;
+  border-radius:5rpx;
+}
+.item_money{
+  font-weight:blod;
+  line-height:50rpx;
+}
+.item_money1{
+  font-weight:blod;
+  color:#ea2929;
+  margin-left:12rpx;
+}
+.item_money2{
+  font-weight:blod;
+  color:#999;
+  text-decoration:line-through;
+  margin-left:5rpx;
+}

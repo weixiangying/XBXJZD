@@ -1,0 +1,4 @@
+<view class='nodata_box' id="empty">
+  <image src='../../images/nodata.png' class='nodata_img' mode="widthFix"></image>
+  <view class='nodata_text'>暂时没有数据</view>
+</view> 

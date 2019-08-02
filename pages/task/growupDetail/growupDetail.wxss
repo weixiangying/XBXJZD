@@ -1,0 +1,131 @@
+/* pages/task/growupDetail/growupDetail.wxss */
+page{
+    background-color:#fff;
+    padding-bottom:120rpx;
+}
+.top_bigbox{
+    padding:47rpx 26rpx  36rpx;
+}
+.top_img{
+    width:100%;
+    height: 400rpx;
+}
+.top_title{
+    font-size: 40rpx;
+    line-height: 65rpx;
+    margin: 0rpx 0 40rpx;
+}
+.h1{
+    
+    width:8rpx;
+    height: 30rpx;
+    margin-right:15rpx;
+}
+.bigtitle{
+    font-size:34rpx;
+    color:#333;
+}
+.bigtitlebox{
+    margin:17rpx 0 27rpx;
+}
+.top_content{
+    line-height: 55rpx;
+}
+.top_btnbox{
+    justify-content: flex-end;
+    margin-top:22rpx;
+    
+}
+.top_arrow{
+    width:17rpx;
+    height: 9rpx;
+    margin-left:14rpx;
+}
+.contentbox{
+    border-top:16rpx solid #f4f4f4;
+}
+.newrw_box{
+    margin-bottom:67rpx;
+}
+.newrw_rwimg{
+    width:100rpx;
+    height: 100rpx;
+    margin-right:26rpx;
+}
+.newrw_toptext{
+    width:385rpx;
+    line-height: 42rpx;
+}
+.newrw_text{
+    width:385rpx;
+    line-height: 34rpx;
+}
+.newrw_btn{
+    font-size:26rpx;
+    
+    
+    width:156rpx;
+    height: 52rpx;
+    line-height: 52rpx;
+    text-align: center;
+    border-radius: 26rpx;
+}
+
+
+.bogack_img{
+    position:absolute;
+    width:18rpx;
+    height: 32rpx;
+    top:66rpx;
+    left:26rpx;
+    z-index: 3;
+}
+
+
+
+
+
+
+
+
+/* bottom */
+.fixbox{
+    position:fixed;left:0;
+    bottom:0;width:100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-top:1px solid #dfdfdf;
+    box-sizing: border-box;
+}
+.w50{
+    width:50%;
+}
+.fix_rightbox{
+    border-left:1px solid #dfdfdf;
+     box-sizing: border-box;
+}
+.fixbox_img{
+    width:36rpx;
+    height: 36rpx;
+    margin-right:18rpx;
+}
+.fixbox_num{
+    margin-left:25rpx;
+}
+.share-box{
+    margin: 0 ;
+    padding: 0;
+    border-radius: 0;
+    background:#fff;
+    border:none;
+    height: 100rpx;
+    line-height: 100rpx;
+    position:fixed;
+    font-size:30rpx;
+}
+button[plain]{
+    border: none;
+}
+.video{
+  width:100%;
+}

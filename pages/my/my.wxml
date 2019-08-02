@@ -1,0 +1,83 @@
+<!--pages/my/my.wxml-->
+<!--pages/my/pages/personInfo/personInfo.wxml-->
+<view class='position_p'>
+
+    <view class='top_bg c_gf_bg'>
+        <view class='overf' catchtap='tz_infouser'>
+            <view wx:if="{{info.nickname==''}}" class='fl top_name one_line'>您好</view>
+            <view wx:else class='fl top_name one_line'>{{info.nickname}}</view>
+            <image src='../../../../images/set.png' class='top_setimg fr'></image>
+        </view>
+        <view class='top_edittext f_28' catchtap='tz_infouser'>编辑个人信息</view>
+    </view>
+    
+    <view class='topbox position_a' id='topbox'>
+        <view class='top_contentbox'>
+            <view class='top_topnamebox display-flex align-items-center justify-content-between'>
+                <view class='top_name display-flex align-items-center'>
+                    <view wx:if="{{topempty}}"></view>
+                    <block wx:else>
+                        <view class="display-flex one_line f_30 c_333 {{currentIndex==index?'currenttext':'nocurrenttext'}}" wx:for="{{list}}" wx:key='this' bindtap='choiceName' data-uid='{{item.uid}}' data-schoolid='{{item.school_id}}' data-index='{{index}}' data-strschool='{{item.school_name}}' data-strgrade='{{item.grade_name}}'>
+                        
+                        <text class="top_name_text one_line">{{item.nickname}}</text>
+                        <image src="{{currentIndex==index?'../../images/home/top_namebg.png':'../../images/home/top_namebg2.png'}}" class='top_name_image'></image>
+                    </view>
+                    </block>
+                    
+                    
+                    <!-- <image src='../../images/home/top_namebg.png'></image> -->
+                </view>
+                
+                <navigator url='/pages/binding/binding' class='top_add display-flex align-items-center '>
+                    <image src='../../images/home/add.png'></image>
+                    <view>添加</view>
+                </navigator>
+            </view>
+            <view class='top_schoolbox display-flex align-items-center'>
+                <view class='topempty f_26 c_333' wx:if="{{topempty}}">请添加学生~</view>
+                <block wx:else>
+                    <image wx:if="{{listtab.avatar}}" src='{{listtab.avatar}}'></image>
+                    <image wx:else src='../../images/default_user.png'></image>
+                    <view>
+                        <view class='top_school f_32  two_line'>{{listtab.school_name}}</view>
+                        <view class='top_grade f_26 '>{{listtab.grade_name}} {{listtab.class_name}}</view>
+                    </view>                    
+                    
+                </block>                                
+            </view>
+            <view wx:if="{{!topempty}}" class='card_tab display-flex align-items-center justify-content-between'>
+                        <view class='card_tab_view' bindtap='tz_infostudent'>
+                            <image src='../../images/my/card_img1.png'></image>
+                            <view>学生信息</view>
+                        </view>
+                        <view class='card_tab_view' bindtap='tz_school'>
+                            <image src='../../images/my/card_img2.png'></image>
+                            <view>学校信息</view>
+                        </view>
+                        <view class='card_tab_view' bindtap='tz_supervise'>
+                            <image src='../../images/my/card_img3.png'></image>
+                            <view>家长监督</view>
+                        </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="{{topempty?'term_boxnew':'term_box'}} " >
+    <navigator class='term display-flex align-items-center justify-content-between' url='/pages/my/aboutMoney/aboutMoney'>
+        <view>我的收益</view>
+        <image src='../../images/arrow_a9.png'></image>
+    </navigator>
+    <navigator class='term display-flex align-items-center justify-content-between' url='/pages/my/my_collect/my_collect'>
+        <view>我的收藏</view>
+        <image src='../../images/arrow_a9.png'></image>
+    </navigator>
+    
+    <navigator class='term display-flex align-items-center justify-content-between' url="/pages/message/onlineSevDetail/onlineSevDetail?info={}">
+        <view>智能客服</view>
+        <image src='../../images/arrow_a9.png'></image>
+    </navigator>
+    <navigator class='term display-flex align-items-center justify-content-between' url='/pages/my/aboutus/aboutus'>
+        <view>关于我们</view>
+        <image src='../../images/arrow_a9.png'></image>
+    </navigator>
+</view>

@@ -1,0 +1,54 @@
+<!--pages/message/message.wxml-->
+<compontNavbar title="消息" isShowBack="{{false}}" component-class="component-class"></compontNavbar>
+
+
+
+    
+
+
+  
+    <navigator class='newbox position_r' url="/pages/message/onlineSevDetail/onlineSevDetail?info={}">
+        
+        <view class='display-flex align-items-center'>
+            <view class='w_17'>
+                <image  src='../../images/header.png' class='newnews_img'></image>
+            </view>
+            <view class='w_83 msg_title'>
+                有事儿找小A
+            </view>
+            
+        </view>
+    </navigator>
+    <view class='newbox position_r' wx:for="{{grouplist}}" wx:key='this' bindtap="enterLive" data-item="{{item}}">
+        
+        <view class='display-flex align-items-center'>
+            <view class='w_17'>
+                <image  src='{{item.image}}' class='newnews_img'></image>
+            </view>
+            <view class='w_83 msg_title'>
+                {{item.name}}
+            </view>
+            
+        </view>
+    </view>
+    
+
+
+
+    <!-- 已读未读的消息 -->
+    <!-- <view class='newbox position_r' wx:for="{{list}}" wx:key="this">
+        <view class='newunread' wx:if="{{item.read == 2}}"></view>
+        <view class='display-flex align-items-center'>
+            <view class='w_17'>
+                <image  src='../../images/message/news_3.png' class='newnews_img'></image>
+            </view>
+            <view class='w_83'>
+                <view class='display-flex align-items-center justify-content-between new_top'>
+                    <view class='one_line f_32 c_333 new_title'>{{item.title}}</view>
+                    <view class='new_time f_24 c_999'>{{item.send_time}}</view>
+                </view>
+                <view class='f_26 c_999 one_line new_bottom'>{{item.content}}</view>
+            </view>
+            
+        </view>
+    </view> -->

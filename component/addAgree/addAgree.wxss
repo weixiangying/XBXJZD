@@ -1,0 +1,34 @@
+.box{
+    width: 100%;
+    text-align: right;
+}
+.box text{
+    font-size: 24rpx;
+    color: #999;
+    margin-right: 14rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+.box .active{
+    color: #f05549;
+}
+.box image{
+    width: 24rpx;
+    height: 24rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.dz-icon{
+	width: 30rpx;
+    height: 30rpx;
+	margin-right: 12rpx;
+}
+.dz-count{
+	font-size: 26rpx;
+	color: #666;
+}
+.dz-count.add-count{
+	color: #f05549;
+}

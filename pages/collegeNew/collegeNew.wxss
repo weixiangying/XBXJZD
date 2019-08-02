@@ -1,0 +1,119 @@
+/* pages/collegeNew/collegeNew.wxss */
+@import "/template/scrollTab/scrollTab.wxss"; 
+page{
+    padding-top:10vh;
+    background-color:#f7f7f7;
+}
+.banner_box2{
+    background-color:#f7f7f7;
+    padding:30rpx 30rpx;
+    margin-top:80rpx;
+}
+.swiper_img2 {
+    width: 100%;
+    height: 170rpx;
+}
+.swiper_img2 image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 6rpx;
+}
+.swiper_img2 navigator {
+    width: 100%;
+    height: 100%;
+}
+/* item */
+.c_itembox{
+    border-bottom: 20rpx solid #f7f7f7;
+    padding:44rpx 0 40rpx;
+}
+.c_item_leftbox{
+    width: 240rpx;
+    height: 160rpx;
+    margin-right:28rpx;
+    margin-left:30rpx;
+}
+.c_item_position{
+    right:0;
+    top:0;
+    width:80rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: right;
+    border-top-right-radius: 6rpx;
+    background-color: red;
+    border-bottom-left-radius: 40rpx;
+    color:#fff;
+    padding-right:10rpx;
+}
+.c_item_position1{
+   
+    background: -webkit-linear-gradient(#FF9344 ,#FFBA88); 
+    background: -o-linear-gradient(#FF9344 ,#FFBA88); 
+    background: -moz-linear-gradient(#FF9344 ,#FFBA88);
+    background: linear-gradient(to left,#FF9344 ,#FFBA88);
+}
+.c_item_position2{
+   
+    background: -webkit-linear-gradient(#168EE5 ,#95C3FF); 
+    background: -o-linear-gradient(#168EE5 ,#95C3FF); 
+    background: -moz-linear-gradient(#168EE5 ,#95C3FF);
+    background: linear-gradient(to left,#168EE5 ,#95C3FF);
+}
+.c_coverimg{
+    width: 240rpx;
+    height: 160rpx;
+    border-radius: 8rpx;
+    
+}
+.w_340{
+    width:390rpx;
+}
+.c_item_text1{
+    color:#3E4871;
+    line-height: 32rpx;
+}
+.c_item_text2{
+    margin:20rpx 0 40rpx 0;
+    line-height: 24rpx;
+}
+.c_item_money{
+    color:#FF9344;
+    font-weight: bold;
+}
+.c_item_yuan{
+    color:#FF9344;
+    display: inline-block;
+    margin-left:8rpx;
+}
+.c_peopleimg{
+    width:26rpx;
+    height: 20rpx;
+    margin-right: 7rpx;
+}
+.c_item_people{
+    color:#010101;
+}
+
+
+.top_fix{
+    position:fixed;
+    top:10vh;left:0;width:100%;
+    background-color:#fff;
+    z-index: 10;
+}
+.active .scroll-item-text{
+    color: #333;
+    font-size:28rpx;
+}
+.new_newbox{
+    margin-top:90rpx;
+    background-color:#fff;
+}
+.img_bofang{
+    left:90rpx;
+    top:50rpx;
+    width:60rpx;
+    height: 60rpx;
+}

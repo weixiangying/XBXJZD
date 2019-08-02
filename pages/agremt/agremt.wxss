@@ -1,0 +1,35 @@
+
+page{
+	color:#333;
+    background: #fff;
+    padding-top:10vh;
+}
+.bigtitle{
+	font-size: 32rpx;  
+    font-weight:bold;
+	margin:0 auto;
+	margin-top:1.7rem;
+	
+	width:100%;
+	text-align:center;
+}
+.title{
+	font-size: 26rpx;  /*26px*/
+    font-weight:bold;
+	text-indent:2em;
+	line-height:2rem;
+}
+.content{
+	font-size: 24rpx;  /*24px*/
+	text-indent:2em;
+	line-height:2rem;
+}
+.box{
+	padding:0 1.2rem 2rem;
+}
+.mt{
+	margin-top:1.5rem;
+}
+	
+
+	

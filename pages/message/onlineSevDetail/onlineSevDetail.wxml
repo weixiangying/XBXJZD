@@ -1,0 +1,58 @@
+<compontNavbar title="在线咨询" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<template name="timeMsg">
+    <view class="sys-msg-box">
+        <text class="sys-msg">{{item.timeStr}}</text>
+    </view>
+</template>
+<template name="recevMsg">
+    <image class="head-img" src="{{base}}images/header.png" mode="aspectFill"></image>
+    <view class="rt-box">
+    <view class="user user-2">小A</view>
+    <view class="cont-box cont-box-2">
+        <view class="triangle triangle2"></view>
+        <view class="msg msg2">
+            <block wx:for="{{item.results}}" wx:for-item="im" wx:key="this">
+                <view class="li {{im.values.isLink? 'link-color': ''}}" catchtap="getDetail" data-hid="{{im.values.id}}">
+                <block wx:if="{{item.results.length > 1 && im.values.index != 0}}">{{im.values.index}}.</block>
+                {{im.values.text}}
+                </view>
+            </block>
+        </view>
+    </view>
+    </view>
+</template>
+<template name="sendMsg">
+    <view class="rt-box">
+        <view class="user user-1">{{item.name}}</view>
+        <view class="cont-box cont-box-1">
+            <view class="msg">
+                {{item.text}}
+            </view>
+            <view class="triangle triangle1"></view>
+        </view>
+    </view>
+    <image class="head-img" src="{{item.img || base + 'images/default_user.png'}}" mode="aspectFill"></image>
+</template>
+
+<view class="box" id='box'>
+    <block wx:for="{{list}}" wx:key="this">
+        <block wx:if="{{item.time - list[index - 1].time > 50}}">
+            <template is="timeMsg" data="{{item}}" />
+        </block>
+        <view class="item {{item.isSelf? 'self-box' : ''}}">    
+            <template is="{{item.isSelf? 'sendMsg' : 'recevMsg'}}" data="{{item, base}}"/>
+        </view>
+
+    </block>
+</view>
+
+<view class="bottom-box">
+    <view class="input-cont">
+        <view class="input-box">
+            <input bindinput="inputFn" value="{{msg}}" placeholder="输入问题关键词提问" placeholder-class="place"></input>
+        </view>
+        <view class="btn" bindtap="sendMsg">发送</view>
+    </view>
+</view>

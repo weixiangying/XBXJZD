@@ -1,0 +1,72 @@
+<!--pages/collegeNew/play/play.wxml-->
+<compontNavbar title="课程详情" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+<view class='video_box' wx:if="{{filetype==1}}">
+    <video src='{{playsrc}}' class='video' autoplay='true'></video>
+</view>
+
+<view wx:else class='video_box position_r'>
+    <image src='{{topimg}}' class='video_s_img position_a' mode='aspectFill'></image>
+    
+    <view class='slid'>
+      <slider bindchange="sliderChange"  block-size="12px" step="2" value="{{offset}}" max="{{max}}" selected-color="#4c9dee" />
+      <view>
+        <text class='times'>{{starttime}}</text> <!-- 进度时长 -->       
+        <text class='times'>{{duration}}</text>   <!-- 总时长 -->
+      </view>
+    </view>
+    
+
+    <view class='position_a video_s_bottom display-flex align-items-center '>
+        <view class='video_leftimg' catchtap='video_leftimg' data-direction='1'>
+            <image class='' src="../../../images/college/left.png" />
+        </view>
+        <view class="audioOpen" bindtap="listenerButtonPlay" wx:if="{{!isOpen}}">
+            <image class='image2' src="../../../images/college/bofang_fff.png" />
+        </view>
+        <view class="audioOpen" bindtap="listenerButtonPause" wx:if="{{isOpen}}">
+            <image class='image2' src="../../../images/college/stop_fff.png"/>
+        </view>
+        <view class='video_leftimg' catchtap='video_leftimg' data-direction='2'>
+            <image class='' src="../../../images/college/right.png" />
+        </view>
+    </view>
+</view>
+<view class='centerbox bg_fff display-flex align-items-center'>
+    <view class='h1'></view>
+    <view class='h1_text f_32'>其他课程</view>
+</view>
+<!-- <view class='item_box bg_fff'>
+    <view class='display-flex align-items-center justify-content-between'>
+        <view class='display-flex align-items-center'>
+            <view>01</view>
+            <view>01</view>
+        </view>
+        <view>2018-01-04</view>
+    </view>    
+</view> -->
+<scroll-view scroll-y="true" style="height:{{scrollheight}}px">
+    <block wx:if="{{showEmpty}}">
+        <empty></empty>
+    </block>
+
+    <view class='right_item bg_fff' wx:for='{{list}}' wx:key='this' data-playid='{{item.fileid}}' data-playsrc='{{item.fileurl}}' catchtap='tz_play'>
+            <view class='display-flex align-items-center'>
+                <image wx:if='{{currentplayid==item.fileid}}' src='{{playicon}}' class='play_video {{playicontype==2?"play_videonew":""}}'></image>
+                <view wx:else class='right_item_num f_32 c_999'>{{item.myindex}}</view>
+                <view class='right_item_center'>
+                    <view class='two_line right_item_center_text1 f_28 {{currentplayid==item.fileid?"c_gf":""}}'>{{item.filename}}</view>                
+                </view>
+            </view>
+            <view class='display-flex align-items-center new_timebox'>
+                        <view class='display-flex align-items-center' wx:if='{{item.filetime}}'>
+                            <image src='../../../images/college/time.png' class='right_item_center_img'></image>
+                            <view class='f_24 c_999 right_item_center_text2'>{{item.filetime}}</view>
+                        </view>
+                        <view class='display-flex align-items-center'>
+                            <image src='../../../images/college/create.png' class='right_item_center_img'></image>
+                            <view class='f_24 c_999 right_item_center_text2'>{{item.createtime}}</view>
+                        </view>
+            </view>  
+    </view>
+    
+</scroll-view>

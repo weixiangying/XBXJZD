@@ -1,0 +1,104 @@
+<!--pages/course/course.wxml-->
+
+
+<compontNavbar title="商学院" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<!-- <import src="/template/scrollTab/scrollTab.wxml" />
+<view class='top_fix' >
+    <scroll-view class="scroll-view" scroll-x="true">
+        <block wx:for="{{tabs}}" wx:key="this">
+            <template is="{{selectedTab == item.id? 'scrollTabActive': 'scrollTab'}}" data="{{item}}" />
+        </block>
+    </scroll-view>
+</view> -->
+
+
+
+
+
+<view wx:if="{{imgUrls.length}}" class='containbox'>
+    <swiper autoplay="false" duration="500" indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" >
+        <block wx:for="{{imgUrls}}" wx:key="this">
+            <swiper-item>
+                <image src="{{item.image}}" class="slide-image" catchtap="toH5" data-type="{{item.to_type}}" data-url="{{item.url}}" data-toid="{{item.to_id}}" mode='aspectFill'/>
+            </swiper-item>
+        </block>
+    </swiper>
+    
+</view>
+<view class="tabs {{imgUrls.length==0?'mttab':''}}">
+        <view class="new_tab"  data-classifyid='{{classifyList[0].PrimaryID}}' data-mytext='{{classifyList[0].TypeName}}' catchtap='tz_newcollege'>
+            <image wx:if='{{classifyList[0].imgUrl}}' class="new_tab_img" src="{{classifyList[0].imgUrl}}"></image>
+            <image wx:else class="new_tab_img" src="../../images/normal_pic12.png"></image>
+            <view class='new_tab_text'>{{classifyList[0].TypeName}}</view>
+        </view>
+        <view class="new_tab" data-classifyid='{{classifyList[1].PrimaryID}}' catchtap='tz_newcollege' data-mytext='{{classifyList[1].TypeName}}'>
+            <image wx:if='{{classifyList[0].imgUrl}}' class="new_tab_img" src="{{classifyList[1].imgUrl}}"></image>
+            <image wx:else class="new_tab_img" src="../../images/normal_pic12.png"></image>
+            <view class='new_tab_text'>{{classifyList[1].TypeName}}</view>
+        </view>
+        <view class="new_tab" data-classifyid='{{classifyList[2].PrimaryID}}' catchtap='tz_newcollege' data-mytext='{{classifyList[2].TypeName}}'>
+            <image wx:if='{{classifyList[0].imgUrl}}' class="new_tab_img" src="{{classifyList[2].imgUrl}}"></image>
+            <image wx:else class="new_tab_img" src="../../images/normal_pic12.png"></image>
+            <view class='new_tab_text'>{{classifyList[2].TypeName}}</view>
+        </view>
+        <view class="new_tab"   catchtap='mytop'>
+            <image class="new_tab_img" src="../../images/course/course_img8.png"></image>
+            <view class='new_tab_text'>全部</view>
+        </view>
+</view>
+
+<view class='p_lr_26'>
+     <view class='coursebigtitle c_333 font_weight_b'>新品课</view>
+</view>     
+      <!-- <block wx:if="{{showEmpty}}">
+        <empty></empty>
+      </block>  
+      
+      <view class='newcourse_itembox' wx:for="{{list}}" wx:key="this" data-myid='{{item.LessonID}}' catchtap='tz_detail'>
+        <view class='position_r'>
+            <image wx:if="{{item.LessonImage}}" class='newcourse_topimg' src='{{item.LessonImage}}' mode='aspectFill' ></image>
+            <image wx:else class='newcourse_topimg' src='../../images/normal_pic1.png' mode='aspectFill' ></image>
+            
+            
+        </view>
+        
+        <view class='newcourse_title f_32 c_333 display-flex'>
+          
+          <text class='text_new2 one_line'>{{item.LessonName}}</text>
+        </view>        
+                 
+        <view class='newcourse_time f_26 c_666'>
+            {{item.LessonContent}}           
+        </view>          
+        
+      </view>    -->
+       <block wx:if="{{showEmpty}}">
+            <empty></empty>
+        </block>
+        <view class='c_itembox display-flex' wx:for='{{list}}' wx:key='this' data-myid='{{item.LessonID}}' catchtap='tz_detail'>
+            <view class='c_item_leftbox position_r'>
+                <image wx:if='{{item.LessonImage}}' src='{{item.LessonImage}}' class='c_coverimg' mode='	aspectFill'></image>
+                <image wx:else src='../../images/normal_pic1.png' class='c_coverimg' mode='aspectFill'></image>
+                
+                <view wx:if="{{item.ClassType==1}}" class='position_a c_item_position f_24 c_item_position1'>视频</view>
+                <view wx:if="{{item.ClassType==2}}" class='position_a c_item_position f_24 c_item_position2'>音频</view>
+                <image class='position_a img_bofang' src='../../images/college/img_bofang.png'></image>
+            </view>
+            <view class='w_340'>
+                <view class='one_line c_item_text1 f_32'>{{item.LessonName}}</view>
+                <view class='one_line c_item_text2 f_24 c_666'>{{item.LessonContent}}</view>
+                <view wx:if="{{item.LessonPrice==0}}" class='c_item_money f_32'>免费</view>
+                <view wx:else class='display-flex align-items-center justify-content-between'>
+                    <view>
+                        <text class='c_item_money f_32'>{{item.LessonPrice}}</text>
+                        <text class='c_item_yuan f_24'>元</text>
+                    </view>
+                    <view class='display-flex align-items-center'>
+                        <image src='../../images/college/people.png' class='c_peopleimg'></image>
+                        <view class='c_item_people f_26'>{{item.PayNum}}人已购</view>
+                    </view>
+                </view>
+            </view>
+        </view>

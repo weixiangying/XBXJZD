@@ -1,0 +1,4 @@
+/* pages/emptypage/emptypage.wxss */
+page{
+    padding-top:10vh;
+}

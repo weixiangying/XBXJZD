@@ -1,0 +1,33 @@
+/*暂无数据  */
+.nodata_box{
+    width: 100%;
+    min-width: 600rpx;
+    min-height: 30vh;
+    text-align: center;
+}
+/* .nodata_img{
+    width: 40%;
+    margin: 10% auto;
+}
+.nodata_text{
+    width: 100%;
+    font-size: 30rpx;
+    color: #666;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+} */
+
+
+.nodata_img{
+    width: 40%;
+    height: 20vh;
+    margin: 10% auto;
+}
+.nodata_text{
+    width: 100%;
+    font-size: 30rpx;
+    color: #666;
+    margin-bottom: 10%;
+    text-align: center;
+}

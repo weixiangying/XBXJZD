@@ -1,0 +1,6 @@
+<navigat-bar class="navigation-box component-class" id="compontNavbar">
+    <view class="back-box" bindtap="goBack" wx:if="{{isShowBack}}">
+        <image class="navigation-back-icon" src="../../images/arow_top_left.png"></image>
+    </view>
+    <view class="navigation-tit">{{title}}</view>
+</navigat-bar>

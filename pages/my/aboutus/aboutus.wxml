@@ -1,0 +1,24 @@
+<!--pages/my/aboutus/aboutus.wxml-->
+<compontNavbar title="关于我们" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<view class='containbox'>
+    <image src='../../../images/logo.png' class='logoimg'></image>
+    <view class='c_333 font_weight_b f_30 title'>{{idname}}-家长端</view>
+    <image src='../../../images/my/aboutus.png' class='aboutusimg' ></image>
+    <view class='num f_30 c_333'>版本号：{{version}}</view>
+    <navigator class='linebox bottombox display-flex align-items-center justify-content-between f_30' url='/pages/my/advise/advise'>
+        <view class='c_gf'>投诉建议</view>
+        <view class='display-flex align-items-center justify_content'>
+            <view class='c_999'>我们需要您的宝贵意见</view>
+            <image src='../../../images/arrow_a9.png'></image>
+        </view>
+    </navigator>
+    <view class='bottombox display-flex align-items-center justify-content-between f_30 mb37'>
+        <view class='c_gf'>客服电话</view>
+        <view class='display-flex align-items-center justify_content'>
+            <view class='c_999' catchtap='makePhone'>{{tel}}</view>
+            <image src='../../../images/arrow_a9.png'></image>
+        </view>
+    </view>
+</view>

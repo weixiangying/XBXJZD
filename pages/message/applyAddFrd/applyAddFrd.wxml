@@ -1,0 +1,13 @@
+<compontNavbar title="验证申请" isShowBack="{{true}}" url="/pages/message/newFrd/newFrd" component-class="component-class"></compontNavbar>
+
+<view class="box">
+    <view class="item">
+        <view class="tit">您需要发送验证申请，等对方通过</view>
+        <input bindinput="applyInput"></input>
+    </view>
+    <view class="item">
+        <view class="tit">为朋友设置备注</view>
+        <input bindinput="inputFn"></input>
+    </view>
+    <view class="btn" catchtap="send">发送</view>
+</view>

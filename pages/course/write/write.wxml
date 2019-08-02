@@ -1,0 +1,11 @@
+<!--pages/courseList/write/write.wxml-->
+<compontNavbar title="{{navtitle}}" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<form bindsubmit="bindFormSubmit">
+  <view class='textareabox'>
+    <textarea placeholder='{{placeholder}}' placeholder-class='placeholder' name="neirong" value='{{neirong}}' maxlength="{{maxlength}}" auto-height="true"></textarea>
+  </view>
+  <view class='bottombox'>
+    <button formType="submit" class='btn c_gf_bg' >保存</button>
+  </view>
+</form>

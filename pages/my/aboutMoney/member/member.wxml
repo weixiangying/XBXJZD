@@ -1,0 +1,17 @@
+<!--pages/my/aboutMoney/member/member.wxml-->
+<compontNavbar title="直属会员" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<block wx:if="{{showEmpty}}">
+    <empty></empty>
+</block>
+
+<view class='bigbox'>   
+    <view class='itembox bg_fff display-flex align-items-center' wx:for='{{list}}' wx:key='this'>
+        <image wx:if="{{item.avatar}}" src='{{item.avatar}}' class='header'></image>
+        <image wx:else src='{{base}}images/default_user.png' class='header'></image>
+        <view class='item_rightbox '>           
+            <view class='name c_333 f_28 one_line'>{{item.realname}}</view>                
+            <view class='time f_24 c_999'>注册日期：{{item.create_time}}</view>           
+        </view>
+    </view>
+</view>

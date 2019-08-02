@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        
+        "compontNavbar": "/component/navigation/navigation"
+    }
+}

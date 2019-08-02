@@ -1,0 +1,52 @@
+<!--pages/composition/composition.wxml-->
+<!-- searchnew -->
+
+
+<!-- newsearch -->
+<view class="navigation-box component-class c_bg_gf" wx:if="{{changeCss==2}}" id='showtwo'>
+    <view class="back-box2" bindtap="goBack" >
+        <image class="navigation-back-icon" src="../../images/arow_top_left_fff.png"></image>
+    </view>
+    <view class='newsearchbox display-flex justify-content-between align-items-center'>
+        <input class='top_inputnew' placeholder='请输入作文标题' placeholder-class='placeholder' bindinput="saveSearch" type='text' bindconfirm='submit' confirm-type='search'></input>
+        <image src='../../images/search_999.png' class='search_img search_imgnew' catchtap="submit"></image>
+    </view>
+</view>
+<!-- search -->
+<view class='position_r topbox' id='showone' >
+    <image src='../../images/home/composition_bg.png' class='composition_bg'></image>
+    <view class='position_a topbox_position'>
+        <view bindtap="goBack" class="back-box">
+            <image class="navigation-back-icon arrow_back" src="../../images/arow_top_left_fff.png"></image>
+        </view>
+        <view class='topbox_title'>作文搜索</view>
+        <view class='top_inputbox display-flex justify-content-between align-items-center'>
+            <input class='top_input' placeholder='请输入作文标题' placeholder-class='placeholder' bindinput="saveSearch" type='text' bindconfirm='submit' confirm-type='search'></input>
+            <image src='../../images/search_999.png' class='search_img' catchtap="submit"></image>
+        </view>
+    </view>
+</view>
+
+
+<view class='compositionbox'>
+    
+    <view  class='composition_padding'>
+        <view class='display-flex align-items-center maintitle'>
+            <image src='../../images/home/composition_hot.png'></image>
+            <view class='f_32 c_333 font_weight_b'>精选作文</view>
+        </view>
+        <block wx:if="{{showEmpty}}">
+            <empty></empty>
+        </block>
+        <!-- for -->
+        <view wx:else>       
+            <view  class='itembox' wx:for="{{list}}" wx:key='this' bindtap='tz_detail' data-myid='{{item.Id}}'>
+                <view class='title f_32 c_333 font_weight_b'>
+                    {{item.Name}}<text class='title_text'>优秀</text>
+                </view>
+                <view class='item_style f_24'>{{item.GradeId}}·{{item.grammar}}·{{item.WordNum}}字</view>
+                <view class='item_content f_26 c_999'>{{item.Intro}}</view>
+            </view>
+        </view>
+    </view>
+</view>

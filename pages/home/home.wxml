@@ -1,0 +1,94 @@
+<!--pages/home/home.wxml-->
+
+<view class="navigation-box component-class" >
+    <view class="back-box display-flex align-items-center" bindtap="tz_little">
+        <image src='../../images/arrow_switch.png' class='arrow_switch'></image>
+        <view class='switch_text'>学生端</view>
+    </view>
+    
+</view>
+
+<view class='banner_box'>
+    <swiper autoplay="false" duration="500" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#4bace2" id='queryone' class='swiper_img' wx:if='{{imgUrls}}'>
+        <block wx:for="{{imgUrls}}" wx:key="this">
+            <swiper-item>
+                <image src="{{item.image}}" class="slide-image" catchtap="toH5" data-type="{{item.to_type}}" data-url="{{item.url}}" data-toid="{{item.to_id}}" mode='aspectFill'/>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<view class='display-flex align-items-center justify-content-around newtop_bigbox '>
+    <view class='newtop_itembox' catchtap='tz_supervise'>
+        <image src='{{base}}images/home/home_img1.png' class='new_toping'></image>
+        <view class='new_toptext f_24'>家长监督</view>
+    </view>
+    <navigator class='newtop_itembox' url='/pages/course/course'>
+        <image src='{{base}}images/home/home_img2.png' class='new_toping'></image>
+        <view class='new_toptext f_24'>新华课典</view>
+    </navigator>
+    <!-- <view class='newtop_itembox' catchtap='opened' >
+        <image src='{{base}}images/home/home_img3.png' class='new_toping'></image>
+        <view class='new_toptext f_24'>商学院</view>
+    </view> -->
+    <navigator class='newtop_itembox' url='/pages/college/college'>
+        <image src='{{base}}images/home/home_img3.png' class='new_toping'></image>
+        <view class='new_toptext f_24'>商学院</view>
+    </navigator>
+    <navigator class='newtop_itembox' url='/pages/business/business'>
+        <image src='{{base}}images/home/home_img4.png' class='new_toping'></image>
+        <view class='new_toptext f_24'>联盟商家</view>
+    </navigator>
+    <navigator class='newtop_itembox' url='/pages/tool/tool'>
+        <image src='{{base}}images/home/home_img5.png' class='new_toping'></image>
+        <view class='new_toptext f_24'>家长工具</view>
+    </navigator>
+</view>
+
+
+
+<view class='banner_box2'>
+    <swiper autoplay="false" duration="500" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#4bace2" id='queryone' class='swiper_img2' wx:if='{{imgUrls}}'>
+        <block wx:for="{{imgUrlsNew}}" wx:key="this">
+            <swiper-item>
+                <image src="{{item.image}}" class="slide-image2" catchtap="toH5New"  mode='aspectFill' data-type="{{item.to_type}}"/>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+
+<view class='new_centerbox display-flex align-items-center justify-content-around'>
+    <!-- <navigator><image src='{{base}}images/home/center_img1.png' class='newcenter_img'></image></navigator>
+    <navigator><image src='{{base}}images/home/center_img2.png' class='newcenter_img'></image></navigator>
+    <navigator><image src='{{base}}images/home/center_img3.png' class='newcenter_img'></image></navigator> -->
+    <image src='{{base}}images/home/center_img1.png' class='newcenter_img' catchtap='tz_czwt'></image>
+    <image src='{{base}}images/home/center_img2.png' class='newcenter_img' catchtap='tz_ryht'></image>
+    <image src='{{base}}images/home/center_img3.png' class='newcenter_img' catchtap='tz_jyzx'></image>
+</view>
+<view class='new_hometitle display-flex align-items-center'>
+    <view class='new_hometitle_h1 c_gf_bg'></view>
+    <view class='new_hometitle_h2 f_36'>家长课堂</view>
+</view>
+<view class='p_lr_30'>
+    <block wx:if="{{showCourseEmpty}}">
+        <empty></empty>
+    </block> 
+    
+    <navigator url="{{'/pages/news/newsDetail/newsDetail?id='+item.id + '&img=' + item.image}}" class='new_bottomitem display-flex' wx:for="{{newsList}}" wx:key='this'>
+        <image wx:if='{{item.image}}' src='{{item.image}}' class='new_bottomitem_leftimg'></image> 
+        <image wx:else src='{{base}}images/normal_pic1.png' class='new_bottomitem_leftimg'></image>
+        <!-- <image  src='{{base}}images/normal_pic1.png' class='new_bottomitem_leftimg'></image> -->
+        <view>
+            <view class='new_bottom_text1 f_28 one_line'>{{item.name}}</view>
+            <view class='new_bottom_text2 f_24 two_line'>{{item.intro}}</view>
+            <view class='display-flex align-items-center new_bottom_smbox'>
+                <image src='../../images/msg_bd.png' class='new_bottom_img1'></image>
+                <view class='new_bottom_text3'>{{item.commentnum}}</view>
+                <image src='../../images/heart_bd.png' class='new_bottom_img1'></image>
+                <view class='new_bottom_text3'>{{item.agreenum}}</view>
+            </view>
+        </view>
+    </navigator>
+    
+</view>

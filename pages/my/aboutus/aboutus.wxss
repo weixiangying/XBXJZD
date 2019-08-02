@@ -1,0 +1,47 @@
+/* pages/my/aboutus/aboutus.wxss */
+page{
+    padding-top: 10vh;
+    background-color: #fff;
+}
+.containbox{
+    padding:58rpx 30rpx 37rpx;
+}
+.logoimg{
+    display: block;
+    width:141rpx;
+    height: 141rpx;
+    margin: 0 auto;
+}
+.title{
+    text-align: center;
+    line-height: 125rpx;
+    margin-bottom:22rpx;
+}
+.aboutusimg{
+    width:690rpx;
+    height:316rpx;
+    margin:0 auto;
+}
+.num{
+    text-align: center;
+    margin-top:118rpx;
+}
+.bottombox{
+    line-height:90rpx;
+    box-sizing: border-box;
+}
+.linebox{
+    border-bottom:1px solid #dfdfdf;
+    margin-top:180rpx;
+}
+.justify_content{
+    justify-content:flex-end;
+}
+.justify_content image{
+    width:13rpx;
+    height:22rpx;
+    margin-left:21rpx;
+}
+.mb37{
+    margin-bottom:37rpx;
+}

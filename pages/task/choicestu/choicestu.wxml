@@ -1,0 +1,14 @@
+<!--pages/task/choicestu/choicestu.wxml-->
+<compontNavbar title="选择学生" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+<view class='mtbox'>
+    <view class='item display-flex align-items-center' wx:for='{{list}}' wx:key='this' bindtap='tz_task' data-uid='{{item.uid}}'>
+        <image wx:if="{{item.avatar}}" src='{{item.avatar}}' class='headerimg'></image>
+        <image wx:else src='../../../images/default_user.png' class='headerimg'></image>
+       
+        <view class='name c_333 f_34'>{{item.nickname}}</view>
+    </view>
+    <!-- <view class='item display-flex align-items-center'>
+        <image src='../../../images/default_user.png' class='headerimg'></image>
+        <view class='name c_333 f_34'>name</view>
+    </view> -->
+</view>

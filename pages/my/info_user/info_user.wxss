@@ -1,0 +1,6 @@
+/* pages/my/info_user/info_user.wxss */
+@import "/pages/my/info_student/info_student.wxss";
+
+.information-photo{
+    right:57rpx;
+}

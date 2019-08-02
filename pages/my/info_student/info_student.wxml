@@ -1,0 +1,34 @@
+<!--pages/my/info_student/info_student.wxml-->
+<compontNavbar title="孩子信息" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<view class="information">
+  <view class="information-Head position-relative" >
+    <text class="information-text mylineheight">我的头像</text>
+    <view class="information-photo">
+        <image wx:if="{{info.avatar==''}}" src="../../../images/default_user.png" mode="aspectFill"></image>
+        <image wx:else src="{{info.avatar}}" mode="aspectFill"></image>
+    </view>
+   
+  </view>
+  <view class="information-personal position-relative" >
+    <text class="information-text">姓名</text>
+    <text class="information-telephone">{{info.nickname}}</text>
+  </view>
+  <view class="information-personal position-relative" >
+    <text class="information-text">学校</text>
+    <text class="information-telephone">{{strschool}}</text>
+  </view>
+  <view class="information-personal position-relative" >
+    <text class="information-text">年级</text>
+    <text class="information-telephone">{{strgrade}}</text>
+  </view>
+  <view class="information-personal position-relative">
+    <text class="information-text">注册手机</text>
+    <text class="information-telephone">{{info.mobile}}</text>
+  </view>
+</view>
+
+<view class='p_lr_26'>
+    <view bindtap='bind_off' class='bind_off'>解除绑定</view>
+</view>

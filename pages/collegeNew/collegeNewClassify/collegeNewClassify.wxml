@@ -1,0 +1,30 @@
+<!--pages/collegeNew/collegeNewClassify/collegeNewClassify.wxml-->
+<compontNavbar title="全部分类" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<view class='contentbigbox'>
+  <scroll-view class="leftbox position_a" scroll-y="true"  style="height:{{scrollHeight}}px">
+    <view wx:for="{{classifyList}}" wx:key="this" bindtap='left_choice' data-leftid='{{item.PrimaryID}}' data-classifytext='{{item.TypeName}}' class="lefttext {{item.PrimaryID==currentid?'current':''}}">
+      <view>{{item.TypeName}}</view>
+    </view>  
+  </scroll-view>
+  
+
+  <scroll-view class='tabright rightbox position_a' scroll-y="true" scroll-top="{{scrollTop}}" style="height:{{scrollHeight2}}px">    
+    <view class='rightbigbox'>
+        <view class='right_topimg_box'>
+           
+            <image  src='../../../images/college/ad.png' class='right_topimg'></image>
+        </view>
+        <view class='display-flex align-items-center right_itembox'>
+            <view class='right_item' wx:for='{{listtwo}}' wx:key='this' catchtap='tz_page' data-rightid='{{item.PrimaryID}}'>
+                <image wx:if='{{item.imgUrl}}' src='{{item.imgUrl}}' class='right_item_img'></image>
+                <image wx:else src='../../../images/normal_pic12.png' class='right_item_img'></image>
+                <view class='right_item_text f_28 c_666'>{{item.TypeName}}</view>
+            </view>
+            
+        </view>
+        
+    </view>           
+  </scroll-view>
+</view>

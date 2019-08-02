@@ -1,0 +1,61 @@
+<!--pages/binding/archives/archives.wxml-->
+<compontNavbar title="" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class='bigbox' >
+    <view class='h1 c_333'>建立孩子学习档案</view>
+    <view class='h2  f_30'>获取个性化学习推荐，保存学习进度</view>
+    <view class='sexbox f_28 display-flex align-items-center'>
+        <view class="sex_view sex_boy display-flex align-items-center {{sex==1?'bgboy':''}}" catchtap='choicesex' data-sex='1'>
+            <image src='../../../images/sex_boy.png' class='sex_img'></image>
+            <view>男</view>
+        </view>
+        <view class="sex_view sex_girl display-flex align-items-center {{sex==2?'bggirl':''}}" catchtap='choicesex' data-sex='2'>
+            <image src='../../../images/sex_girl.png' class='sex_img'></image>
+            <view class=''>女</view>
+        </view>       
+    </view>
+    <view class='inputbox'>
+        <input placeholder='请输入孩子姓名' placeholder-class='placeholder' type='text' confirm-type='next' bindinput="nameInputEvent"></input>
+    </view>
+    
+    <view class="pickerbox f_30 c_333">       
+        <view class='display-flex justify-content-between align-items-center' catchtap="showPicerFn">
+            <view class="" wx:if="{{address.length > 0}}">{{address[0].name + address[1].name + address[2].name}}</view>
+            <view wx:else class="">省市区</view> 
+            <image class="arrow-rt-icon" src='../../../images/arrow_downarrow.png'></image>   
+        </view>
+    </view>
+    <picker class="pickerbox f_30 c_333" bindchange="bindPickerSchool" value="{{schoolIndex}}" range="{{schoolList}}" range-key="name">        
+            
+            <view class="display-flex justify-content-between align-items-center">
+                <view class="" wx:if="{{schoolIndex}}">{{schoolList[schoolIndex].name}}</view>
+                <view wx:else class="">所在学校</view>
+                <image class="arrow-rt-icon" src='../../../images/arrow_downarrow.png'></image>   
+            </view>       
+    </picker>
+    <picker bindchange="bindPickerGrade" value="{{gradeIndex}}" range="{{gradeList}}" range-key="name" class="pickerbox f_30 c_333">
+        
+            
+            <view class="display-flex justify-content-between align-items-center">
+                <view class="" wx:if="{{gradeIndex}}">{{gradeList[gradeIndex].name}}</view>
+                <view wx:else class="">所在年级</view>
+                <image class="arrow-rt-icon" src='../../../images/arrow_downarrow.png'></image>   
+            </view>
+        
+    </picker>
+    <picker mode="selector" bindchange="bindPickerClass" value="{{classIndex}}" range="{{classList}}" range-key="name" class="pickerbox f_30 c_333">
+        
+            <view class="display-flex justify-content-between align-items-center">
+                <view class="" wx:if="{{classIndex}}">{{classList[classIndex].name}}</view>
+                <view wx:else class="">所在班级</view>
+                <image class="arrow-rt-icon" src='../../../images/arrow_downarrow.png'></image>   
+            </view>
+        
+    </picker>
+    <view class="btn-box" bindtap="saveSchool">
+        创建档案
+    </view>
+</view> 
+
+
+<addressPicker wx:if="{{showPicker}}" catch:pikerConfirm="getAddressInfo" catch:pikerCancel="hidePicker"></addressPicker>

@@ -1,0 +1,36 @@
+<compontNavbar title="详情资料" isShowBack="{{true}}" url="{{url}}" component-class="component-class"></compontNavbar>
+<view class="box">
+    <view class="header">
+        <image src="{{base}}images/default_user.png" class="h-img"></image>
+        <view class="h-cont">
+            <view class="tit-box">
+                <text wx:if="{{detail.friend_remark}}">{{detail.friend_remark}}</text>
+                <text class="tit" wx:else>{{detail.nickname}}</text>
+                <image src="../../../images/message/sex1.png" class="sex-icon" mode="aspectFill" wx:if="{{detail.sex == 1}}"></image>
+                <image src="../../../images/message/sex2.png" class="sex-icon" mode="aspectFill" wx:if="{{detail.sex == 2}}"></image>
+            </view>
+            <view class="sub">年级：{{detail.grade_name}}</view>
+        </view>
+    </view>
+    <view class="cont-box" wx:if="{{!detail.friend_remark && detail.is_friend == 1}}">
+        <view class="item" bindtap="toRemarks">
+            <view class="title">设置备注</view>            
+            <image src="{{base}}images/arowRtGray.png" class="next-icon"></image>
+        </view>
+    </view>
+    <view class="cont-box">
+        <view class="item">
+            <view class="title">所在学校</view>
+            <view class="cont">{{detail.school_name}}</view>
+        </view>
+        <view class="item" bindtap="toClassmate">
+            <view class="title">个人相册</view>
+            <view class="img-list">
+                <image mode="aspectFill" src="{{item.photo}}" wx:for="{{photos}}" wx:key="this" wx:if="{{index < 3}}"></image>
+            </view>
+        </view>
+    </view>
+
+    <view class="btn" wx:if="{{detail.is_friend == 0}}" catchtap="addFrd">添加好友</view>
+    <view class="btn" wx:if="{{detail.is_friend == 1 && detail.is_black_list != 1}}" bindtap="enterLive">发消息</view>
+</view>

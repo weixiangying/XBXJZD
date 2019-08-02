@@ -1,0 +1,154 @@
+/* pages/task/task.wxss */
+page{
+    background-color:#fff;
+    padding-top: 10vh;
+}
+.nostudent{
+    padding-top:20rpx;
+}
+.topbox{
+    box-shadow:rgba(102,102,102,0.1) 0px 0px 5px 5px;
+    height: 120rpx;
+    border-radius: 10rpx;
+    margin-top:30rpx;
+    padding-right:24rpx;
+    margin-bottom:30rpx;
+}
+.topbox_img{
+    width:74rpx;
+    height: 74rpx;
+    border-radius: 50%;
+    margin:0 40rpx 0 40rpx;
+}
+.top_name{
+    line-height: 120rpx;
+    width:420rpx;
+}
+.arowRtGray{
+    width:17rpx;
+    height: 24rpx;
+    
+}
+.topimgbox{
+    margin-bottom:24rpx;
+}
+.top_taskimg{
+    width:338rpx;
+    height: 150rpx;
+    display: block;
+    margin:0;
+    padding:0;
+}
+.topimg_text{
+    font-size:34rpx;
+    color:#fff;
+    left:44rpx;top:0;
+    line-height: 150rpx;
+}
+
+.centerbox{
+    border-top:16rpx solid #f4f4f4;
+    margin-bottom:60rpx;
+}
+.new_rwitembox{
+    margin:0rpx 26rpx 20rpx;
+    border-bottom:1px solid #dfdfdf; 
+}
+.new_smbox{
+    /* border-bottom:1px solid #dfdfdf; */
+    padding:20rpx 0 20rpx;
+
+}
+.center_title1{
+    line-height: 100rpx;
+}
+.newrw_rwimg{
+    width:100rpx;
+    height: 100rpx;
+    margin-right:42rpx;
+}
+.newrw_toptext{
+    margin-bottom:10rpx;
+}
+.newrw_toptext text{
+    display: inline-block;
+    color:#E6A22A;
+    font-size:24rpx;
+    margin-left:14rpx;
+}
+.newrw_pro{
+    background-color: #CDEDFF;
+    width:250rpx;
+    height: 14rpx;
+    margin-right:14rpx; 
+    border-radius: 7rpx;
+}
+.newrw_pro_cur{
+    left:0;top:0;
+    
+    height: 14rpx;
+    background-color:#4BACE2;
+    border-radius: 7rpx;
+    max-width: 250rpx;
+}
+.newrw_protext{
+
+}
+.img_down{
+    width:21rpx;
+    height: 23rpx;
+}
+.newbtn{
+    height: 50rpx;
+    line-height: 50rpx;
+}
+.newbtn4{
+    color:#FF6427;
+    border:1px solid #FF6427;
+    text-align: center;
+    width:150rpx;   
+    border-radius: 25rpx;
+}
+.newbtn2{
+    color:#4bacdf;
+    
+}
+.new_rightbox{
+    text-align: right;
+}
+.new_bottomtext{
+    line-height: 42rpx;
+    margin-bottom:10rpx;
+}
+.click_zhankai{
+
+}
+.new_rw_bottomtext{
+    line-height: 42rpx;
+    word-break: break-all;
+    margin-top:30rpx;
+}
+.newrw_jz_time{
+    margin-top:10rpx;
+    margin-bottom: 10rpx;
+    line-height: 24rpx;
+}
+.newonlineter_scroll{
+  width:100%;
+  height:150rpx;
+  white-space:nowrap;
+  margin-left:0rpx;
+  align-items: flex-start;
+  margin-top:20rpx;
+}
+.newonlineter_item{
+  width:150rpx;
+  height:100%;
+  display:inline-block;
+  margin-right:55rpx;
+  /* margin-top:16rpx; */
+}
+.newonlineter_item image{
+    width:150rpx;
+    height: 150rpx;
+}

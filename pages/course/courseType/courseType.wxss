@@ -1,0 +1,36 @@
+/* pages/course/course.wxss */
+@import "/component/navigation/navigation.wxss";
+@import "/template/scrollTab/scrollTab.wxss"; 
+@import "/pages/course/course.wxss"; 
+page{
+    padding-top:10vh;
+    background-color:#fff;
+}
+.p_lr_26{
+    margin-top:130rpx;
+}
+.top_fix {
+   
+    border-bottom:16rpx solid #f7f7f7;
+}
+.scroll-view{
+    width:70%;
+    /* margin-left:23%; */
+}
+
+
+.bigpicker{
+    width:30%;
+    
+}
+.picker{
+    width:100%;
+    line-height: 80rpx;
+    text-align: center;
+}
+.arrow_right_bottom{
+    width:12rpx;
+    height:12rpx;
+    right:25rpx;
+    bottom:25rpx;
+}

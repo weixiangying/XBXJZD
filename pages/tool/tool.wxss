@@ -1,0 +1,17 @@
+/* pages/tool/tool.wxss */
+page{
+    padding-top:10vh;
+}
+.bigbox{
+    padding:24rpx 56rpx 0;
+    border-top:20rpx solid #f4f4f4;
+
+}
+.smbox{
+    width: 100%;
+    margin-bottom:30rpx;
+}
+.smbox image{
+    width: 327rpx;
+    height: 366rpx;
+}

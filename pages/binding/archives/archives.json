@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "compontNavbar": "/component/navigation/navigation",
+        "addressPicker": "/component/addressPicker/addressPicker"
+    }
+}
+

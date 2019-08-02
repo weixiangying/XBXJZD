@@ -1,0 +1,11 @@
+<!--pages/binding/binding.wxml-->
+<compontNavbar title="" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class='bigbox'>
+    <view class='h1 c_333'>建立孩子学习档案</view>
+    <view class='h2 c_999 f_30'>获取个性化学习推荐内容，保存孩子学习记录</view>
+    <view class='h3 c_333 f_30'>孩子有{{idname}}校园生态账号？</view>
+    <view class='circle circle1' bindtap='tz_next' data-mytype='0'>没有</view>
+    <view class='circle circle2' bindtap='tz_next' data-mytype='1'>有</view>
+</view>
+

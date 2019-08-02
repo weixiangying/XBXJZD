@@ -1,0 +1,33 @@
+<compontNavbar title="聊天信息" isShowBack="{{true}}" url="/pages/message/liveroom/liveroom" component-class="component-class"></compontNavbar>
+<view class="box">
+    <scroll-view class="scroll-view" scroll-x="true">
+        <view class="scroll-view-item" wx:for="{{info.member}}" wx:key="this" bindtap="toDetail" data-id="{{item.user.uid}}" data-mobile="{{item.mobile}}">
+            <image src='{{item.user.avatar || base + "images/default_user.png"}}' class="scroll-header" mode="aspectFill"></image>
+            <view class='scorll-name'>{{item.user.nickname}}</view>
+        </view>
+        <!-- <view class="scroll-view-item">
+            <image src='../../images/msg/add2.png' class="scroll-header" catchtap='showAddFriend'></image>
+        </view>
+        <view class="scroll-view-item">
+            <image src='../../images/msg/minus.png' class="scroll-header" catchtap='showAddFriend'></image>
+        </view> -->
+    </scroll-view>
+    <view class="list">
+        <view class="item">
+            <view class="lt">群聊名称</view>
+            <view class="rt">
+                <view class="rt-text">{{info.group_name}}</view>
+                <image src="{{base}}images/arowRtGray.png" class="next-icon"></image>
+            </view>
+        </view>
+        <view class="item">
+            <view class="lt">群头像</view>
+            <view class="rt">
+                <image src="{{info.image}}" class="g-img"></image>
+                <image src="{{base}}images/arowRtGray.png" class="next-icon"></image>
+            </view>
+        </view>
+    </view>
+
+    <view class="btn">删除并退出</view>
+</view>

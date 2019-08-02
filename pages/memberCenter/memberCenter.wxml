@@ -1,0 +1,158 @@
+<!-- <compontNavbar title="会员中心" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class='bigbox1'>
+    <view class='display-flex justify-content-between align-items-center'>
+        <view class='display-flex'>
+            <image src='{{base}}images/default_user.png' class='headerimg'></image>
+            <view>
+                <view class='display-flex align-items-center'>
+                    <view class='name f_32 c_333 one_line'>姓名姓名</view>
+                    <image src='{{base}}images/spread/vip.png' class='name_img'></image>
+                </view>
+                <view class='time f_24 c_666'>有效期：2018-01-01</view>
+            </view>
+        </view>        
+    </view> 
+</view>
+
+<view class='bigbox1'>
+    <view class='bigtitle f_32 c_333'>
+        <text class='c_gf_bg'></text>
+        会员升级
+    </view>
+    <view class='choice_box display-flex align-items-center '>
+        <view class='choice_item {{item.id==myid?"choice_item_c":""}}' wx:for='{{list}}' wx:key='this' catchtap='choice_item' data-myid='{{item.id}}'>
+            <view class='choice_text1 f_26 '>{{item.title}}</view>
+            <view class='choice_text2 choice_text1_c'><text class='f_24'>￥</text>{{item.money}}</view>
+            <view class='choice_text3 c_666 f_24'>原价￥{{item.ymoney}}</view>
+        </view>
+        
+    </view>
+</view>
+
+<view class='bigbox1 qy_bigbox'>
+    <view class='bigtitle f_32 c_333'>
+        <text class='c_gf_bg'></text>
+        会员权益
+    </view>
+    <view class='display-flex align-items-center qy_itembigbox'>
+        <view class='display-flex qy_itembox'>
+            <image src='{{base}}images/spread/img1.png' class='qy_img'></image>
+            <view>
+                <view class='f_32 c_333 qy_text1'>预习乐</view>
+                <view class='f_24 c_999'>预习乐课程免费读</view>                
+            </view>
+        </view>
+        <view class='display-flex qy_itembox'>
+            <image src='{{base}}images/spread/img2.png' class='qy_img'></image>
+            <view>
+                <view class='f_32 c_333 qy_text1'>冥想思</view>
+                <view class='f_24 c_999'>冥想思课程任意学</view>                
+            </view>
+        </view>
+        <view class='display-flex qy_itembox'>
+            <image src='{{base}}images/spread/img3.png' class='qy_img'></image>
+            <view>
+                <view class='f_32 c_333 qy_text1'>视频课程</view>
+                <view class='f_24 c_999'>视频课程免随心看</view>                
+            </view>
+        </view>
+        <view class='display-flex qy_itembox'>
+            <image src='{{base}}images/spread/img4.png' class='qy_img'></image>
+            <view>
+                <view class='f_32 c_333 qy_text1'>作业批改</view>
+                <view class='f_24 c_999'>作业批改不限传</view>                
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='fix_bottom display-flex justify-content-between align-items-center'>
+    <view class='fix_left display-flex align-items-center'>
+        <view class='fix_money'><text class='f_24'>￥</text>{{newmoney}}</view>
+        <view class='fix_text f_24 c_999'>已优惠{{savemoney}}元</view>
+    </view>
+    <view class='fix_btn c_gf_bg f_32 c_fff'>确认支付</view>
+</view> -->
+
+
+<compontNavbar title="会员续费" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class='bigbox1'>
+    <view class='display-flex justify-content-between align-items-center'>
+        <view class='display-flex'>
+            <image wx:if="{{info.avatar}}" src='{{info.avatar}}' class='headerimg'></image>
+            <image wx:else src='{{base}}images/default_user.png' class='headerimg'></image>
+            
+            <view>
+                <view class='display-flex align-items-center'>
+                    <view class='name f_32 c_333 one_line'>{{info.nickname}}</view>
+                    <image src='{{base}}images/spread/vip.png' class='name_img'></image>
+                </view>
+                <view class='time f_24 c_666'>有效期：{{renInfo.end_time}}</view>
+            </view>
+        </view>        
+    </view> 
+</view>
+
+<view class='bigbox1'>
+    <view class='bigtitle f_32 c_333'>
+        <text class='c_gf_bg'></text>
+        会员升级
+    </view>
+    <view class='choice_box display-flex align-items-center '>
+        <view class='choice_item {{item.id==myid?"choice_item_c":""}}' wx:for='{{list}}' wx:key='this' catchtap='choice_item'  data-myid='{{item.id}}'>
+            <view class='choice_text1 f_26 '>{{item.title}}</view>
+            <view class='choice_text2 choice_text1_c'><text class='f_24'>￥</text>{{item.price}}</view>
+            <view class='choice_text3 c_666 f_24'>原价￥{{item.yprice}}</view>
+        </view>
+        
+    </view>
+</view>
+
+<view class='bigbox1 qy_bigbox'>
+    <view class='bigtitle f_32 c_333'>
+        <text class='c_gf_bg'></text>
+        会员权益
+    </view>
+    <view class='display-flex align-items-center qy_itembigbox'>
+        <view class='display-flex qy_itembox'>
+            <image src='{{base}}images/spread/img1.png' class='qy_img'></image>
+            <view>
+                <view class='f_32 c_333 qy_text1'>预习乐</view>
+                <view class='f_24 c_999'>预习乐课程免费读</view>                
+            </view>
+        </view>
+        <view class='display-flex qy_itembox'>
+            <image src='{{base}}images/spread/img2.png' class='qy_img'></image>
+            <view>
+                <view class='f_32 c_333 qy_text1'>冥想思</view>
+                <view class='f_24 c_999'>冥想思课程任意学</view>                
+            </view>
+        </view>
+        <view class='display-flex qy_itembox'>
+            <image src='{{base}}images/spread/img3.png' class='qy_img'></image>
+            <view>
+                <view class='f_32 c_333 qy_text1'>视频课程</view>
+                <view class='f_24 c_999'>视频课程免随心看</view>                
+            </view>
+        </view>
+        <view class='display-flex qy_itembox'>
+            <image src='{{base}}images/spread/img4.png' class='qy_img'></image>
+            <view>
+                <view class='f_32 c_333 qy_text1'>作业批改</view>
+                <view class='f_24 c_999'>作业批改不限传</view>                
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='fix_bottom display-flex justify-content-between align-items-center'>
+    <view class='fix_left display-flex align-items-center'>
+        <view class='fix_money'><text class='f_24'>￥</text>{{newmoney}}</view>
+        <view class='fix_text f_24 c_999'>已优惠{{savemoney}}元</view>
+    </view>
+    <button class='fix_btn c_gf_bg f_32 c_fff' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="judgeLogin">确认支付</button>
+</view>
+
+

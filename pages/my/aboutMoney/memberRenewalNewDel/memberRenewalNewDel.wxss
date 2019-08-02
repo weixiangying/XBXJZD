@@ -1,0 +1,23 @@
+/* pages/my/aboutMoney/memberRenewalNewDel/memberRenewalNewDel.wxss */
+page{    
+    background-color:#fff;
+    padding-top:10vh;
+}
+.bigbox{
+    padding:23rpx 30rpx 0;
+}
+.item_box{
+    height: 140rpx;
+    border-bottom: 1px solid #dfdfdf;
+}
+.item_text1 text{
+    display: inline-block;
+    margin-left: 10rpx;
+}
+.item_time{
+    margin-top: 16rpx;
+}
+.item_money{
+    color:#F69B4A;
+    font-size:40rpx;
+}

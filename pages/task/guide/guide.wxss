@@ -1,0 +1,17 @@
+/* pages/task/guide/guide.wxss */
+@import "/template/tab/tab.wxss";
+.tab-line{
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    width: 20%;
+    height: 4rpx;
+    background: #fff;
+}
+page{
+    background-color:#f4f4f4;
+    padding-top:10vh;
+}
+.tab-content{
+    margin-top:8vh;
+}

@@ -1,0 +1,66 @@
+<!--pages/common/login/login.wxml-->
+    <view class="bigbox">
+    	<view class="top_text">欢迎登录{{idname}}家长端</view>
+        <view class="tab_box">
+        	<view class="tab_topbox  display-flex" >
+                 
+                
+                <view class="tab_title {{menu_content_left?'tab_title_active':''}} " bindtap='tab_topbox_left'>
+                    验证码登录
+                </view>
+                <view class="tab_title {{menu_content_right?'tab_title_active':''}}" bindtap='tab_topbox_right'>
+                    密码登录
+                </view>
+                
+            </view>
+            <!-- 切换的左侧 -->
+            <view class="menu_content {{menu_content_left?'display_b':'display_n'}}"  >
+                <view class="phone_box display-flex  align-items-center">
+                    <view class="phone_left c_333 f_28">+86</view>
+                    <input class="phone_inputtel f_26" type="number" placeholder="请输入手机号"  placeholder-class='placeholder' bindinput="user_left_phone"></input>
+                </view>
+                <view class="login_btn f_34 c_fff" bindtap="click_left_login">登录</view>
+                <view class="login_text f_26 c_999">未注册手机验证后自动登录</view>
+            </view>
+            
+            <!-- 切换的右侧 -->
+            <view class="menu_content {{menu_content_right?'display_b':'display_n'}}">
+                <view class="phone_box display-flex align-items-center">
+                    <view class="phone_left c_333 f_28 ">
+                        +86
+                    </view>
+                    <input class="phone_inputtel f_26 " type="number" placeholder="请输入手机号" placeholder-class='placeholder' bindinput="user_right_phone"></input>
+                </view>
+                <view class="display-flex justify-content-between changep_box">
+                    <!-- <input placeholder="请输入密码" placeholder-class='placeholder' type="{{passwordtype}}" class='f_26' bindinput="user_right_password"></input> -->
+                    
+                    <input wx:if='{{passwordtype=="password"}}' placeholder="请输入密码" placeholder-class='placeholder' type="password" class='f_26' bindinput="user_right_password" value='{{user_right_password}}'></input>
+                    <input wx:else placeholder="请输入密码" placeholder-class='placeholder' type="text" class='f_26' bindinput="user_right_password" value='{{user_right_password}}'></input>
+                    
+                    <image src="{{passwordimg}}" bindtap="passwordimg"></image>
+                </view>
+                <view class="login_btn f_34 c_fff" bindtap="click_right_login" >登录</view>
+                <view class="login_btn_bottom f_26 display-flex  align-items-center">
+                    <!-- <view class="c_gf" bindtap='tab_topbox_left'>注册</view> -->
+                    <navigator url='/pages/login/modify_password/modify_password' class="c_666">忘记密码？</navigator>
+                </view>
+            </view>
+            
+
+        </view>
+
+        
+        
+    </view>
+
+
+
+
+
+
+
+
+
+
+
+<view class="c_gf f_24 newbottomtext">家长端{{version}}</view>

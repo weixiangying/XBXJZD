@@ -1,0 +1,165 @@
+/* pages/collegeNew/collegeNewDel/collegeNewDel.wxss */
+page{
+    padding-top:10vh;
+    background-color: #f7f7f7;
+    padding-bottom:110rpx;
+}
+.top_img{
+    width: 100%;
+    height: 318rpx;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.tabbox{
+    border-bottom:2px solid #f7f7f7;
+    height: 84rpx;
+    line-height: 84rpx;
+    padding:0 128rpx;
+}
+.tab_text{
+    font-size:26rpx;
+    color: #393939;
+    width:138rpx;
+    text-align: center;
+}
+.tab_text_active{
+    font-size:32rpx;
+    color:#61ACE3;
+    
+}
+.tab_textline{
+    left:29rpx;
+    bottom:0;
+    height: 3px;
+    background-color:#61ACE3;
+    width:80rpx;
+    border-radius: 1.5px;
+}
+
+.right_item{
+    padding:20rpx 0 22rpx;
+    border-bottom:2px solid #f7f7f7;
+}
+.right_item_num{
+    font-size:40rpx;
+    margin-left:32rpx;
+    margin-right: 40rpx;
+}
+.right_item_center{
+    width:590rpx;
+}
+.right_item_center_text1{
+    color:#393939;
+    line-height: 40rpx;
+    word-break: break-all;
+    
+    min-height: 40rpx;
+}
+.right_item_center_img{
+    width:20rpx;
+    height: 20rpx;
+    margin-right: 10rpx;
+}
+.right_item_center_img2{
+    width:22rpx;
+    height: 18rpx;
+    margin-right: 10rpx;
+}
+.right_item_center_text2{
+    /* width:120rpx; */
+    margin-right:40rpx;
+}
+.right_item_right{
+    margin-right: 30rpx;
+}
+
+
+.left_topbox{
+    padding:35rpx 34rpx 20rpx;
+    border-bottom:20rpx solid #f7f7f7;
+}
+.left_top_title{
+    font-weight: bold;
+    color:#393939;
+    font-size: 40rpx;
+    line-height: 60rpx;
+}
+.left_top_box{
+    margin:22rpx 0 27rpx;
+}
+.left_top_imgc{
+    width:26rpx;
+    height: 24rpx;
+    margin-right: 16rpx;
+}
+.left_top_imgtext{
+    color:#FBC4A0;
+    margin-right: 64rpx;
+}
+.left_top_text2{
+    line-height: 44rpx;
+    word-break: break-all;
+}
+.left_centerbox{
+     padding:30rpx 34rpx 22rpx;
+}
+.mb30{
+    margin-bottom:30rpx;
+}
+.h1{
+    background-color:#47ade8;
+    width:10rpx;
+    height: 32rpx;
+    margin-right: 18rpx;
+}
+.h1_text{
+    line-height: 32rpx;
+}
+.left_centerbox_header{
+    width:88rpx;
+    height: 88rpx;
+    border-radius: 50%;
+    margin-right: 24rpx;
+}
+.left_centerbox_name{
+    /* line-height: 30rpx; */
+    color:#4A537A;
+    /* margin:6rpx 0 18rpx; */
+}
+.left_centerbox_time{
+    line-height: 24rpx;
+}
+.left_centerbox_tag{
+    color:#61ACE3
+}
+.new_timebox{
+    margin-left:122rpx;
+    margin-top:20rpx;
+}
+/* bottom */
+.fix_bottom{
+    position:fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 100rpx;
+}
+.fix_btn{
+    width:320rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center; 
+    padding:0;
+    border-radius: 0;
+    margin:0;
+}
+.fix_money{
+    color:#FB6D0E;
+    margin-left:50rpx;
+    margin-right:30rpx;
+    width:140rpx;
+    font-size:42rpx;
+    font-weight: bold;
+}

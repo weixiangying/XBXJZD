@@ -1,0 +1,59 @@
+<!--pages/recite/recite.wxml-->
+<image src='../../images/recite/recite_bg.png' class='recite_bg'></image>
+<view class="navigation-box component-class" >
+    <view class="back-box" bindtap="goBack" >
+        <image class="navigation-back-icon" src="../../images/arow_top_left_fff.png"></image>
+    </view>
+    <view class="navigation-tit">背诵课文</view>
+</view>
+<view class='choice_box display-flex justify-content-center align-items-center' catchtap='choice_box'>
+    <view class='choice_text'>{{gradeshowname}}</view>
+    <view class='choice_line'></view>
+    <view class='choice_text display-flex  align-items-center'>
+        {{versionshowname}}
+        <image src='../../images/picker.png' class='picker_img'></image>
+    </view>
+</view>
+<view class='itembigbox '>
+    <block wx:if="{{showEmpty}}">
+            <empty></empty>
+    </block>
+    <view class='itembox display-flex justify-content-between ' wx:for="{{list}}" wx:key='this' bindtap='tz_detail' data-myid="{{item.Id}}">
+        <view class='w480'>
+            <view class='title c_333'>{{item.Name}}</view>
+            <view class='author f_26'><text class='item_text'>{{item.years}}</text>{{item.Author}}</view>
+            <view class='content one_line f_30 c_333'>{{item.Intro}}</view>
+        </view>
+        <view class='circle_box position_r' wx:if="{{item.Score}}">
+            <image wx:if="{{item.Score==100}}" src='../../images/recite/circle_10.png' class='score_img'></image>
+            <image wx:if="{{item.Score>=90&&item.Score<100}}" src='../../images/recite/circle_9.png' class='score_img'></image>
+            <image wx:if="{{item.Score>=80&&item.Score<90}}" src='../../images/recite/circle_8.png' class='score_img'></image>
+            <image wx:if="{{item.Score>=70&&item.Score<80}}" src='../../images/recite/circle_7.png' class='score_img'></image>
+            <image wx:if="{{item.Score>=60&&item.Score<70}}" src='../../images/recite/circle_6.png' class='score_img'></image>
+            <image wx:if="{{item.Score>=50&&item.Score<60}}" src='../../images/recite/circle_5.png' class='score_img'></image>
+            <image wx:if="{{item.Score>=40&&item.Score<50}}" src='../../images/recite/circle_4.png' class='score_img'></image>
+            <image wx:if="{{item.Score>=30&&item.Score<40}}" src='../../images/recite/circle_3.png' class='score_img'></image>
+            <image wx:if="{{item.Score<30}}" src='../../images/recite/circle_2.png' class='score_img'></image>
+            
+
+            <view class='position_a'>{{item.Score}}<text class='f_24'>分</text></view>
+        </view>
+        
+    </view>
+</view>
+
+<view class='pickbox' bindtap='onlyclickbig' wx:if="{{!mask}}">
+    <view class='pick_smbox' catchtap='onlyclick'>
+        <view class='pick_title c_333 f_34' >选择教材</view>
+        <view class='display-flex pick_content'>
+            <scroll-view class='pick_leftbox' scroll-y='true'>
+                <view class="pick_left_item f_32 {{gradeid==item.id?'c_gf':''}}" wx:for="{{gradelist}}" wx:key="this" catchtap='choicegrade' data-gradeid="{{item.id}}" data-gradename="{{item.name}}">{{item.name}}</view>
+                
+            </scroll-view>
+            <scroll-view class='pick_rightbox' scroll-y='true'>
+                <view class="pick_right_item f_32 one_line {{versionid==item.ID?'c_gf':''}}" catchtap='choiceversion' wx:for="{{versionlist}}" wx:key="this" data-versionid="{{item.ID}}" data-versionname="{{item.VersionName}}">{{item.VersionName}}</view>
+                
+            </scroll-view>
+        </view>
+    </view>
+</view>

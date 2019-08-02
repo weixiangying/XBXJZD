@@ -1,0 +1,122 @@
+/* pages/zuoye/zuoye.wxss */
+page{
+    background-color:#f7f7f7;
+    padding-top: 10vh;
+}
+.bigbox{
+  padding:0 26rpx;
+  margin-top:18rpx;
+}
+.itembox{
+  background-color:#fff;
+  padding:0 30rpx;
+  margin-bottom:18rpx;
+}
+.item_top{
+  line-height: 76rpx;
+  height: 76rpx;
+  border-bottom:1px solid #dfdfdf;
+}
+.item_topright{
+  height: 40rpx;
+  line-height: 40rpx;
+  width:80rpx;
+  
+  text-align: center;
+  border-radius: 20rpx;
+}
+.item_title{
+  padding:0 10rpx;
+  color:#333;
+  word-break: break-all;
+  line-height: 42rpx;
+  margin-top:10rpx;
+}
+.newonlineter_scroll{
+  width:100%;
+  height:200rpx;
+  white-space:nowrap;
+  margin-left:0rpx;
+  align-items: flex-start;
+  margin-top:10rpx;
+  margin-bottom:26rpx;
+}
+.newonlineter_item{
+  width:200rpx;
+  height:100%;
+  display:inline-block;
+  margin-right:10rpx;
+  /* margin-top:16rpx; */
+}
+.newonlineter_item image{
+    width:200rpx;
+    height: 200rpx;
+}
+/* bottom */
+.item_bottom{
+  height: 108rpx;
+  border-top:1px solid #dfdfdf;
+  justify-content:flex-end;
+}
+.item_headerimg{
+  width:60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  margin-right: 18rpx;
+}
+.item_name{
+  max-width: 168rpx;
+  margin-right: 14rpx;
+}
+.item_tag{
+  max-width: 144rpx;
+}
+.item_btn{
+  /* width:180rpx; */
+  height: 60rpx;
+  line-height: 60rpx;
+  color:#666;
+  text-align: center;
+  border-radius: 6rpx;
+}
+.item_btn1{
+  background:#BBBBBB;
+}
+.item_btn2{
+  background: -webkit-linear-gradient(#EB3549 ,#FF7979); /*待提交*/
+    background: -o-linear-gradient(#EB3549 ,#FF7979); 
+    background: -moz-linear-gradient(#EB3549 ,#FF7979);
+    background: linear-gradient(to right, #EB3549 ,#FF7979);
+}
+.item_btn3{
+  background: -webkit-linear-gradient(#F6A054 ,#FFBA7E);  /*待批改*/
+    background: -o-linear-gradient(#F6A054 ,#FFBA7E); 
+    background: -moz-linear-gradient(#F6A054 ,#FFBA7E);
+    background: linear-gradient(to right, #F6A054 ,#FFBA7E);
+}
+.item_btn4{
+  background: #66D1CC; /*已批改*/
+    
+}
+
+
+
+.item_center{
+  min-height: 60rpx;
+}
+
+
+.btn {
+    position: fixed;
+    bottom: 76rpx;
+    right: 25rpx;
+    z-index: 2;
+    background-color: #4bace2;
+    width: 102rpx;
+    height: 102rpx;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 27rpx;
+    text-align: center;
+    line-height: 102rpx;
+}

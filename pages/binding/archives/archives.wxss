@@ -1,0 +1,124 @@
+/* pages/binding/archives/archives.wxss */
+page{
+    background: #fff;
+    padding-top:10vh;
+}
+.component-class{
+    border-bottom:none !important;
+}
+.bigbox{
+    text-align: center;
+}
+.h1{
+    font-size:46rpx;
+    margin-top:72rpx;
+    line-height:46rpx;
+    font-weight: bold;
+}
+.h2{
+    line-height:30rpx;
+    margin-top:56rpx;
+    color:#9a9a9a;
+    margin-bottom:62rpx;
+   
+}
+.sexbox{
+    width:350rpx;
+    height:68rpx;
+    line-height: 68rpx;
+    margin:0 auto 0;
+     
+}
+.sex_view{
+    width:50%;
+    background-color:#F4F4F4;
+    color:#999;
+}
+.sex_boy{
+    border-top-left-radius: 6rpx;
+    border-bottom-left-radius: 6rpx;
+}
+.bgboy{
+   
+    color:#fff;
+    background: -webkit-linear-gradient(#50A6FB ,#70B6FC); 
+    background: -o-linear-gradient(#50A6FB ,#70B6FC); 
+    background: -moz-linear-gradient(#50A6FB ,#70B6FC);
+    background: linear-gradient(to left, #50A6FB ,#70B6FC);
+}
+.bggirl{
+    
+    color:#fff;
+    background: -webkit-linear-gradient(#FF818C ,#FB7984); 
+    background: -o-linear-gradient(#FF818C ,#FB7984); 
+    background: -moz-linear-gradient(#FF818C ,#FB7984);
+    background: linear-gradient(to left, #FF818C ,#FB7984);
+}
+.sex_girl{
+    
+    border-top-right-radius: 6rpx;
+    border-bottom-right-radius: 6rpx;
+}
+.sex_img{
+    width:39rpx;
+    height:52rpx;
+    margin:0rpx 18rpx 0 32rpx;
+}
+.inputbox{
+    margin:0 auto;
+    width:580rpx;
+    height:80rpx;
+    line-height:80rpx;
+    box-sizing: border-box;
+    background-color:#f4f4f4;
+    border:1px solid #dfdfdf;
+    border-radius: 6rpx;
+    padding:0 36rpx;
+    margin-top:64rpx;
+}
+.placeholder{
+    font-size:30rpx;
+    color:#9a9a9a;
+}
+input{
+    font-size:30rpx;
+    color:#333;
+    width:100%;
+    text-align: left;
+    height:80rpx;
+    line-height:80rpx;
+    
+}
+.arrow-rt-icon{
+    width:21rpx;
+    height:15rpx;
+}
+
+
+
+
+.pickerbox{
+    width:580rpx;
+    height:80rpx;
+    line-height:80rpx;
+    box-sizing: border-box;
+    background-color:#f4f4f4;
+    border:1px solid #dfdfdf;
+    border-radius: 6rpx;
+    padding:0 36rpx;
+    margin:34rpx auto 0;
+}
+.btn-box{
+    margin:76rpx auto 160rpx;
+    border-radius: 10rpx;
+    width:580rpx;
+    height:86rpx;
+    line-height:86rpx;
+    box-sizing: border-box;
+     background: -webkit-linear-gradient(#66D1CC ,#8CE7E4); 
+    background: -o-linear-gradient(#66D1CC ,#8CE7E4);
+    background: -moz-linear-gradient(#66D1CC ,#8CE7E4);
+    background: linear-gradient(to left,#66D1CC ,#8CE7E4);
+    color:#fff;
+    font-size:34rpx;
+}

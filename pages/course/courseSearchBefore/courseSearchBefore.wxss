@@ -1,0 +1,194 @@
+/* pages/course/course.wxss */
+@import "/component/navigation/navigation.wxss";
+@import "/template/scrollTab/scrollTab.wxss"; 
+page{
+    padding-top:12vh;
+    background-color:#fff;
+}
+/*导航栏  */
+.navigation-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #fff;
+    width: 100%;
+    height: 10vh;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.back-box{
+    position: absolute;
+    left: 30rpx;
+    top: 0;
+    width: 100rpx;
+    height: 10vh;
+}
+.navigation-back-icon {
+    position: absolute;
+    left: 0;
+    top: 62%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 18rpx;
+    height: 32rpx;
+}
+.navigation-tit{
+    width: 50%;
+    height: 100%;
+    line-height: 13vh;
+    text-align: center;
+    color: #333;
+    font-size: 33rpx;
+    margin: 0 auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.navigation_search{
+    width:32rpx;
+    height: 32rpx;
+    margin-left:60rpx;
+    margin-top: 30rpx;
+}
+/* end */
+/* top picker */
+.h1{
+   
+    background: #fff;
+}
+.h1 text{
+    color: #333;
+    font-size: 33rpx;
+    margin-right: 22rpx;
+}
+.h1 image{
+    display: inline-block;
+    vertical-align: middle;
+    /* width: 4%; */
+    width: 23rpx;
+    height: 13rpx;
+    padding-top: 4rpx;
+}
+
+/* scroll */
+.top_fix {
+    position: fixed;
+    
+    background-color: #fff;
+    z-index: 2;
+    height: 76rpx;
+    width: 100%;
+    /* border-bottom:16rpx solid #f7f7f7; */
+}
+
+.containbox{
+    padding:100rpx 26rpx 0;
+}
+
+/* banner */
+swiper {
+    width: 100%;
+    height: 318rpx;
+}
+
+swiper image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 6rpx;
+}
+
+swiper navigator {
+    width: 100%;
+    height: 100%;
+}
+/* tab */
+.mttab{
+    margin-top:100rpx;
+}
+.tabs {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 28rpx 0 24rpx;
+    margin-bottom: 16rpx;
+}
+.new_tab {
+    text-align: center;
+}
+
+.new_tab_img {
+    width: 81rpx;
+    height: 80rpx;
+}
+
+.new_tab_text {
+    font-size: 24rpx;
+    color: #333;
+    margin-top: 16rpx;
+}
+/* 精品课程 */
+.coursebigtitle{
+    font-size:36rpx;
+    margin-bottom:40rpx;
+}
+.newcourse_itembox{
+  
+  margin-bottom:40rpx;
+  box-sizing: border-box;
+  -webkit-box-sizing:border-box;
+}
+.newcourse_topimg{
+  width:100%;
+  /* display: block; */
+  margin-bottom:20rpx;
+  /* box-sizing: border-box; */
+  border-radius: 6rpx;
+}
+.newcourse_title{
+  line-height:42rpx;
+}
+.live_position{
+    background-color:#fff;
+    left:18rpx;
+    bottom:60rpx;
+    height:44rpx;
+    border-radius: 22rpx;
+    padding-right:15rpx;
+}
+.newcourse_title .text_new1{
+  display: inline-block;
+  background-color:#4bace2;
+  color:#fff;
+  font-size:24rpx;
+  padding:4rpx 12rpx;
+  border-radius: 4rpx;
+  margin-right:14rpx;
+  text-align: center;
+  
+
+}
+.newcourse_title .text_new2{
+    width:85%;
+}
+.newcourse_headerimg{
+  margin-left:4rpx;
+  width:40rpx;
+  height:40rpx;
+  margin-right:12rpx;
+  border-radius: 50%;
+}
+
+.newcourse_time {
+  
+  
+  line-height: 70rpx;
+}
+.newcourse_bottombox{
+  margin:16rpx 0 39rpx;
+}

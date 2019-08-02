@@ -1,0 +1,23 @@
+<compontNavbar title="教育动态" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<view class="container">
+    <block wx:if="{{showEmpty}}"><empty></empty></block> 
+    <block wx:else>
+        <view bindtap='toDetail' wx:for="{{news}}" data-newsid='{{item.id}}' wx:key="this" class="news">
+            <view class="news-lt">
+                <image class="news-img" src="{{item.image}}"></image>       
+            </view>
+            <view class="news-rt">
+                <view class="news-tit two_line">{{item.name}}</view>
+                <view class="news-tips">
+                    <view class="tips-lt">{{item.createdate}}</view>
+                    <view class="tips-rt">
+                        <image class="news-tip-img" src="../../images/agree.png"></image><text class="news-tip-text">{{item.agreenum}}</text>
+                            <image class="news-tip-img" src="../../images/comment.png"></image><text class="news-tip-text">{{item.commentnum}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block> 
+</view>

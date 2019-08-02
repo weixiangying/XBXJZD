@@ -1,0 +1,4 @@
+<!--pages/my/school/school.wxml-->
+
+
+<web-view src="https://m.ajihua888.com/school/info?schoolid={{schoolId}}"></web-view>

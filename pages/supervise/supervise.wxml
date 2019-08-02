@@ -1,0 +1,163 @@
+<!--page/supervise/supervise.wxml-->
+<!-- 选择日期 -->
+<view class="navigation-box component-class" >
+    <view class="back-box" bindtap="goBack">
+        <image class="navigation-back-icon" src="../../images/arow_top_left.png"></image>
+    </view>
+    <view class="navigation-tit">
+        <picker mode="date"  start="{{startDate}}" end="{{endDate}}" fields="month" bindchange="pickerChange" class="h1">  
+            <view class="picker">  
+                <text>{{ year }}年{{ month}}月</text> <image src="../../images/arrow_down.png"></image> 
+            </view>  
+        </picker> 
+    </view>
+</view>
+
+
+<!-- calendar -->
+<view class='bg_fff' id='showone'>
+    <view class='box1' style='width: {{ sysW * 7 }}px'>
+    
+        <block wx:for='{{ weekArr }}' wx:key='this'>
+            <view style='width:{{ sysW }}px;' class='calendar_height'>{{ item }}</view>
+        </block> 
+        <block wx:for='{{ arr }}' wx:key='this'>
+            <view wx:if="{{ item ==  getDate}}" style='{{ index == 0 ? "margin-left:" + sysW * marLet + "px;" : "" }}width: {{ sysW }}px;' class='calendar_textbox ' bindtap='topSectData' data-topdata='{{item }}'>
+                <text class='calendar_text dateOn c_gf_bg'>{{ item }}</text>
+            </view>
+            <view wx:else style='{{ index == 0 ? "margin-left:" + sysW * marLet + "px;" : "" }}width: {{ sysW }}px;' class='calendar_textbox ' bindtap='topSectData' data-topdata='{{item }}'>
+                <text class='calendar_text {{ item ==  sectedDate ? "seltd-date" : ""}}'>{{ item }}</text>
+            
+            </view>
+        </block>
+    </view>
+</view>
+
+
+<!-- 滑动后的calendar -->
+<view class='topfix_calender' id='showtwo' wx:if="{{changeCss==2}}">
+    <scroll-view class="date-box" scroll-x="true" scroll-left="{{scrollLeft}}">
+        <block wx:for="{{dates}}" wx:key="this">
+            <view wx:if="{{item.d==getDate}}" class="date-item" bindtap="sectDate" data-dt="{{item.d}}"  >
+                <view class="week" >{{item.w}}</view>
+                <view class="date" >                   
+                    <text class="date-text date-text-cur c_gf_bg" >{{item.d}}</text>
+                </view>
+            </view>
+            <view wx:else class="date-item" bindtap="sectDate" data-dt="{{item.d}}"  >
+                <view class="week" >{{item.w}}</view>
+                <view class="date" >                   
+                    <text class="date-text  {{sectedDate == item.d? 'c_gf' : ''}}" >{{item.d}}</text>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+</view>
+
+
+<!-- 正文 -->
+
+<view  class='contentbox bg_fff'>
+    <view class='contenttitle f_30 c_333 font_weight_b'>学习记录</view>
+    <view wx:if='{{xuexilength==0}}' class='itembigbox'>      
+        <view class='nodata_new f_26 c_999'>还没有此项记录~</view>       
+    </view>
+    <view wx:else class='itembigbox'>
+        <!-- for -->
+        <view class='itembox display-flex align-items-center' wx:for='{{xuexi}}' wx:key='this'>
+            <view class='item_left display-flex align-items-center'>
+                <image src='../../images/home/point.png' class='point_img'></image>
+                <view class='f_26 item_time c_333'>{{item.time}}</view>
+            </view>
+            <view class='item_right'>
+                <view class='right_one f_30 one_line c_333' style='width:{{ foroneline }}px;'>
+                    {{item.content}}</view>
+                <view class='right_one f_26 one_line c_999' style='width:{{ foroneline }}px;'>
+                    {{item.remark}}</view>
+            </view>
+        </view>
+        
+    </view>
+</view>
+<view  class='contentbox bg_fff'>
+    <view class='contenttitle f_30 c_333 font_weight_b'>理财记录</view>
+    <view wx:if='{{licailength==0}}' class='itembigbox'>      
+        <view class='nodata_new f_26 c_999'>还没有此项记录~</view>       
+    </view>
+    <view wx:else class='itembigbox'>
+        <!-- for -->
+        <view class='itembox display-flex align-items-center' wx:for='{{licai}}' wx:key='this'>
+            <view class='item_left display-flex align-items-center'>
+                <image src='../../images/home/point.png' class='point_img'></image>
+                <view class='f_26 item_time c_333'>{{item.time}}</view>
+            </view>
+            <view class='item_right'>
+                <view class='right_one f_30 one_line c_333' style='width:{{ foroneline }}px;'>{{item.title}}</view>
+                <view class="right_one f_26 one_line {{item.remark>0?'newf_red':'newf_green'}}" style='width:{{ foroneline }}px;'>{{item.remark}}</view>
+            </view>
+        </view>
+        
+    </view>
+</view>
+<view class='contentbox bg_fff'>
+    <view class='contenttitle f_30 c_333 font_weight_b'>提问记录</view>
+    <view wx:if='{{tiwenlength==0}}' class='itembigbox'>      
+        <view class='nodata_new f_26 c_999'>还没有此项记录~</view>       
+    </view>
+    <view wx:else class='itembigbox'>
+        <!-- for -->
+        <view class='itembox display-flex align-items-center' wx:for='{{tiwen}}' wx:key='this'>
+            <view class='item_left display-flex align-items-center'>
+                <image src='../../images/home/point.png' class='point_img'></image>
+                <view class='f_26 item_time c_333'>{{item.time}}</view>
+            </view>
+            <view class='item_right'>
+                <view class='right_one f_30 one_line c_333' style='width:{{ foroneline }}px;'>{{item.title}}</view>
+                <view class='right_one f_26 one_line c_999' style='width:{{ foroneline }}px;'>{{item.remark}}</view>
+            </view>
+        </view>
+        
+    </view>
+</view>
+<view class='contentbox bg_fff'>
+    <view class='contenttitle f_30 c_333 font_weight_b'>笔记记录</view>
+    <view wx:if='{{bijilength==0}}' class='itembigbox'>      
+        <view class='nodata_new f_26 c_999'>还没有此项记录~</view>       
+    </view>
+    <view wx:else class='itembigbox'>
+        <!-- for -->
+        <view class='itembox display-flex align-items-center' wx:for='{{biji}}' wx:key='this'>
+            <view class='item_left display-flex align-items-center'>
+                <image src='../../images/home/point.png' class='point_img'></image>
+                <view class='f_26 item_time c_333'>{{item.time}}</view>
+            </view>
+            <view class='item_right'>
+                <view class='right_one f_30 one_line c_333' style='width:{{ foroneline }}px;'>{{item.title}}</view>
+                <view class='right_one f_26 one_line c_999' style='width:{{ foroneline }}px;'>{{item.remark}}</view>
+            </view>
+        </view>
+        
+    </view>
+</view>
+<view class='contentbox bg_fff for_m_b'>
+    <view class='contenttitle f_30 c_333 font_weight_b'>定位记录</view>
+    <view wx:if='{{dingweilength==0}}' class='itembigbox'>      
+        <view class='nodata_new f_26 c_999'>还没有此项记录~</view>       
+    </view>
+    <view class='itembigbox' wx:else>      
+        <!-- for -->
+        <view class='itembox display-flex align-items-center' wx:for='{{dingwei}}' wx:key='this'>
+            <view class='item_left display-flex align-items-center'>
+                <image src='../../images/home/point.png' class='point_img'></image>
+                <view class='f_26 item_time c_333'>{{item.time}}</view>
+            </view>
+            <view class='item_right'>
+                <view class='right_one f_30 one_line c_333' style='width:{{ foroneline }}px;'>{{item.content}}</view>
+                <view class='display-flex align-items-center' >
+                    <image src='../../images/address.png' class='address_img right_one'></image>
+                    <view class='f_26 one_line c_999' style='width:{{ foroneline2 }}px;'>{{item.remark}}</view>
+                </view>
+            </view>
+        </view>     
+    </view>
+</view>

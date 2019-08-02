@@ -1,0 +1,66 @@
+<!--pages/task/taskChoice/taskChoice.wxml-->
+<view class='search_box display-flex' >
+  <image class="navigation-back-icon" src="../../../images/arow_top_left.png" bindtap='backReturn'></image>
+  <view class='search display-flex align-items-center'>
+    
+    <image src='../../../images/search.png'></image>
+    <input placeholder='搜索关键字' placeholder-class='placeholder'  bindinput="saveSearch" type='text' bindconfirm='submit' confirm-type='search'></input>
+  </view>
+</view> 
+
+<view class='contentbox'>
+    <block wx:if="{{showEmpty}}">
+            <empty></empty>
+    </block>
+    <view class='itembox' wx:for='{{list}}' wx:key='this' bindtap='choice' data-id='{{index}}'>
+        <view class='display-flex '>
+            <image wx:if="{{item.checked== true}}" class='circle_img' src='../../../images/task/circle_2.png'></image>
+            <image wx:elif="{{item.checked == false || item.checked == undifined}}" class='circle_img' src='../../../images/task/circle_1.png'></image>
+            <image wx:if='{{item.image}}' src='{{item.image}}' class='item_img'></image>
+            <image wx:else src='../../../images/normal_pic12.png' class='item_img'></image>
+            <view class='item_content f_28 c_333'>{{item.title}}</view>
+        </view>
+        <view class='item_bottom'>￥{{item.price}}</view>
+    </view>
+    <!-- <view class='itembox'>
+        <view class='display-flex '>
+            <image src='../../../images/normal_pic12.png' class='item_img'></image>
+            <view class='item_content f_28 c_333'>文字文字文字文字文字文字文字文字文字</view>
+        </view>
+        <view class='item_bottom'>￥12</view>
+    </view> -->
+</view>
+
+
+<view class='bottom_fixed display-flex align-items-center justify-content-between'>
+    <view class='display-flex align-items-center'>
+        <view class='f_28 c_333 bottom_text1'>已选择{{goodslist.length}}件</view>
+        <view wx:if='{{goodslist.length!=0}}' class='c_gf f_28' catchtap='click_see'>点击查看</view>
+    </view>
+    <view class='bottom_btn c_gf_bg' catchtap='click_firm'>确定</view>
+</view>
+
+<view class='newbox' wx:if="{{newbox}}">
+    <view class='position_a newbox_sm'>
+        <view class='newbox_top'>
+            <view class='f_26 c_666 newbox_toptext' catchtap='click_clear'>清空</view>
+        </view>
+        
+        <view class='itembox itembox_new' wx:for='{{goodstemp}}' wx:key='this' bindtap='choicegoods' data-id='{{index}}'>
+            <view class='display-flex '>
+                <image wx:if="{{item.checked== true}}" class='circle_img' src='../../../images/task/circle_2.png'></image>
+                <image wx:elif="{{item.checked == false || item.checked == undifined}}" class='circle_img' src='../../../images/task/circle_1.png'></image>
+                <image wx:if='{{item.image}}' src='{{item.image}}' class='item_img'></image>
+                <image wx:else src='../../../images/normal_pic12.png' class='item_img'></image>
+                <view class='item_content f_28 c_333'>{{item.title}}</view>
+            </view>
+            <view class='item_bottom'>￥{{item.price}}</view>
+        </view>
+        <view class='bottom_fixed_new display-flex align-items-center justify-content-between'>
+            <view class='display-flex align-items-center'>
+                <view class='f_28 c_333 bottom_text1'>已选择{{goodslist.length}}件</view>
+            </view>
+            <view class='bottom_btn c_gf_bg' catchtap='click_newbox_btn'>确定</view>
+        </view>
+    </view>
+</view>

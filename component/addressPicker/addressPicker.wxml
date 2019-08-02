@@ -1,0 +1,19 @@
+<view class="box" id="addressPicker" catchtap='pikerConfirm'>
+    <view class="picker-box">
+        <view class="picker-btns">
+            <view class="btn" catchtap='pikerCancel'>取消</view>
+            <view class="btn" catchtap='pikerConfirm'>确认</view>
+        </view>
+        <picker-view indicator-class="selected" class="picker-view" value="{{index}}" bindchange="bindChange">
+            <picker-view-column>
+                <view wx:for="{{provinces}}" wx:key="this">{{item.province_name}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{citys}}" wx:key="this">{{item.city_name}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{districts}}" wx:key="this">{{item.district_name}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

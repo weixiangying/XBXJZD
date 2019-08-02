@@ -1,0 +1,42 @@
+<!--pages/course/course.wxml-->
+<!-- <compontNavbar title="新华课典" isShowBack="{{true}}" component-class="component-class"></compontNavbar> -->
+
+
+<navigat-bar class="navigation-box component-class" id="compontNavbar">
+    <view class="back-box display-flex align-items-center"  >
+        <image class="navigation-back-icon" src="../../../images/arow_top_left.png" bindtap="goBack"></image>
+        
+    </view>
+    <view class="navigation-tit">新华课典</view>
+</navigat-bar>
+
+
+
+<view class='p_lr_26'>
+     
+      <block wx:if="{{showEmpty}}">
+        <empty></empty>
+      </block>  
+      
+      <view class='newcourse_itembox' wx:for="{{list}}" wx:key="this" bindtap='tz_detail'  data-id="{{item.Id}}" data-myid="{{item.Id}}" data-videopic="{{item.PicUrl}}">
+        <view class='position_r'>
+            <image wx:if="{{item.PicUrl}}" class='newcourse_topimg' src='{{item.PicUrl}}' mode='aspectFill' ></image>
+            <image wx:else class='newcourse_topimg' src='../../../images/normal_pic1.png' mode='aspectFill' ></image>
+            <view wx:if="{{item.nTeacher}}" class='position_a display-flex live_position align-items-center'>
+                <image wx:if="{{item.nTeacher.FacePath==''}}" src='../../..images/default_user.png' class='newcourse_headerimg'></image>
+                <image wx:else src='{{item.nTeacher.FacePath}}' class='newcourse_headerimg'></image>
+                <view class='newcourse_name one_line f_26 c_333'>{{item.nTeacher.Name}}</view>
+            </view>
+        </view>
+        
+        <view class='newcourse_title f_32 c_333 display-flex'>
+          <text class='text_new1' wx:if='{{item.nBaseSubject.Name}}'>{{item.nBaseSubject.Name}}</text>
+          <text class='text_new2 one_line'>{{item.Name}}</text>
+        </view>        
+                 
+        <view class='newcourse_time f_26 c_666'>
+            课程时长<text wx:if="{{item.Minute==0}}">10</text><text wx:else>{{item.Minute}}</text>分钟 · {{item.Hit}}人已观看        
+        </view>          
+        
+      </view>   
+</view>

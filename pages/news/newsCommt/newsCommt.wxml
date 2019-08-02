@@ -1,0 +1,29 @@
+<compontNavbar title="评论详情" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<view class="container">
+    <block wx:if="{{showEmpty}}"><empty></empty></block> 
+    <view class="comm-list" wx:else>
+        <view class="comm-item" wx:key="this" wx:for="{{list}}">
+            <image class="user-img" src="{{item.userInfo.avatar?item.userInfo.avatar:'../../../images/default_user.png'}}" mode="aspectFill"></image>
+            <view class="comm-cont">
+                <view class="user-info">
+                    <view class="lt">
+                        <view class="uname">{{item.userInfo.nickname}}</view>
+                        <view class="comm-posi">{{item.createdate}}</view>
+                    </view>
+                    <view class="rt"> 
+                        <addAgre item="{{item}}" catch:callback="addAgrCallback" resourcetypeid="10" agreenum="{{item.agreenum}}"></addAgre>
+                    </view>  
+                </view>
+                <accord item="{{item}}"></accord>
+            </view>
+        </view>
+    </view>
+    <view class="comt">
+        <view class="input-container">
+            <input placeholder="写点什么吧" type="text" bindinput="inputFn" value="{{msg}}" bindconfirm="submitCommt"></input>           
+        </view>
+    </view>
+</view>
+

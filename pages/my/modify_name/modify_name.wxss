@@ -1,0 +1,47 @@
+
+page{
+    padding-top: 10vh;
+    max-height: 100vh; 
+    border-top: 1rpx solid #dfdfdf;
+    background: #f4f4f4;
+}
+.input-container{
+    width: 100%;
+    padding: 80rpx 24rpx 26rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+input{
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+    border: 1rpx solid #dfdfdf;
+    background: #fff;
+    padding: 0 80rpx;
+    font-size: 34rpx;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.tip{
+    width: 100%;
+    padding: 0 54rpx;
+    color: #8f8e8e;
+    font-size: 28rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.btn-box{
+    width: 100%;
+    margin-top: 50rpx;
+}
+.btn{
+    width: 40%;
+    margin: 0 auto;
+    font-size: 34rpx;
+    border-radius: 10rpx;
+    line-height: 86rpx;
+    color: #fff;
+    text-align: center;
+}

@@ -1,0 +1,56 @@
+<!--pages/recite/reciteDetail/reciteDetail.wxml-->
+<view class="navigation-box component-class" >
+    <view class="back-box" bindtap="goBack" >
+        <image class="navigation-back-icon" src="../../../images/arow_top_left.png"></image>
+    </view>
+    <view class="navigation-tit " >
+    <text class="{{topcurrent==0?'c_333':'c_999'}}">原文</text>   
+    <!-- class="{{length==1||length==0?'input':'input_none'}}" -->
+    <!-- class="{{topcurrent==0?'c_333':'c_666'}}" -->
+    <image src='../../../images/recite/translate.png' class='translate_img'></image>
+    <text class="{{topcurrent==0?'c_999':'c_333'}}">译文</text>
+    </view>
+</view>
+
+   <swiper autoplay="{{autoplay}}"  indicator-dots="true" indicator-color="#ccc" indicator-active-color="#76d1e3" style="height:{{scrollheight}}px" bindchange="bindchange">
+        
+        <swiper-item>
+            <scroll-view scroll-y="true" class='p_lr_26 '  style="height:{{scrollheight}}px">
+                <view class='title'>
+                    <view class='bringpy_box' wx:for="{{arrtitle}}" wx:key="this">
+                        <view class='bringpy_h1 f_24 c_666' wx:if="{{item[1]}}">{{item[1]}}</view>
+                        <view class='bringpy_h2 c_333'>{{item[0]}}</view>
+                    </view>          
+                </view>
+                <view class='author f_26'><text class='item_text'>{{detail.item.years}}</text>{{detail.item.Author}}</view>
+                <view class='title'>
+                    <view wx:for="{{list}}" wx:key='this' class='contentpy_bigbox'>
+                        <view class='contentpy_box' wx:for="{{item.write}}" wx:key="this">
+                            <view class='contentpy_h1 f_24 c_666 ' wx:if="{{item[1]}}">{{item[1]}}</view>
+                            <view class='contentpy_h2 c_333'>{{item[0]}}</view>
+                        </view> 
+                    </view>                 
+                </view>
+                <!-- <view style='height:500rpx;background-color:#666;'></view> -->
+                
+            </scroll-view>
+        </swiper-item>
+        <swiper-item>
+            <scroll-view scroll-y="true"   style="height:{{scrollheight}}px">
+                <view class='y_box'>
+                    <view class='y_title c_333'>{{detail.item.Name}}</view>
+                    <view class='y_author f_26'><text class='item_text y_item_text'>{{detail.item.years}}</text>{{detail.item.Author}}</view>
+                    <block wx:for="{{list}}" wx:key='this'>
+                        <view class='y_content c_333 f_32'>{{item.Section}}</view>
+                        <view class='y_ycontent c_999 f_28'>{{item.Translate}}</view>
+                    </block>
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+
+
+<view class='bottombox' bindtap='opened'>
+    <image src='../../../images/recite/icon_recite.png' class='icon_reciteimg'></image>
+    <view class='bottom_h1'>开始背诵</view>
+</view>

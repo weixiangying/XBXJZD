@@ -1,0 +1,35 @@
+<!--pages/binding/form/form.wxml-->
+<compontNavbar title="" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class='bigbox' wx:if="{{mytype==0}}">
+    <view class='h1 c_333'>手机绑定</view>
+    <view class='h2  f_30'>孩子可通过此手机号登录{{idname}}校园生态</view>
+    <view class='inputbox'>
+        <input placeholder='请输入手机号' type='number' placeholder-class='placeholder' confirm-type='next' bindinput="phoneInputEvent"></input>
+    </view>
+    <view class='inputbox inputbox2 inputbox3 display-flex justify-content-between align-items-center'>
+        <input class='codeinput' placeholder='验证码' placeholder-class='placeholder' type='text' bindinput="vcodeInputEvent" confirm-type='next'></input>
+        <view class="codebtn c_gf_bg c_fff f_24 {{verify_color? 'code_style1' : 'c_gf_bg'}}" bindtap="identify">{{verifyCodeTime}}</view>
+    </view>
+    <view class='inputbox inputbox2'>
+        <input placeholder='请输入密码' placeholder-class='placeholder' type='password' bindinput='passwordInputEvent' confirm-type='done'></input>
+    </view>
+    <view class='btn' bindtap='submit'>下一步</view>
+</view>
+
+
+
+
+
+<view class='bigbox' wx:else>
+    <view class='h1 c_333'>绑定{{idname}}校园生态学生号</view>
+    <view class='h2  f_30'>免费接收老师布置的作业，实时监控孩子学习动态</view>
+    <view class='inputbox'>
+        <input placeholder='请输入孩子学号/手机号' type='number' placeholder-class='placeholder' confirm-type='next' bindinput="phoneInputEvent"></input>
+    </view>
+
+    <view class='inputbox inputbox2'>
+        <input placeholder='请输入密码' placeholder-class='placeholder' type='password' bindinput='passwordInputEvent' confirm-type='done'></input>
+    </view>
+    <view class='btn' bindtap='submitbottom'>确认绑定</view>
+</view>

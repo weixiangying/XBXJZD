@@ -1,0 +1,70 @@
+<!--pages/task/calendar/calendar.wxml-->
+<compontNavbar title="学习日历" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+
+<view class='display-flex  align-items-center topbigbox '>
+    
+    <image src='{{leftimg}}' class='icon_arrow' bindtap="last"></image>
+    <view class='topbox position_r'>
+        <image src='../../../images/icon_task_mainjb.png' class='position_a icon_task_mainjb'></image>
+        <view class='topbox_h1 c_333'>{{year}}年{{month}}月</view>
+        <view class='display-flex  align-items-center justify-content-between top_smbox f_30'>
+            <view>签到打卡{{toplist.singin_num}}次</view>
+            <view>完成任务{{toplist.task_finish_num}}个</view>
+        </view>
+        <view class='display-flex  align-items-center justify-content-around'>
+            <view class='newdata_text' wx:for='{{ arr }}' wx:key='this' catchtap='click_day' data-day='{{item}}'>{{item}}</view>           
+        </view>
+    </view>
+    <image src='{{rightimg}}' class='icon_arrow' bindtap="next"></image>
+</view>
+
+<view class=''>
+    <block wx:if="{{taskweek==1&&showEmpty}}"><empty></empty></block> 
+    <view wx:if="{{taskweek==1}}" class='new_rwitembox' wx:for="{{list}}" wx:key='this'>
+        <view class='display-flex justify-content-between align-items-center new_smbox'>
+            <view class='display-flex'>
+                <image wx:if="{{item.receiveGoods[0].image}}" src='{{item.receiveGoods[0].image}}' class='newrw_rwimg'></image>
+                <image wx:else src='../../../images/normal_pic12.png' class='newrw_rwimg'></image>
+                <view>
+                    <view class='newrw_toptext f_30 c_333'>{{item.taskname}}<text>{{item.score}}积分</text></view>
+                    <view class='f_24 c_999' wx:if='{{item.num==item.all}}'>
+                        已完成该任务
+                    </view>
+                    <view wx:else class='display-flex align-items-center'>
+                        <view class='newrw_pro position_r' >
+                            <view class='position_a newrw_pro_cur' style="width:{{item.num/item.all*prowidth}}px"></view>
+                        </view>
+                        <view class='newrw_protext f_24 c_999'>{{item.num}}/{{item.all}}次</view>
+                    </view>
+                </view>
+            </view>
+            <view class='new_rightbox'>
+                <view wx:if='{{item.status==1}}' class='newbtn newbtn2 f_26'>进行中</view>
+                <view wx:if='{{item.status==2}}' class='newbtn newbtn4 f_26'>可领取</view>
+                <view wx:if='{{item.status==3}}' class='newbtn f_999 f_26'>已领取</view>
+                <view wx:if='{{item.status==4}}' class='newbtn newbtn4 f_26'>未完成</view>
+                <image wx:if='{{item.taskid==taskid}}' src="../../../images/task/icon_task_item_up.png" class='img_down' catchtap='click_zhankai' data-taskid='{{item.taskid}}'></image>
+                <image wx:else src="../../../images/task/icon_task_item_down.png" class='img_down' catchtap='click_zhankai' data-taskid='{{item.taskid}}'></image>
+                
+            </view>
+        </view>
+        <view wx:if="{{item.taskid==taskid}}" class='new_bottomtext f_28 c_999'>{{item.info2}}</view>
+    </view>
+    <!-- <block wx:if="{{taskweek==2&&showEmptyNew}}"><empty></empty></block>  -->
+    <view wx:if='{{taskweek==2}}' class='dayitem_bigbox'>
+        <view class='dayitem_box position_r'>
+            <view class='position_a dayitem_circle dayitem_circle1'></view>
+            <view class='display-flex justify-content-between'>
+                <view class='dayitem_left'>
+                    <view class='f_30 c_333 dayitem_text1'>文字文字文字文字文字文字文字文字文字文字文字</view>
+                    <view class='f_28 c_666 dayitem_text2'>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</view>
+                </view>
+                <view class='dayitem_time f_28 c_666'>time</view>
+            </view>
+            
+        </view>
+        
+    </view>
+</view>

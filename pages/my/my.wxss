@@ -1,0 +1,187 @@
+/* pages/my/my.wxss */
+@import "/pages/home/home.wxss";
+page{
+    padding-top:0;
+}
+.topbox{
+    width: 100%;
+    left:0;
+    top:180rpx;
+}
+.top_contentbox{
+     margin:0 26rpx;
+    border: 1rpx solid #f4f4f4;
+    border-radius: 10rpx;
+    background-color:#fff;
+     /* box-shadow: #fafafa 0px 0px 5px 5px ; 会虚*/
+     /* box-shadow: rgba(250,250,250,0.35) 0px 0px 5px 5px; */
+     box-shadow: rgba(102,102,102,0.1) 0px 0px 5px 5px;
+}
+.top_topnamebox{
+    background-color: #f6f6f6;
+    line-height: 90rpx;
+    height: 90rpx;
+    font-size: 30rpx;
+}
+.top_name_image{
+    width:42rpx;
+    height:90rpx;
+}
+.top_name_text{
+    
+    padding:0 15rpx 0 30rpx;
+    max-width:120rpx;
+}
+.currenttext{
+    background-color:#fff;
+}
+.nocurrenttext{
+    background-color:#f6f6f6;
+}
+.top_add{
+    margin-right:27rpx;
+}
+.top_add image{
+    width:19rpx;
+    height:19rpx;
+    margin-right:8rpx;
+}
+.top_schoolbox{
+    padding:36rpx 50rpx;
+    color:#333;
+}
+.top_schoolbox image{
+    width:120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    margin-right:46rpx;
+}
+.top_school{
+    width:410rpx;
+    margin-bottom:14rpx;
+}
+.top_bg{
+    
+    color:#fff;
+    padding:160rpx 26rpx 164rpx 42rpx;
+}
+.top_name{
+    font-size:54rpx;
+    font-weight: bold;
+    width:610rpx;
+}
+.top_setimg{
+    width:34rpx;
+    height:32rpx;
+    margin-top:6rpx;
+}
+.top_edittext{
+    margin-top:24rpx;
+}
+.card_box{
+    top:350rpx;
+    left:0;
+    z-index: 2;
+}
+.card_box{
+    width:100%;   
+}
+.card_smbox{
+    margin:0 26rpx;
+    background-color:#fff;
+    border:1rpx solid red;
+}
+.card_top{
+    height:90rpx;
+    line-height:90rpx;
+    background-color:#f6f6f6
+}
+.card_topname{
+    margin-left:50rpx;
+}
+.card_addimg{
+    width:19rpx;
+    height:19rpx;
+}
+.card_addtext{
+    margin-right:28rpx;
+}
+.card_contentbigbox{
+    width:100%;
+}
+.card_contentbox{
+    border-bottom:1rpx solid #DFDFDF;
+    margin:0 52rpx;
+    padding:44rpx 0 42rpx;
+}
+.card_content_headerimg{
+    width:120rpx;
+    height:120rpx;
+    border-radius: 50%;
+    margin-right:46rpx;
+}
+.card_content_school{
+    max-width:420rpx;
+}
+.card_content_grade{
+    margin-top:18rpx;
+}
+.card_content_grade  text{
+    margin-left:30rpx;
+}
+.card_tab{
+    margin:0 52rpx;
+    padding:35rpx 0 38rpx;
+    border-top:1px solid #dfdfdf;
+}
+.card_tab_view{
+    text-align: center;
+}
+.card_tab_view image{
+    width:60rpx;
+    height:60rpx;
+    margin-bottom:18rpx;
+}
+.card_tab_view view{
+    font-size:28rpx;
+    color:#333;
+}
+.term_box{
+    margin-top:430rpx;
+    padding:0 44rpx;
+    margin-bottom:140rpx;
+}
+.term_boxnew{
+    margin-top:230rpx;
+    padding:0 44rpx;
+    margin-bottom:140rpx;
+}
+.term{
+    height:90rpx;
+    line-height:90rpx;
+    border-bottom:1px solid #dfdfdf;
+}
+.term view{
+    font-size:32rpx;
+    color:#333;
+}
+.term image{
+    width:13rpx;
+    height:22rpx;
+}
+
+
+.top_add view{
+    width:60rpx;
+}
+.topbox{
+    top:350rpx;
+}
+.top_name_text{
+    font-weight: normal;
+}
+.topempty{
+    line-height: 120rpx;
+    text-align: center;
+    margin:0 auto;
+}

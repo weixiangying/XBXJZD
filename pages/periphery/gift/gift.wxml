@@ -1,0 +1,52 @@
+<!--pages/periphery/gift/gift.wxml-->
+<compontNavbar title="购物车" isShowBack="{{true}}" ></compontNavbar>
+<view class="box">
+    <block wx:if="{{showEmpty}}">
+        <empty></empty>
+    </block>
+    <block wx:else>
+        <view class="list">
+          <block wx:for="{{list}}" wx:key="this" wx:for-item="im" wx:for-index="idx">
+            <view class='new_sjname display-flex align-items-center'  bindtap='tz_shangjia' data-businessid='{{im.id}}'>
+              <image  src="{{im.checked? '../../../images/yuan2.png': '../../../images/yuan1.png'}}" class="item-icon" catchtap="selectGoods" data-index="{{idx}}"></image>
+              
+              <image wx:if="{{im.name!=''}}" src='{{base}}images/business_type.png' class='business_type_img'></image>
+              <view class='f_28 c_333 new_business_name'>{{im.name}}</view>
+              <image wx:if="{{im.name!=''}}" src='{{base}}images/arowRtGray.png' class='arowRtGray'></image>
+            </view>
+            <view>              
+                
+                <view class="item-box" wx:for="{{im.goods_list}}" wx:key="this"  data-idx="{{idx}}" data-index="{{index}}"  style="{{item.txtStyle}}"  bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
+                    <view class="item" >
+                        <image src="{{item.checked? '../../../images/yuan2.png': '../../../images/yuan1.png'}}" class="item-icon" catchtap="selectGoods_new" data-index="{{index}}" data-idx="{{idx}}"></image>
+                        <image class="item-img" src="{{item.image}}"></image>
+                        <view class="item-info">
+                            <view class="item-name">{{item.title}}</view>
+                            <view class="item-tips">
+                                <view class="item-price">￥{{item.price}}</view>
+                                <view class="item-count-box">
+                                    <view class="minus {{item.num == 1? 'disabled': ''}}" data-status="1" data-item="{{item}}" catchtap="modifNumClick">－</view>
+                                    <view class="num">{{item.num}}</view>
+                                    <view class="plus" data-status="2" data-item="{{item}}" catchtap="modifNumClick">+</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="del" data-id="{{item.id}}" bindtap="deleteGoods">删除</view>
+                </view>
+                <!-- <view class="del" data-id="{{item.id}}" catchtap="deleteGoods">删除</view> -->
+                
+            </view>
+          </block>
+        </view>
+        <view class="pay-box">
+            <image src="{{isAll?'../../../images/yuan2.png':'../../../images/yuan1.png'}}" class="allcheck-icon" catchtap="switchAll"></image>
+            <view class="total-box">
+                <text class='new_quanxuantext f_26 c_333' catchtap="switchAll">全选</text>
+                <text class="total-price">合计:￥{{priceAll}}</text>
+            </view>
+            <view class="btn" catchtap="toComfirmOrder">去结算</view>
+        </view>
+    </block>
+    
+</view>

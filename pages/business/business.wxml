@@ -1,0 +1,70 @@
+<!--pages/business/business.wxml-->
+<compontNavbar title="周边商家" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<block wx:if="{{showEmpty}}">
+  <empty></empty>
+</block>
+<view class='item_box position_r' wx:for="{{list}}" wx:key="this" bindtap='tz_businessDetail' data-businessid='{{item.id}}'>
+  <view class='item_location position_a display-flex align-items-center' wx:if='{{showdistance}}'>
+    <image src='{{base}}images/addr3.png'></image>
+    <view class='f_24 c_999' >{{item.distance}}</view>
+  </view>
+  <view class='item_top display-flex'>
+    <view class='item_headerbox'>
+      <image src="{{item.pic?item.pic:'../../images/star.png'}}"></image>
+    </view>
+    <view class='item_titlebox'>
+      <view class='display-flex align-items-center'>
+        <view class='item_title one_line f_28 c_333'>{{item.name}}</view>
+        <view wx:if="{{item.isauth==2}}" class='item_state'>已验证</view>
+        <view wx:else class='item_state'>未验证</view>
+      </view>
+      <view class='item_num display-flex align-items-center'>
+        <view wx:if="{{item.score<=1}}" class='display-flex align-items-center'>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+        </view> 
+        <view wx:if="{{item.score>1&&item.score<=2}}" class='display-flex align-items-center'>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+        </view> 
+        <view wx:if="{{item.score>2&&item.score<=3}}" class='display-flex align-items-center'>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+        </view> 
+        <view wx:if="{{item.score>3&&item.score<=4}}" class='display-flex align-items-center'>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+        </view>      
+        <view wx:if="{{item.score>4&&item.score<=5}}" class='display-flex align-items-center'>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+          <image src='{{base}}images/star.png' class='item_start_img'></image>
+        </view> 
+        <view class='item_score f_24 c_666'>{{item.score}}分</view>
+      </view>
+      <view class='item_type display-flex align-items-center'>
+        <image src='{{base}}images/business_type.png' class='item_start_img'></image>       
+        <view class='item_typetext f_24 c_999'>文具类</view>
+      </view>
+    </view>
+  </view>
+  <view class='item_contentbigbox display-flex '>
+    <navigator class='item_contentbox ' wx:for="{{item.goods_list}}" wx:key="this"  data-id='{{item.id}}' url="{{'/pages/business/goodsDetailNew/goodsDetailNew?id=' + item.id}}">
+   
+
+      <image src='{{item.image}}' class='item_contentimg'></image>
+      <view class='item_money '>
+        <text class='item_money1 f_26'>￥{{item.price}}</text>
+        <text class='item_money2 f_24'>￥{{item.yprice}}</text>
+      </view>
+    </navigator>    
+  </view>
+</view>
+
+
+

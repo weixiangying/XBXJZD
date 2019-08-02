@@ -1,0 +1,58 @@
+/* pages/my/advise/advise.wxss */
+page{
+    padding-top: 10vh;
+    background-color: #f7f7f7;
+}
+
+.toptext{
+  color:#3f3020;
+  font-size:29rpx;
+  margin:40rpx 0 0 30rpx;
+}
+.textareabox{
+  background-color:#fff;
+  margin:20rpx 20rpx;
+  border-radius: 10rpx;
+  padding:0 10rpx;
+}
+textarea{
+    width: 100%;
+  padding-top:20rpx;
+  font-size:29rpx;
+  color:#333;
+}
+.placeholder{
+  color:#999;
+}
+.centertext{
+  color:#3f3020;
+  font-size:29rpx;
+  margin:30rpx 0 0 30rpx;
+}
+.inputbox{
+  background-color:#fff;
+  margin:20rpx 20rpx;
+  border-radius: 10rpx;
+  padding:0 10rpx;
+  height:100rpx;
+}
+input{
+  height:100rpx;
+  line-height: 100rpx;
+  font-size:29rpx;
+  color:#333;
+}
+.btn{
+    background: -webkit-linear-gradient(#50A6FB ,#70B6FC); 
+    background: -o-linear-gradient(#50A6FB ,#70B6FC);
+    background: -moz-linear-gradient(#50A6FB ,#70B6FC);
+    background: linear-gradient(to left,#50A6FB ,#70B6FC);
+  border-radius:10rpx;
+  margin:280rpx auto 40rpx;
+  color:#fff;
+  height: 90rpx;
+  line-height: 90rpx; 
+  width: 90%;
+  text-align: center;
+  font-size:32rpx;
+}

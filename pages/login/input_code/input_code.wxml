@@ -1,0 +1,48 @@
+<!--pages/login/input_code/input_code.wxml-->
+<compontNavbar title="输入验证码" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+
+<!--提示错误信息-->
+<view class="code_error display-flex align-items-center" wx:if="{{display==true}}">
+    <image src='../../../images/tips.png' class='code_error_img'></image>
+    <view>{{error_tip}}</view>
+</view>
+
+    <view class="bigbox">
+    	<view class="code_already f_26 c_666">
+        	验证码已发送至+86
+            <text>{{user_left_phone}}</text>
+        </view>
+        <view class="code_form display-flex justify-content-between" bindtap="set_Focus">
+            
+            <view class="{{length==1||length==0?'input':'input_none'}}">
+                <text>{{code[0]}}</text>
+            </view>
+            <view class="{{length==2?'input':'input_none'}}">
+                <text>{{code[1]}}</text>
+            </view>
+            <view class="{{length==3?'input':'input_none'}}">
+                <text>{{code[2]}}</text>
+            </view>
+            <view class="{{length==4?'input':'input_none'}}">
+                <text>{{code[3]}}</text>
+            </view>
+            <view class="{{length==5?'input':'input_none'}}">
+                <text>{{code[4]}}</text>
+            </view>
+            <view class="{{length==6?'input':'input_none'}}">
+                <text>{{code[5]}}</text>
+            </view>
+        </view>
+
+        <input bindinput="get_code" class="input-content" type="number" focus="{{code_isFocus}}" maxlength="6" ></input>
+
+
+        
+
+        <view class="code_righttext f_24 c_999 {{verify_color? 'c_999' : 'verify_color'}}"  bindtap="identify">{{verifyCodeTime}}</view>
+        
+        <view class="code_agreement f_24 c_999">
+        	用户注册登录代表阅读并同意<text class="c_gf" bindtap="toAgrmt">使用协议及使用条款</text>
+        </view>
+    </view>

@@ -1,0 +1,73 @@
+<!--pages/collegeNew/collegeNewDel/collegeNewDel.wxml-->
+<compontNavbar title="课程详情" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+<image wx:if='{{detail.LessonImage}}' class='top_img' src='{{detail.LessonImage}}' mode='aspectFill'></image>
+<image wx:else class='top_img' src='../../../images/normal_pic1.png' mode='aspectFill'></image>
+<view class='tabbox display-flex justify-content-between bg_fff'>
+    <view class='tab_text position_r {{tabstyle==1?"tab_text_active":""}}' catchtap='click_tab' data-tabstyle='1'>
+        课程介绍
+        <view wx:if='{{tabstyle==1}}' class='position_a tab_textline'></view>
+    </view>
+    <view class='tab_text position_r {{tabstyle==2?"tab_text_active":""}}' catchtap='click_tab' data-tabstyle='2'>
+        全部课程
+        <view wx:if='{{tabstyle==2}}' class='position_a tab_textline'></view>
+    </view>
+</view>
+<scroll-view scroll-y="true" style="height:{{scrollheight}}px">
+    <view wx:if='{{tabstyle==1}}'>
+        <view class='left_topbox bg_fff'>
+            <view class='left_top_title'>{{detail.LessonName}}</view>
+            <view class='left_top_box display-flex align-items-center'>
+                <image src='../../../images/college/c_people.png' class='left_top_imgc'></image>
+                <view class='left_top_imgtext f_24'>{{detail.PayNum}}人已购</view>            
+            </view>
+            <view class='left_top_text2 f_24 c_999'>{{detail.LessonContent}}</view>
+        </view>
+        <view class='bg_fff left_centerbox'>
+            <view class='display-flex align-items-center mb30'>
+                <view class='h1'></view>
+                <view class='h1_text f_32'>主讲人</view>
+            </view>
+            <view class='display-flex align-items-center justify-content-between'>
+                <view class='display-flex align-items-center'>
+                    <image wx:if="{{detail.teacher.FacePath}}" src='{{detail.teacher.FacePath}}' class='left_centerbox_header'></image>
+                    <image wx:else src='../../../images/default_user.png' class='left_centerbox_header'></image>                   
+                    <view class='left_centerbox_name f_30'>{{detail.teacher.Name}}</view>                
+                </view>
+                <view class='left_centerbox_tag f_24'>{{detail.teacher.JobTitle}}</view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <block wx:if="{{showEmpty}}">
+                <empty></empty>
+        </block>
+        <view class='right_item bg_fff' wx:for='{{list}}' wx:key='this' data-playid='{{item.fileid}}' data-playsrc='{{item.fileurl}}' catchtap='tz_play'>
+            <view class='display-flex align-items-center'>
+                <view class='right_item_num f_32 c_999'>{{item.myindex}}</view>
+                <view class='right_item_center'>
+                    <view class='two_line right_item_center_text1 f_28'>{{item.filename}}</view>                
+                </view>
+            </view>
+            <view class='display-flex align-items-center new_timebox'>
+                        <view class='display-flex align-items-center' wx:if='{{item.filetime}}'>
+                            <image src='../../../images/college/time.png' class='right_item_center_img'></image>
+                            <view class='f_24 c_999 right_item_center_text2'>{{item.filetime}}</view>
+                        </view>
+                        <view class='display-flex align-items-center'>
+                            <image src='../../../images/college/create.png' class='right_item_center_img2'></image>
+                            <view class='f_24 c_999 right_item_center_text2'>{{item.createtime}}</view>
+                        </view>
+            </view>  
+        </view>
+    </view>
+
+</scroll-view>
+
+
+
+<view class='fix_bottom display-flex justify-content-between align-items-center' wx:if="{{hidemoney}}">
+    <view class='fix_left display-flex align-items-center'>
+        <view class='fix_money'><text class='f_24'>￥</text>{{detail.LessonPrice}}</view>       
+    </view>
+    <button class='fix_btn c_gf_bg f_32 c_fff' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="judgeLogin">确认支付</button>
+</view>

@@ -1,0 +1,37 @@
+<!--pages/composition/compositionDetail/compositionDetail.wxml-->
+<compontNavbar title="文章详情" isShowBack="{{true}}" component-class="component-class"></compontNavbar>
+
+<view class='containbox'>
+    <view class='title f_36 c_333'>
+        {{detail.Name}}<text class='title_text'>优秀</text>
+    </view>
+    <view class='compositionstyle f_28 c_777'>{{detail.GradeId}}·{{detail.grammar}}·{{detail.WordNum}}字</view>
+    <!-- <text class='article f_30 c_333'>{{content}}</text> -->
+    <view class='article f_30 c_333' wx:key='this' wx:for='{{newcontent}}'>{{item}}</view>
+
+
+
+
+    <!-- 分享收藏 -->
+    <!-- <view class='display-flex align-items-center justify-content-around operatebox'>        
+        <view bindtap='isCollect' class='collect_box'>           
+            <image src='../../../images/collect_news_already.png' class='collectimg' wx:if='{{mycollect==1}}' ></image>
+            <image wx:else src='../../../images/collect_news.png' class='collectimg' ></image>
+        </view>
+        <button class="share-box" open-type="share" plain="true">
+            <image src='../../../images/share.png' class='shareimg'></image>
+        </button>
+    </view> -->
+
+
+    <view class='dianpingbox position_r' wx:if='{{detail.TeacherComment}}'>
+        <view class='wonderfulbox position_a'>
+            <view class='wonderful f_30 c_fff c_gf_bg'>精彩点评</view>
+        </view>
+        <view class='bg_fff dianping f_30 c_333'>
+        {{detail.TeacherComment}}
+        </view>
+    </view>
+    
+</view>
+

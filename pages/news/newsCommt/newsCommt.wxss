@@ -1,0 +1,119 @@
+page{
+    border-top: 1rpx solid #dfdfdf;
+    background: #fff;
+    padding-top: 10vh;
+}
+
+.container{
+    width: 100%;
+    padding-bottom: 8vh;
+}
+.comm-list{
+    width: 100%;
+}
+.comm-item{
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 30rpx;
+}
+.user-img{
+    width: 54rpx;
+    height: 54rpx;
+    border-radius: 50%;
+    margin-left: 24rpx;
+    margin-right: 12rpx;
+}
+.comm-cont{
+    width: 88%;
+    padding-bottom: 48rpx;
+    padding-right: 24rpx;
+    border-bottom: 1rpx solid #dfdfdf;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.user-info{
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lt{
+    width: 80%;
+}
+.uname{
+    width: 100%;
+    font-size: 28rpx;
+    color: #4b94ee;
+    margin-bottom: 14rpx;
+}
+.comm-posi{
+    width: 100%;
+    font-size: 22rpx;
+    color: #a0a0a0;
+    margin-bottom: 26rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.rt{
+    width: 20%;
+    text-align: right;
+}
+.rt text{
+    font-size: 24rpx;
+    color: #999;
+    margin-right: 14rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+.rt image{
+    width: 24rpx;
+    height: 24rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.comt{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 8.2vh;
+    background: #fff;
+    border-top: 1rpx solid #dfdfdf;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.input-container{
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 30rpx;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4% 3%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.input-container input{
+    width: 100%;
+    font-size: 26rpx;
+    color: #333;
+}
+.input-container image{
+    width: 42rpx;
+    height: 40rpx;
+}
+

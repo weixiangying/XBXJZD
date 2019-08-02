@@ -1,0 +1,117 @@
+/* pages/recite/reciteDetail/reciteDetail.wxss */
+@import "/component/navigation/navigation.wxss";
+
+.translate_img{
+    width:29rpx;
+    height:22rpx;
+    margin:0 16rpx 0 16rpx;
+}
+
+
+page{
+    padding-top:10vh;
+    padding-bottom:220rpx;
+}
+.title{
+    margin-top:84rpx;
+    text-align: center;
+}
+
+.bringpy_box{
+    display: inline-block;
+    text-align: center;
+    margin-right:26rpx;
+    margin-bottom:10rpx;
+}
+.bringpy_h1{
+    line-height: 24rpx;
+
+}
+.bringpy_h2{
+    font-size:42rpx;
+    line-height: 42rpx;
+    margin-top:40rpx;
+}
+.author{
+    line-height: 34rpx;
+    color:#333;
+    text-align: center;
+    margin-top:34rpx;
+}
+.item_text{
+    color:#808080;
+    font-size:24rpx;
+    border:1px solid #BFBFBF;
+    display: inline-block;
+    line-height: 34rpx;
+    padding:0 7rpx;
+    border-radius: 6rpx;
+    margin-right:16rpx;
+}
+.contentpy_bigbox{
+    margin-bottom:48rpx;
+}
+.contentpy_box{
+    display: inline-block;
+    text-align: center;
+    margin-right:26rpx;
+    margin-bottom:10rpx;
+    width:73rpx;
+}
+.contenpy_h1{
+    line-height: 24rpx;
+
+}
+.contenpy_h2{
+    font-size:40rpx;
+    line-height: 40rpx;
+    margin-top:24rpx;
+}
+/* 译文 */
+.y_box{
+    padding:0 64rpx 0 72rpx;
+}
+.y_title{
+    font-size:40rpx;
+    line-height: 60rpx;
+    margin-top:84rpx;
+}
+.y_author{
+    line-height: 34rpx;
+    color:#333;
+    margin-top:25rpx;
+    margin-bottom:64rpx;
+}
+.y_item_text{
+    margin-right:22rpx;
+}
+.y_content{
+    line-height: 60rpx;
+    margin-bottom:26rpx;
+}
+.y_ycontent{
+    line-height: 50rpx;
+    margin-bottom:82rpx;
+}
+/* bottom */
+.bottombox{
+    position:fixed;
+    width:100%;
+    bottom:0;
+    background-color:#fff;
+    height:220rpx;
+    box-sizing: border-box;
+    /* border-top:1px solid red; */
+    text-align: center;
+    box-shadow:0rpx -10rpx 0rpx 0rpx #f8f8f8
+}
+.bottom_h1{
+    color:#54C1D7;
+    font-size:28rpx;
+}
+.icon_reciteimg{
+    width:44rpx;
+    height:66rpx;
+    margin:60rpx auto 23rpx;
+    display: block;
+}

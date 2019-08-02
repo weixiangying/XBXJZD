@@ -1,0 +1,15 @@
+<template name="tab">
+    <view class="tab" bindtap="swiTab" data-index="{{item.index}}" style="width: {{item.width}}">
+        <view class="tab-text">{{item.title}}</view>
+        <view class="tab-line"></view>
+    </view>
+</template>
+
+
+
+<template name="tabActive">
+    <view class="tab active" style="width: {{item.width}}" bindtap="swiTab" data-index="{{item.index}}">
+        <view class="tab-text">{{item.title}}</view>
+        <view class="tab-line"></view>
+    </view>
+</template>

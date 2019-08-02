@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "empty": "/component/empty/empty",
+        "addAgre": "/component/addAgree/addAgree",
+        "accord": "./accord/accord",
+        "compontNavbar": "/component/navigation/navigation"
+    }
+}
